@@ -17,12 +17,16 @@ public class TuCarro {
     }
 
     public void registrarVehiculo(Vehiculo vehiculo){
+        boolean validar = true;
         for (Vehiculo v : listaVehiculos) {
             if (v.getPlaca().equals(vehiculo.getPlaca())) {
-                JOptionPane.showMessageDialog(null,"El usuario ya existe");
-            }else{
-                listaVehiculos.add(vehiculo);
+                JOptionPane.showMessageDialog(null,"Ya existe este vehiculo");
+                validar = false;
+                break;
             }
+        }
+        if(validar){
+            listaVehiculos.add(vehiculo);
         }
     }
 
@@ -37,6 +41,7 @@ public class TuCarro {
         }
 
     }
+
     public void registrarCliente(Cliente cliente){
 
         for (Cliente e : listaClientes) {
