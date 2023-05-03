@@ -16,38 +16,28 @@ public class TuCarro {
         listaClientes = new ArrayList<>();
     }
 
-    public List<Vehiculo> getListaVehiculos() {
-        return listaVehiculos;
-    }
+//    public void registrarVehiculo(Vehiculo vehiculo) throws Exception {
+//        for(int i=0;i<listaVehiculos.size();i++){
+//            if(listaVehiculos.get(i).getPlaca()==vehiculo.getPlaca()){
+//                throw new Exception("el vehiculo este repetido");
+//            }
+//        }
+//        listaVehiculos.add(vehiculo);
+//
+//    }
 
-    public void setListaVehiculos(List<Vehiculo> listaVehiculos) {
-        this.listaVehiculos = listaVehiculos;
-    }
-
-    public List<Empleado> getListaEmpleados() {
-        return listaEmpleados;
-    }
-
-    public void setListaEmpleados(List<Empleado> listaEmpleados) {
-        this.listaEmpleados = listaEmpleados;
-    }
-
-    public List<Cliente> getListaClientes() {
-        return listaClientes;
-    }
-
-    public void setListaClientes(List<Cliente> listaClientes) {
-        this.listaClientes = listaClientes;
-    }
-
-    public void registrarVehiculo(Vehiculo vehiculo) throws Exception {
-        for(int i=0;i<listaVehiculos.size();i++){
-            if(listaVehiculos.get(i).getPlaca()==vehiculo.getPlaca()){
-                throw new Exception("el vehiculo este repetido");
+    public void registrarVehiculo(Vehiculo vehiculo){
+        boolean validar = true;
+        for (Vehiculo v : listaVehiculos) {
+            if (v.getPlaca().equals(vehiculo.getPlaca())) {
+                JOptionPane.showMessageDialog(null,"Ya existe este vehiculo");
+                validar = false;
+                break;
             }
         }
-        listaVehiculos.add(vehiculo);
-
+        if(validar){
+            listaVehiculos.add(vehiculo);
+        }
     }
 
     public void registrarEmpleado(Empleado empleado){
@@ -70,5 +60,30 @@ public class TuCarro {
                 listaClientes.add(cliente);
             }
         }
+    }
+
+
+    public List<Vehiculo> getListaVehiculos() {
+        return listaVehiculos;
+    }
+
+    public void setListaVehiculos(List<Vehiculo> listaVehiculos) {
+        this.listaVehiculos = listaVehiculos;
+    }
+
+    public List<Empleado> getListaEmpleados() {
+        return listaEmpleados;
+    }
+
+    public void setListaEmpleados(List<Empleado> listaEmpleados) {
+        this.listaEmpleados = listaEmpleados;
+    }
+
+    public List<Cliente> getListaClientes() {
+        return listaClientes;
+    }
+
+    public void setListaClientes(List<Cliente> listaClientes) {
+        this.listaClientes = listaClientes;
     }
 }
