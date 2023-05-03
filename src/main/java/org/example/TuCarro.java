@@ -30,7 +30,7 @@ public class TuCarro {
         boolean validar = true;
         for (Vehiculo v : listaVehiculos) {
             if (v.getPlaca().equals(vehiculo.getPlaca())) {
-                JOptionPane.showMessageDialog(null,"Ya existe este vehiculo");
+                JOptionPane.showMessageDialog(null,"La placa ingresada ya existe.");
                 validar = false;
                 break;
             }
@@ -41,24 +41,30 @@ public class TuCarro {
     }
 
     public void registrarEmpleado(Empleado empleado){
-
+        boolean validar = true;
         for (Empleado e : listaEmpleados) {
             if (e.getDocumento().equals(empleado.getDocumento())) {
-                JOptionPane.showMessageDialog(null,"El empleado ya existe");
-            }else{
-                listaEmpleados.add(empleado);
+                JOptionPane.showMessageDialog(null,"El documento ingresado ya existe.");
+                validar = false;
+                break;
             }
+        }
+        if(validar){
+            listaEmpleados.add(empleado);
         }
 
     }
     public void registrarCliente(Cliente cliente){
-
+        boolean validar = true;
         for (Cliente e : listaClientes) {
             if (e.getDocumento().equals(cliente.getDocumento())) {
-                JOptionPane.showMessageDialog(null,"El cliente ya existe");
-            }else{
-                listaClientes.add(cliente);
+                JOptionPane.showMessageDialog(null,"El numero de documento ingresado ya existe.");
+                validar = false;
+                break;
             }
+        }
+        if (validar){
+            listaClientes.add(cliente);
         }
     }
 
