@@ -6,7 +6,7 @@ import java.util.List;
 
 public class TuCarro {
 
-    public List<Vehiculo> listaVehiculos;
+    private List<Vehiculo> listaVehiculos;
     public List<Empleado> listaEmpleados;
     public List<Cliente>  listaClientes;
 
@@ -16,14 +16,38 @@ public class TuCarro {
         listaClientes = new ArrayList<>();
     }
 
-    public void registrarVehiculo(Vehiculo vehiculo){
-        for (Vehiculo v : listaVehiculos) {
-            if (v.getPlaca().equals(vehiculo.getPlaca())) {
-                JOptionPane.showMessageDialog(null,"El usuario ya existe");
-            }else{
-                listaVehiculos.add(vehiculo);
+    public List<Vehiculo> getListaVehiculos() {
+        return listaVehiculos;
+    }
+
+    public void setListaVehiculos(List<Vehiculo> listaVehiculos) {
+        this.listaVehiculos = listaVehiculos;
+    }
+
+    public List<Empleado> getListaEmpleados() {
+        return listaEmpleados;
+    }
+
+    public void setListaEmpleados(List<Empleado> listaEmpleados) {
+        this.listaEmpleados = listaEmpleados;
+    }
+
+    public List<Cliente> getListaClientes() {
+        return listaClientes;
+    }
+
+    public void setListaClientes(List<Cliente> listaClientes) {
+        this.listaClientes = listaClientes;
+    }
+
+    public void registrarVehiculo(Vehiculo vehiculo) throws Exception {
+        for(int i=0;i<listaVehiculos.size();i++){
+            if(listaVehiculos.get(i).getPlaca()==vehiculo.getPlaca()){
+                throw new Exception("el vehiculo este repetido");
             }
         }
+        listaVehiculos.add(vehiculo);
+
     }
 
     public void registrarEmpleado(Empleado empleado){

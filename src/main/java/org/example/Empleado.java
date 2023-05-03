@@ -29,4 +29,8 @@ public class Empleado {
     public void setPassCliente(String passCliente) {
         this.passCliente = passCliente;
     }
+
+    public void agregarVehiculo(TuCarro almacenar,Vehiculo vehiculo) throws Exception {
+        almacenar.registrarVehiculo(vehiculo);
+    }
 }
