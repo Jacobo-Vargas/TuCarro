@@ -8,7 +8,6 @@ public class Vehiculo {
             throw new Exception("la placa del vehiculo no puede estar vacia");
         }else {
             this.placa=placa;
-          
         }
     }
 

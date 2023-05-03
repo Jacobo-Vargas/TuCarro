@@ -29,6 +29,7 @@ public class TestAdicionarVehiculo {
         var vehiculo2=new Vehiculo("IZG95F");
         tuCarro.registrarVehiculo(vehiculo);
         Assertions.assertThrows(Exception.class,()->empleado.agregarVehiculo(tuCarro,vehiculo2));
+        System.out.println("bueno hp hasta aqui llegue");
     }
 
 }
