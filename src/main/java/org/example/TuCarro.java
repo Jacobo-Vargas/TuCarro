@@ -16,6 +16,59 @@ public class TuCarro {
         listaClientes = new ArrayList<>();
     }
 
+//    public void registrarVehiculo(Vehiculo vehiculo) throws Exception {
+//        for(int i=0;i<listaVehiculos.size();i++){
+//            if(listaVehiculos.get(i).getPlaca()==vehiculo.getPlaca()){
+//                throw new Exception("el vehiculo este repetido");
+//            }
+//        }
+//        listaVehiculos.add(vehiculo);
+//
+//    }
+
+    public void registrarVehiculo(Vehiculo vehiculo){
+        boolean validar = true;
+        for (Vehiculo v : listaVehiculos) {
+            if (v.getPlaca().equals(vehiculo.getPlaca())) {
+                JOptionPane.showMessageDialog(null,"La placa ingresada ya existe.");
+                validar = false;
+                break;
+            }
+        }
+        if(validar){
+            listaVehiculos.add(vehiculo);
+        }
+    }
+
+    public void registrarEmpleado(Empleado empleado){
+        boolean validar = true;
+        for (Empleado e : listaEmpleados) {
+            if (e.getDocumento().equals(empleado.getDocumento())) {
+                JOptionPane.showMessageDialog(null,"El documento ingresado ya existe.");
+                validar = false;
+                break;
+            }
+        }
+        if(validar){
+            listaEmpleados.add(empleado);
+        }
+
+    }
+    public void registrarCliente(Cliente cliente){
+        boolean validar = true;
+        for (Cliente e : listaClientes) {
+            if (e.getDocumento().equals(cliente.getDocumento())) {
+                JOptionPane.showMessageDialog(null,"El numero de documento ingresado ya existe.");
+                validar = false;
+                break;
+            }
+        }
+        if (validar){
+            listaClientes.add(cliente);
+        }
+    }
+
+
     public List<Vehiculo> getListaVehiculos() {
         return listaVehiculos;
     }
@@ -38,37 +91,5 @@ public class TuCarro {
 
     public void setListaClientes(List<Cliente> listaClientes) {
         this.listaClientes = listaClientes;
-    }
-
-    public void registrarVehiculo(Vehiculo vehiculo) throws Exception {
-        for(int i=0;i<listaVehiculos.size();i++){
-            if(listaVehiculos.get(i).getPlaca()==vehiculo.getPlaca()){
-                throw new Exception("el vehiculo este repetido");
-            }
-        }
-        listaVehiculos.add(vehiculo);
-
-    }
-
-    public void registrarEmpleado(Empleado empleado){
-
-        for (Empleado e : listaEmpleados) {
-            if (e.getDocumento().equals(empleado.getDocumento())) {
-                JOptionPane.showMessageDialog(null,"El empleado ya existe");
-            }else{
-                listaEmpleados.add(empleado);
-            }
-        }
-
-    }
-    public void registrarCliente(Cliente cliente){
-
-        for (Cliente e : listaClientes) {
-            if (e.getDocumento().equals(cliente.getDocumento())) {
-                JOptionPane.showMessageDialog(null,"El cliente ya existe");
-            }else{
-                listaClientes.add(cliente);
-            }
-        }
     }
 }
