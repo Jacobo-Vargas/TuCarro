@@ -34,4 +34,40 @@ public class Combustible {
         this.noEnchufable = noEnchufable;
 
     }
+
+    public boolean isGasolina() {
+        return gasolina;
+    }
+
+    public Diesel getDiesel() {
+        return diesel;
+    }
+
+    public boolean isElectrico() {
+        return electrico;
+    }
+
+    public float getPromedioCarga() {
+        return promedioCarga;
+    }
+
+    public float getAutonomia() {
+        return autonomia;
+    }
+
+    public boolean isHibrido() {
+        return hibrido;
+    }
+
+    public boolean isEnchufable() {
+        return enchufable;
+    }
+
+    public boolean isNoEnchufable() {
+        return noEnchufable;
+    }
+
+    public boolean isLigero() {
+        return ligero;
+    }
 }
