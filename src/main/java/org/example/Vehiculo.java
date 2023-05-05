@@ -12,7 +12,7 @@ public class Vehiculo {
     private int cilinbraje;
     private int numeroPasajeros;
     private int numeroPuertas;
-    private String tipoCombustible;
+    private Combustible combustible;
 
     public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, Date modelo, int numeroMarchas,
                     float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible) throws Exception {
