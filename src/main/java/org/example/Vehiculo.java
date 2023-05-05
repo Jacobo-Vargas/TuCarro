@@ -6,15 +6,15 @@ public class Vehiculo {
     private final String placa;
     private EstadoVehiculo estadoVehiculo;
     private String marca;
-    private Date modelo;
-    private int numeroMarchas;
+    private int modelo;
+    private int cambios;
     private float velocidadMaxima;
     private int cilinbraje;
     private int numeroPasajeros;
     private int numeroPuertas;
     private Combustible combustible;
 
-    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, Date modelo, int numeroMarchas,
+    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
                     float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible) throws Exception {
         if(placa.isEmpty() || placa.isBlank() || placa.length()!=6){
             throw new Exception("existe un erro en la placa");
@@ -31,18 +31,16 @@ public class Vehiculo {
         }else{
             this.marca = marca;
         }
-        if (modelo.after(1990)){
 
-        }
-//        if(modelo<0 || modelo>4000){
-//            throw new Exception("el modelo no puede ser menor que cero o mayor que 4000");
-//        }else{
-//            this.modelo = modelo;
-//        }
-        if(numeroMarchas <=3 ){
+      if(modelo< 1980 || modelo> 2023 ){
+          throw new Exception("el año no puede ser menor a 1980 o mayor a 2023");
+      }else{
+          this.modelo = modelo;
+      }
+        if(cambios <=3 ){
             throw new Exception("el numero de marchas no puede ser menor que 3");
         }else {
-            this.numeroMarchas = numeroMarchas;
+            this.cambios = cambios;
         }
         if(velocidadMaxima<=0){
             throw new Exception("la velocidad maxima no puede ser menor o igual a cero");
@@ -57,9 +55,6 @@ public class Vehiculo {
             throw new Exception("el numero de pasajeros no puede ser menor que cero");
         }else{this.numeroPasajeros = numeroPasajeros;
         }
-
-        this.numeroPuertas = numeroPuertas;
-        this.tipoCombustible = tipoCombustible;
     }
 
     public String getPlaca() {
@@ -90,12 +85,12 @@ public class Vehiculo {
         this.modelo = modelo;
     }
 
-    public int getNumeroMarchas() {
-        return numeroMarchas;
+    public int getCambios() {
+        return cambios;
     }
 
-    public void setNumeroMarchas(int numeroMarchas) {
-        this.numeroMarchas = numeroMarchas;
+    public void setCambios(int cambios) {
+        this.cambios = cambios;
     }
 
     public float getVelocidadMaxima() {
@@ -130,28 +125,8 @@ public class Vehiculo {
         this.numeroPuertas = numeroPuertas;
     }
 
-    public String getTipoCombustible() {
-        return tipoCombustible;
-    }
-
-    public void setTipoCombustible(String tipoCombustible) {
-        this.tipoCombustible = tipoCombustible;
-    }
-
-    @Override
-    public String toString() {
-        return "Vehiculo{" +
-                "placa='" + placa + '\'' +
-                ", estadoVehiculo=" + estadoVehiculo +
-                ", marca='" + marca + '\'' +
-                ", modelo=" + modelo +
-                ", numeroMarchas=" + numeroMarchas +
-                ", velocidadMaxima=" + velocidadMaxima +
-                ", cilinbraje=" + cilinbraje +
-                ", numeroPasajeros=" + numeroPasajeros +
-                ", numeroPuertas=" + numeroPuertas +
-                ", tipoCombustible='" + tipoCombustible + '\'' +
-                '}';
+    public Combustible getCombustible() {
+        return combustible;
     }
 }
 
