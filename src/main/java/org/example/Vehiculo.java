@@ -1,10 +1,12 @@
 package org.example;
 
+import java.util.Date;
+
 public class Vehiculo {
     private final String placa;
     private EstadoVehiculo estadoVehiculo;
     private String marca;
-    private int  modelo;
+    private Date modelo;
     private int numeroMarchas;
     private float velocidadMaxima;
     private int cilinbraje;
@@ -12,7 +14,7 @@ public class Vehiculo {
     private int numeroPuertas;
     private String tipoCombustible;
 
-    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int numeroMarchas,
+    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, Date modelo, int numeroMarchas,
                     float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible) throws Exception {
         if(placa.isEmpty() || placa.isBlank() || placa.length()!=6){
             throw new Exception("existe un erro en la placa");
@@ -29,12 +31,15 @@ public class Vehiculo {
         }else{
             this.marca = marca;
         }
-        if(modelo<0 || modelo>4000){
-            throw new Exception("el modelo no puede ser menor que cero o mayor que 4000");
-        }else{
-            this.modelo = modelo;
+        if (modelo.after(1990)){
+
         }
-        if(numeroMarchas<=3){
+//        if(modelo<0 || modelo>4000){
+//            throw new Exception("el modelo no puede ser menor que cero o mayor que 4000");
+//        }else{
+//            this.modelo = modelo;
+//        }
+        if(numeroMarchas <=3 ){
             throw new Exception("el numero de marchas no puede ser menor que 3");
         }else {
             this.numeroMarchas = numeroMarchas;
@@ -44,8 +49,8 @@ public class Vehiculo {
         }else{
             this.velocidadMaxima = velocidadMaxima;
         }
-        if (cilinbraje<=0){
-            throw new Exception("el cilinbraje no puede menor o igual a cero");
+        if (cilinbraje <= 0){
+            throw new Exception("el cilindraje no puede menor o igual a cero");
         }else {this.cilinbraje = cilinbraje;
         }
         if(numeroPasajeros<2){
