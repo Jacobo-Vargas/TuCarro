@@ -70,7 +70,7 @@ public class TestOrdenarVehiculuo {
 
         System.out.println("imprimiendo lista ordenada");
 
-        tuCarro.ordenarListaPorModelo().forEach(System.out::println); //metodo que ordena la lista de menor a mayor 
+        tuCarro.ordenarListaPorModelo().forEach(System.out::println); //metodo que ordena la lista de menor a mayor
     }
 
 
