@@ -22,23 +22,19 @@ public class Combustible {
         this.promedioCarga = promedioCarga;
         this.autonomia = autonomia;
     }
-
     public Combustible(boolean hibrido,boolean enchufable,boolean ligero){
         this.hibrido = hibrido;
         this.enchufable = enchufable;
         this. ligero = ligero;
     }
-
     public Combustible(boolean hibrido,boolean noEnchufable){
         this.hibrido = hibrido;
         this.noEnchufable = noEnchufable;
 
     }
-
     public boolean isGasolina() {
         return gasolina;
     }
-
     public Diesel getDiesel() {
         return diesel;
     }
