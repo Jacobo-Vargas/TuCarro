@@ -3,6 +3,7 @@ package org.example;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class TuCarro {
 
@@ -67,6 +68,17 @@ public class TuCarro {
             listaClientes.add(cliente);
         }
     }
+    public List<Vehiculo> ordenarListaCarroPlaca (){//metodo para ordenar por numero de placa
+        var listaOrdenada=listaVehiculos.stream().sorted((vehiculo1 , vehiculo2)
+                ->vehiculo1. getPlaca(). compareTo(vehiculo2.getPlaca())) .collect(Collectors.toList());
+        return listaOrdenada;
+    }
+    public List<Vehiculo> ordenarListaPorModelo(){
+        var listaOrdenada=listaVehiculos.stream().sorted((vehiculo1 , vehiculo2)->vehiculo1.getModelo()-
+                vehiculo2.getModelo()).collect(Collectors.toList());
+        return listaOrdenada;
+    }
+
 
 
 

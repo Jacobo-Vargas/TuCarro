@@ -128,6 +128,22 @@ public class Vehiculo {
     public Combustible getCombustible() {
         return combustible;
     }
+
+    @Override
+    public String toString() {
+        return "Vehiculo{" +
+                "placa='" + placa + '\'' +
+                ", estadoVehiculo=" + estadoVehiculo +
+                ", marca='" + marca + '\'' +
+                ", modelo=" + modelo +
+                ", cambios=" + cambios +
+                ", velocidadMaxima=" + velocidadMaxima +
+                ", cilinbraje=" + cilinbraje +
+                ", numeroPasajeros=" + numeroPasajeros +
+                ", numeroPuertas=" + numeroPuertas +
+                ", combustible=" + combustible +
+                '}';
+    }
 }
 
 
