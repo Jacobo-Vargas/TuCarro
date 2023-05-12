@@ -12,7 +12,7 @@ public class Vehiculo {
     private int cilinbraje;
     private int numeroPasajeros;
     private int numeroPuertas;
-    private Combustible combustible;
+    //public Combustible combustible;
 
     public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
                     float velocidadMaxima, int cilinbraje, int numeroPasajeros
@@ -64,8 +64,8 @@ public class Vehiculo {
         //if(combustible==null){
           //  throw new Exception("El tipo de combustible no puede estar vacio");
         //}else {
-          //  this.combustible=combustible;
-        //}
+         //   this.combustible=combustible;
+       // }
     }
 
     public String getPlaca() {
