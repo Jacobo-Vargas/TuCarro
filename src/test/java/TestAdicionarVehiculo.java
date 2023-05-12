@@ -12,7 +12,7 @@ public class TestAdicionarVehiculo {
     public void test01() throws Exception {// test al nuevo metodo de registrar heviculo
         var tuCarro=new TuCarro();
         var vehiculo=new Vehiculo("IZG95F", EstadoVehiculo.NUEVO,"mazda",2006,4,
-                1300,250,4,4,"gasolina");
+                1300,250,4,4);
         tuCarro.registrarVehiculo(vehiculo);
         Assertions.assertEquals(1,tuCarro.getListaVehiculos().size());
         Assertions.assertEquals(vehiculo,tuCarro.getListaVehiculos().get(0));
@@ -22,10 +22,10 @@ public class TestAdicionarVehiculo {
     public void test02() throws Exception {// test al nuevo metodo de registrar si hay vehiculos repetidos
         var tuCarro=new TuCarro();
         var vehiculo=new Vehiculo("IZG95F", EstadoVehiculo.NUEVO,"mazda",2006,4,
-                1300,250,4,4,"gasolina");
+                1300,250,4,4);
         tuCarro.registrarVehiculo(vehiculo);
         tuCarro.registrarVehiculo(new Vehiculo("IZG95F", EstadoVehiculo.NUEVO,"mazda",2006,4,
-                1300,250,4,4,"gasolina"));
+                1300,250,4,4));
         Assertions.assertEquals(1,tuCarro.getListaVehiculos().size());
     }
 

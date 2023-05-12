@@ -73,16 +73,11 @@ public class TuCarro {
                 ->vehiculo1. getPlaca(). compareTo(vehiculo2.getPlaca())) .collect(Collectors.toList());
         return listaOrdenada;
     }
-    public List<Vehiculo> ordenarListaPorModelo(){
+    public List<Vehiculo> ordenarListaPorModelo(){// metodo para ordenar por modelo
         var listaOrdenada=listaVehiculos.stream().sorted((vehiculo1 , vehiculo2)->vehiculo1.getModelo()-
                 vehiculo2.getModelo()).collect(Collectors.toList());
         return listaOrdenada;
     }
-
-
-
-
-
     public List<Vehiculo> getListaVehiculos() {
         return listaVehiculos;
     }

@@ -1,3 +1,4 @@
+import org.example.Combustible;
 import org.example.EstadoVehiculo;
 import org.example.TuCarro;
 import org.example.Vehiculo;
@@ -8,19 +9,19 @@ public class TestOrdenarVehiculuo {
     public void test01() throws Exception {
         var tuCarro=new TuCarro();
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,1500,4,4,"gasolina");
+                4,100,1500,4,4);
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.USADO,"MUZAN",2021,
-                4,100,1500,4,4,"gasolina");
+                4,100,1500,4,4);
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.USADO,"MUZAN",1999,
-                4,100,1500,4,4,"gasolina");
+                4,100,1500,4,4);
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"MUZAN",2000,
-                4,100,1500,4,4,"gasolina");
+                4,100,1500,4,4);
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2001,
-                4,100,1500,4,4,"gasolina");
+                4,100,1500,4,4);
 
         tuCarro.registrarVehiculo(vehiculo1);
 
@@ -42,19 +43,19 @@ public class TestOrdenarVehiculuo {
     public void test02() throws Exception {
         var tuCarro=new TuCarro();
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,1500,4,4,"gasolina");
+                4,100,1500,4,4);
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.USADO,"MUZAN",2021,
-                4,100,1500,4,4,"gasolina");
+                4,100,1500,4,4);
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.USADO,"MUZAN",1999,
-                4,100,1500,4,4,"gasolina");
+                4,100,1500,4,4);
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"MUZAN",2000,
-                4,100,1500,4,4,"gasolina");
+                4,100,1500,4,4);
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2001,
-                4,100,1500,4,4,"gasolina");
+                4,100,1500,4,4);
 
         tuCarro.registrarVehiculo(vehiculo1);
 

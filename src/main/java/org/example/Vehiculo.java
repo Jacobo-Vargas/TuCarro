@@ -15,7 +15,8 @@ public class Vehiculo {
     private Combustible combustible;
 
     public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
-                    float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible) throws Exception {
+                    float velocidadMaxima, int cilinbraje, int numeroPasajeros
+            , int numeroPuertas) throws Exception {
         if(placa.isEmpty() || placa.isBlank() || placa.length()!=6){
             throw new Exception("existe un erro en la placa");
         }else{
@@ -55,6 +56,16 @@ public class Vehiculo {
             throw new Exception("el numero de pasajeros no puede ser menor que cero");
         }else{this.numeroPasajeros = numeroPasajeros;
         }
+        if (numeroPuertas < 2){
+            throw new Exception("El numero de puertas no puede ser menor que cero");
+        }else {
+            this.numeroPuertas=numeroPuertas;
+        }
+        //if(combustible==null){
+          //  throw new Exception("El tipo de combustible no puede estar vacio");
+        //}else {
+          //  this.combustible=combustible;
+        //}
     }
 
     public String getPlaca() {
@@ -125,9 +136,6 @@ public class Vehiculo {
         this.numeroPuertas = numeroPuertas;
     }
 
-    public Combustible getCombustible() {
-        return combustible;
-    }
 
     @Override
     public String toString() {
@@ -141,7 +149,7 @@ public class Vehiculo {
                 ", cilinbraje=" + cilinbraje +
                 ", numeroPasajeros=" + numeroPasajeros +
                 ", numeroPuertas=" + numeroPuertas +
-                ", combustible=" + combustible +
+
                 '}';
     }
 }

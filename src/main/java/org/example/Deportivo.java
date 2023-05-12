@@ -9,7 +9,7 @@ public class Deportivo extends Vehiculo{
 
 
     public Deportivo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible, int numPasajeros, int numPuertas, float caballosFuerza, int numBolsasAire, float timeCienKM) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, numeroPasajeros, numeroPuertas, tipoCombustible);
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, numeroPasajeros, numeroPuertas);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.caballosFuerza = caballosFuerza;
