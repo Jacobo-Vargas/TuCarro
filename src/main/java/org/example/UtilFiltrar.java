@@ -84,6 +84,61 @@ public class UtilFiltrar {
         };
         return predicate;
     }
+    public static Predicate<Empleado> filtrarPorNumeroDocumento(String numeroDocumento){
+        Predicate<Empleado> predicate=new Predicate<Empleado>() {
+            @Override
+            public boolean test(Empleado empleado) {
+                return empleado.getDocumento()==numeroDocumento;
+            }
+        };
+        return predicate;
+    }
+    public static Predicate<Empleado> filtrarPorNombre(String nombre){
+        Predicate<Empleado> predicate=new Predicate<Empleado>() {
+            @Override
+            public boolean test(Empleado empleado) {
+                return empleado.getNombre()==nombre;
+            }
+        };
+        return predicate;
+    }
+    public static Predicate<Empleado> filtrarPorPassClienteEmpleado(String passcliente){
+        Predicate<Empleado> predicate=new Predicate<Empleado>() {
+            @Override
+            public boolean test(Empleado empleado) {
+                return empleado.getPassCliente()==passcliente;
+            }
+        };
+        return predicate;
+    }
+    public static Predicate<Cliente> filtrarPorNombreCliente(String nombre){
+        Predicate<Cliente> predicate=new Predicate<Cliente>() {
+            @Override
+            public boolean test(Cliente cliente) {
+                return cliente.getNombre()==nombre;
+            }
+        };
+        return predicate;
+    }
+    public static Predicate<Cliente> filtrarPorDocumentoCliente(String documento){
+        Predicate<Cliente> predicate=new Predicate<Cliente>() {
+            @Override
+            public boolean test(Cliente cliente) {
+                return cliente.getDocumento()==documento;
+            }
+        };
+        return predicate;
+    }
+    public static Predicate<Cliente> filtrarPorPasswordCliente(String password){
+        Predicate<Cliente> predicate=new Predicate<Cliente>() {
+            @Override
+            public boolean test(Cliente cliente) {
+                return cliente.getPassword()==password;
+            }
+        };
+        return predicate;
+    }
+
     //public static Predicate<Vehiculo> filtrarPorTipoCombustible(Combustible combustible){
       //  Predicate<Vehiculo> predicate=new Predicate<Vehiculo>() {
         //    @Override
@@ -131,6 +186,29 @@ public class UtilFiltrar {
         //}
         return predicate;
 
+    }
+    public static Predicate<Empleado> filtrarEmpleado (String documento, String nombre, String passCliente) {
+
+        Predicate<Empleado> predicate = persona -> true;
+        if (documento != null) {
+            predicate = predicate.and(filtrarPorNumeroDocumento(documento));
+        }if ( nombre != null){
+            predicate = predicate.and(filtrarPorNombre(nombre));
+        }if (passCliente != null){
+            predicate = predicate.and(filtrarPorPassClienteEmpleado(passCliente));
+        }
+        return predicate;
+    }
+    public static Predicate<Cliente> filtrarCliente (String documento, String nombre, String password){
+        Predicate<Cliente> predicate = persona -> true;
+        if (documento != null){
+            predicate = predicate.and(filtrarPorDocumentoCliente(documento));
+        }if (nombre != null){
+            predicate = predicate.and(filtrarPorNombreCliente(nombre));
+        }if (password != null){
+            predicate = predicate.and(filtrarPorPasswordCliente(password));
+        }
+        return predicate;
     }
 
 }
