@@ -323,15 +323,15 @@ public class TestUtilFiltrar {
    @Test
    public void test10() throws Exception {//filtrar cliente por numero de documento
        var tuCarro = new TuCarro();
-       var cliente=new Cliente("1094883247", "juan jose", "2045");
+       var cliente=new Cliente("1094883247", "juan jose");
 
-       var cliente2=new Cliente("1122334455", "juan jose", "2045");
+       var cliente2=new Cliente("1122334455", "juan jose");
 
-       var cliente3=new Cliente("1234567890", "juan jose", "2045");
+       var cliente3=new Cliente("1234567890", "juan jose");
 
-       var cliente4=new Cliente("3235006677", "juan jose", "2045");
+       var cliente4=new Cliente("3235006677", "juan jose");
 
-       var cliente5=new Cliente("3128638699", "juan jose", "2045");
+       var cliente5=new Cliente("3128638699", "juan jose");
        tuCarro.registrarCliente(cliente);
 
        tuCarro.registrarCliente(cliente2);
@@ -349,15 +349,15 @@ public class TestUtilFiltrar {
     @Test
     public void test11() throws Exception {//filtrar cliente por nombre
         var tuCarro = new TuCarro();
-        var cliente=new Cliente("1094883247", "juan jose", "2045");
+        var cliente=new Cliente("1094883247", "juan jose");
 
-        var cliente2=new Cliente("1122334455", "juan pablo", "2045");
+        var cliente2=new Cliente("1122334455", "juan pablo");
 
-        var cliente3=new Cliente("1234567890", "laura", "2045");
+        var cliente3=new Cliente("1234567890", "laura");
 
-        var cliente4=new Cliente("3235006677", "juan carlos", "2045");
+        var cliente4=new Cliente("3235006677", "juan carlos");
 
-        var cliente5=new Cliente("3128638699", "lukas", "2045");
+        var cliente5=new Cliente("3128638699", "lukas");
         tuCarro.registrarCliente(cliente);
 
         tuCarro.registrarCliente(cliente2);
@@ -375,15 +375,15 @@ public class TestUtilFiltrar {
     @Test
     public void test12() throws Exception {//filtrar cliente por password
         var tuCarro = new TuCarro();
-        var cliente=new Cliente("1094883247", "juan jose", "2045");
+        var cliente=new Cliente("1094883247", "juan jose");
 
-        var cliente2=new Cliente("1122334455", "juan jose", "2004");
+        var cliente2=new Cliente("1122334455", "juan jose");
 
-        var cliente3=new Cliente("1234567890", "juan jose", "2030");
+        var cliente3=new Cliente("1234567890", "juan jose");
 
-        var cliente4=new Cliente("3235006677", "juan jose", "1000");
+        var cliente4=new Cliente("3235006677", "juan jose");
 
-        var cliente5=new Cliente("3128638699", "juan jose", "5000");
+        var cliente5=new Cliente("3128638699", "juan jose");
         tuCarro.registrarCliente(cliente);
 
         tuCarro.registrarCliente(cliente2);

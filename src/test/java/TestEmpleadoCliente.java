@@ -6,27 +6,27 @@ import org.junit.jupiter.api.Test;
 public class TestEmpleadoCliente {
     @Test
     public void test01() throws Exception {// test a la clase cliente documento null
-        Assertions.assertThrows(Exception.class, ()->new Cliente(null,"juan","23d"));
+        Assertions.assertThrows(Exception.class, () -> new Cliente(null,"juan"));
     }
     @Test
     public void test02(){// test a la clase cliente documento espacios vacios
-        Assertions.assertThrows(Exception.class, ()->new Cliente("  ","juan","23d"));
+        Assertions.assertThrows(Exception.class, () -> new Cliente("  ","juan"));
     }
     @Test
     public void test03(){// test a la clase cliente nombre null
-        Assertions.assertThrows(Exception.class, ()->new Cliente("1094883247",null,"23d"));
+        Assertions.assertThrows(Exception.class, () -> new Cliente("1094883247",null));
     }
     @Test
     public void test04(){// test a la clase cliente nombre espacios vacios
-        Assertions.assertThrows(Exception.class, ()->new Cliente("1094883247","  ","23d"));
+        Assertions.assertThrows(Exception.class, () -> new Cliente("1094883247","  "));
     }
     @Test
     public void test05(){// test a la clase cliente password null
-        Assertions.assertThrows(Exception.class, ()->new Cliente("1094883247","juan",null));
+        Assertions.assertThrows(Exception.class, ()->new Cliente("1094883247","juan"));
     }
     @Test
     public void test06(){// test a la clase cliente password espacios vacios
-        Assertions.assertThrows(Exception.class, ()->new Cliente("1094883247",null,"   "));
+        Assertions.assertThrows(Exception.class, ()->new Cliente("1094883247",null));
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////// Pruebas unitarias a la clase cliente/////////////////////////////////////////////////////////////////////

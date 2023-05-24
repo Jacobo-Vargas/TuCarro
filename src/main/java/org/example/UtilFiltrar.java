@@ -129,15 +129,6 @@ public class UtilFiltrar {
         };
         return predicate;
     }
-    public static Predicate<Cliente> filtrarPorPasswordCliente(String password){
-        Predicate<Cliente> predicate=new Predicate<Cliente>() {
-            @Override
-            public boolean test(Cliente cliente) {
-                return cliente.getPassword()==password;
-            }
-        };
-        return predicate;
-    }
 
     //public static Predicate<Vehiculo> filtrarPorTipoCombustible(Combustible combustible){
       //  Predicate<Vehiculo> predicate=new Predicate<Vehiculo>() {
@@ -205,8 +196,6 @@ public class UtilFiltrar {
             predicate = predicate.and(filtrarPorDocumentoCliente(documento));
         }if (nombre != null){
             predicate = predicate.and(filtrarPorNombreCliente(nombre));
-        }if (password != null){
-            predicate = predicate.and(filtrarPorPasswordCliente(password));
         }
         return predicate;
     }
