@@ -1,5 +1,5 @@
-import org.example.Cliente;
-import org.example.Empleado;
+import model.Cliente;
+import model.Empleado;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

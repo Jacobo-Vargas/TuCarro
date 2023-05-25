@@ -1,6 +1,6 @@
-import org.example.Empleado;
-import org.example.Login;
-import org.example.TuCarro;
+import model.Empleado;
+import model.Login;
+import model.TuCarro;
 import org.junit.jupiter.api.Test;
 
 public class TestLogin {

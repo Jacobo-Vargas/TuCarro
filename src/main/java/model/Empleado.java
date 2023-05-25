@@ -1,6 +1,5 @@
-package org.example;
+package model;
 
-import java.util.List;
 public class Empleado {
     private final String documento;
     private final String nombre;

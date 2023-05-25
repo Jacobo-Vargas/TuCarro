@@ -1,7 +1,6 @@
-import org.example.Combustible;
-import org.example.EstadoVehiculo;
-import org.example.TuCarro;
-import org.example.Vehiculo;
+import model.EstadoVehiculo;
+import model.TuCarro;
+import model.Vehiculo;
 import org.junit.jupiter.api.Test;
 
 public class TestOrdenarVehiculuo {

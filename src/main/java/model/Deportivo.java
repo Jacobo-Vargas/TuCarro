@@ -1,4 +1,4 @@
-package org.example;
+package model;
 
 public class Deportivo extends Vehiculo{
     private int numPasajeros;

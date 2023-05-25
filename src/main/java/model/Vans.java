@@ -1,25 +1,23 @@
-package org.example;
+package model;
 
-public class PickUps extends Vehiculo{
+public class Vans extends Vehiculo{
     private int numPasajeros;
     private int numPuertas;
     private AireAcondicionado aire;
     private CamaraReversa camReversa;
-    private float capacidadCarga;
+    private float capacidadMaletero;
     private int numBolsasAire;
     private ABS abs;
-    private boolean cuatroPorCuatro;
 
-    public PickUps(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadCarga, int numBolsasAire, ABS abs, boolean cuatroPorCuatro) throws Exception {
+    public Vans(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs) throws Exception {
         super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, numeroPasajeros, numeroPuertas);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;
         this.camReversa = camReversa;
-        this.capacidadCarga = capacidadCarga;
+        this.capacidadMaletero = capacidadMaletero;
         this.numBolsasAire = numBolsasAire;
         this.abs = abs;
-        this.cuatroPorCuatro = cuatroPorCuatro;
     }
 
     public int getNumPasajeros() {
@@ -54,12 +52,12 @@ public class PickUps extends Vehiculo{
         this.camReversa = camReversa;
     }
 
-    public float getCapacidadCarga() {
-        return capacidadCarga;
+    public float getCapacidadMaletero() {
+        return capacidadMaletero;
     }
 
-    public void setCapacidadCarga(float capacidadCarga) {
-        this.capacidadCarga = capacidadCarga;
+    public void setCapacidadMaletero(float capacidadMaletero) {
+        this.capacidadMaletero = capacidadMaletero;
     }
 
     public int getNumBolsasAire() {
@@ -76,13 +74,5 @@ public class PickUps extends Vehiculo{
 
     public void setAbs(ABS abs) {
         this.abs = abs;
-    }
-
-    public boolean isCuatroPorCuatro() {
-        return cuatroPorCuatro;
-    }
-
-    public void setCuatroPorCuatro(boolean cuatroPorCuatro) {
-        this.cuatroPorCuatro = cuatroPorCuatro;
     }
 }

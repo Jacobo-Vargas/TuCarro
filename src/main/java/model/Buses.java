@@ -1,6 +1,6 @@
-package org.example;
+package model;
 
-public class Sedan extends Vehiculo{
+public class Buses extends Vehiculo{
     private int numPasajeros;
     private int numPuertas;
     private AireAcondicionado aire;
@@ -8,12 +8,10 @@ public class Sedan extends Vehiculo{
     private float capacidadMaletero;
     private int numBolsasAire;
     private ABS abs;
-    private VelocidadCrucero velCucero;
-    private SensorColision sensorColision;
-    private SensorTrafico sensorTrafico;
-    private AsistenciaPermanencia asistenciaPermanencia;
+    private int numeroEjes;
+    private int numSalidasEmergencia;
 
-    public Sedan(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia) throws Exception {
+    public Buses(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, int numeroEjes, int numSalidasEmergencia) throws Exception {
         super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, numeroPasajeros, numeroPuertas);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
@@ -22,10 +20,8 @@ public class Sedan extends Vehiculo{
         this.capacidadMaletero = capacidadMaletero;
         this.numBolsasAire = numBolsasAire;
         this.abs = abs;
-        this.velCucero = velCucero;
-        this.sensorColision = sensorColision;
-        this.sensorTrafico = sensorTrafico;
-        this.asistenciaPermanencia = asistenciaPermanencia;
+        this.numeroEjes = numeroEjes;
+        this.numSalidasEmergencia = numSalidasEmergencia;
     }
 
     public int getNumPasajeros() {
@@ -84,35 +80,19 @@ public class Sedan extends Vehiculo{
         this.abs = abs;
     }
 
-    public VelocidadCrucero getVelCucero() {
-        return velCucero;
+    public int getNumeroEjes() {
+        return numeroEjes;
     }
 
-    public void setVelCucero(VelocidadCrucero velCucero) {
-        this.velCucero = velCucero;
+    public void setNumeroEjes(int numeroEjes) {
+        this.numeroEjes = numeroEjes;
     }
 
-    public SensorColision getSensorColision() {
-        return sensorColision;
+    public int getNumSalidasEmergencia() {
+        return numSalidasEmergencia;
     }
 
-    public void setSensorColision(SensorColision sensorColision) {
-        this.sensorColision = sensorColision;
-    }
-
-    public SensorTrafico getSensorTrafico() {
-        return sensorTrafico;
-    }
-
-    public void setSensorTrafico(SensorTrafico sensorTrafico) {
-        this.sensorTrafico = sensorTrafico;
-    }
-
-    public AsistenciaPermanencia getAsistenciaPermanencia() {
-        return asistenciaPermanencia;
-    }
-
-    public void setAsistenciaPermanencia(AsistenciaPermanencia asistenciaPermanencia) {
-        this.asistenciaPermanencia = asistenciaPermanencia;
+    public void setNumSalidasEmergencia(int numSalidasEmergencia) {
+        this.numSalidasEmergencia = numSalidasEmergencia;
     }
 }

@@ -1,6 +1,6 @@
-package org.example;
+package model;
 
-public class Camionetas extends Vehiculo{
+public class Sedan extends Vehiculo{
     private int numPasajeros;
     private int numPuertas;
     private AireAcondicionado aire;
@@ -12,9 +12,8 @@ public class Camionetas extends Vehiculo{
     private SensorColision sensorColision;
     private SensorTrafico sensorTrafico;
     private AsistenciaPermanencia asistenciaPermanencia;
-    private boolean cuatroPorCuatro;
 
-    public Camionetas(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia, boolean cuatroPorCuatro) throws Exception {
+    public Sedan(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia) throws Exception {
         super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, numeroPasajeros, numeroPuertas);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
@@ -27,7 +26,6 @@ public class Camionetas extends Vehiculo{
         this.sensorColision = sensorColision;
         this.sensorTrafico = sensorTrafico;
         this.asistenciaPermanencia = asistenciaPermanencia;
-        this.cuatroPorCuatro = cuatroPorCuatro;
     }
 
     public int getNumPasajeros() {
@@ -116,13 +114,5 @@ public class Camionetas extends Vehiculo{
 
     public void setAsistenciaPermanencia(AsistenciaPermanencia asistenciaPermanencia) {
         this.asistenciaPermanencia = asistenciaPermanencia;
-    }
-
-    public boolean isCuatroPorCuatro() {
-        return cuatroPorCuatro;
-    }
-
-    public void setCuatroPorCuatro(boolean cuatroPorCuatro) {
-        this.cuatroPorCuatro = cuatroPorCuatro;
     }
 }

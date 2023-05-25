@@ -1,6 +1,4 @@
-package org.example;
-
-import java.util.Date;
+package model;
 
 public class Vehiculo {
     private final String placa;
