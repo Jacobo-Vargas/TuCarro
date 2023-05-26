@@ -16,7 +16,7 @@ public class AppController {
     @FXML
     private Rectangle paneRectangle;
     @FXML
-    private Label lblUsuario, lblPassword, lblBienvenida;
+    private Label lblUsuari, lblPassword, lblBienvenida;
     @FXML
     private TextField txtUsuario,txtPassword;
     @FXML
