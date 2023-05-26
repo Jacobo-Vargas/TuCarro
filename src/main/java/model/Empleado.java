@@ -3,14 +3,14 @@ package model;
 public class Empleado {
     private final String documento;
     private final String nombre;
-    private String passCliente;
+    private String passEmpleado;
 
     @Override
     public String toString() {
         return "Empleado{" +
                 "documento='" + documento + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", passCliente='" + passCliente + '\'' +
+                ", passCliente='" + passEmpleado + '\'' +
                 '}';
     }
 
@@ -30,7 +30,7 @@ public class Empleado {
         }if (passCliente == null || passCliente.isEmpty() || passCliente.isBlank()){
             throw new Exception("el passCliente tiene un error");
         }else {
-            this.passCliente = passCliente;
+            this.passEmpleado = passCliente;
         }
     }
 
@@ -42,12 +42,12 @@ public class Empleado {
         return nombre;
     }
 
-    public String getPassCliente() {
-        return passCliente;
+    public String getPassEmpleado() {
+        return passEmpleado;
     }
 
-    public void setPassCliente(String passCliente) {
-        this.passCliente = passCliente;
+    public void setPassEmpleado(String passCliente) {
+        this.passEmpleado = passCliente;
     }
 
     public void agregarVehiculo(TuCarro almacenar,Vehiculo vehiculo) throws Exception {

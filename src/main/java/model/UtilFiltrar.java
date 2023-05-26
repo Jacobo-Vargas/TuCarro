@@ -102,11 +102,11 @@ public class UtilFiltrar {
         };
         return predicate;
     }
-    public static Predicate<Empleado> filtrarPorPassClienteEmpleado(String passcliente){
+    public static Predicate<Empleado> filtrarPorPassClienteEmpleado(String passEmpleado){
         Predicate<Empleado> predicate=new Predicate<Empleado>() {
             @Override
             public boolean test(Empleado empleado) {
-                return empleado.getPassCliente()==passcliente;
+                return empleado.getPassEmpleado()==passEmpleado;
             }
         };
         return predicate;

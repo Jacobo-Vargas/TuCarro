@@ -10,13 +10,19 @@ public class Login {
     }
 
     public boolean verificarCredenciales(String documento, String pass) {
-        for (Empleado e : tuCarro.listaEmpleados) {
-            if (e.getDocumento().equals(documento) && e.getPassCliente().equals(pass)) {
-                JOptionPane.showMessageDialog(null,"Acceso exitoso");
-                return true;
+        if (documento.equals("admin") && pass.equals("@dmin")){
+            JOptionPane.showMessageDialog(null,"Acceso exitoso");
+            return true;
+        }else{
+            for (Empleado e : tuCarro.listaEmpleados) {
+                if ((e.getDocumento().equals(documento) && e.getPassEmpleado().equals(pass)) ) {
+                    JOptionPane.showMessageDialog(null,"Acceso exitoso");
+                    return true;
+                }
             }
+            JOptionPane.showMessageDialog(null,"Verifique los datos ingresados.");
+            return false;
         }
-        JOptionPane.showMessageDialog(null,"Verifique los datos ingresados.");
-        return false;
+
     }
 }
