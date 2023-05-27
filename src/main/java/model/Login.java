@@ -5,24 +5,31 @@ import javax.swing.*;
 
 public class Login {
     private TuCarro tuCarro;
+    private String nombreUSer;
+
     public Login(TuCarro tuCarro) {
         this.tuCarro = tuCarro;
     }
-
-    public boolean verificarCredenciales(String documento, String pass) {
+    public int verificarCredenciales(String documento, String pass) {
         if (documento.equals("admin") && pass.equals("@dmin")){
             JOptionPane.showMessageDialog(null,"Acceso exitoso");
-            return true;
+            this.nombreUSer = "admin";
+            return 1;
         }else{
             for (Empleado e : tuCarro.listaEmpleados) {
                 if ((e.getDocumento().equals(documento) && e.getPassEmpleado().equals(pass)) ) {
                     JOptionPane.showMessageDialog(null,"Acceso exitoso");
-                    return true;
+                    this.nombreUSer = e.getNombre();
+                    return 2;
                 }
             }
             JOptionPane.showMessageDialog(null,"Verifique los datos ingresados.");
-            return false;
+            return 0;
         }
 
+    }
+
+    public String getNombreUSer() {
+        return nombreUSer;
     }
 }
