@@ -3,10 +3,14 @@ package view;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import com.jfoenix.controls.JFXButton;
+import javafx.scene.layout.StackPane;
 
 public class EmpleadoController {
+    @FXML
+    private AnchorPane anchorPane;
 
     @FXML
     private HBox topHBox;
@@ -22,12 +26,6 @@ public class EmpleadoController {
 
     @FXML
     private JFXButton btnSalir;
-
-    @FXML
-    private void initialize() {
-        // Este método se ejecuta automáticamente al cargar el FXML
-        // Puedes realizar inicializaciones aquí
-    }
 
     @FXML
     private void handleVehiculosButtonClick() {

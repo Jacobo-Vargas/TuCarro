@@ -11,6 +11,12 @@ import java.io.IOException;
 import java.util.Objects;
 
 public class MainApp extends Application {
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(view.MainApp.class.getResource("concesionario.fxml"));
@@ -23,7 +29,5 @@ public class MainApp extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) {
-        launch();
-    }
+
 }
