@@ -8,8 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Stage;
 
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 
 public class AppController {
@@ -22,8 +24,15 @@ public class AppController {
     @FXML
     private Button btnIngresar;
 
+    private void launchVentanaEmpleado() throws IOException {
+        VentanaEmpleado ventanaEmpleado = new VentanaEmpleado();
+        Stage stage = new Stage();
+        ventanaEmpleado.start(stage);
+    }
 
-    public void actionPerformed(ActionEvent actionEvent) {
-        INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText());
+    public void actionPerformed(ActionEvent actionEvent) throws IOException {
+        if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 1) || (INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 2) ){
+            launchVentanaEmpleado();
+        }
     }
 }
