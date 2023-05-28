@@ -6,10 +6,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import com.jfoenix.controls.JFXButton;
+import javafx.scene.layout.StackPane;
 
 import java.awt.event.ActionEvent;
-
-import static model.loginInstance.INSTANCE;
 
 public class EmpleadoController {
     @FXML
@@ -43,7 +42,7 @@ public class EmpleadoController {
     }
 
     @FXML
-    private void uardarDatosCliente(ActionEvent e){
+    private void uardarDatosCliente(ActionEvent event){
 
     }
 }
