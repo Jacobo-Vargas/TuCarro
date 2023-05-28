@@ -10,8 +10,11 @@ public class Camiones extends Vehiculo{
     private TipoCamion tipoCamion;
 
 
-    public Camiones(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, String tipoCombustible, AireAcondicionado aire, float capacidadCarga, ABS abs, int numeroEjes, int numSalidasEmergencia, FrenoAire frenoAire, TipoCamion tipoCamion) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, numeroPasajeros, numeroPuertas);
+    public Camiones(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
+                    float velocidadMaxima, int cilinbraje, float precioVehiculo, Combustible combustible,
+                    AireAcondicionado aire, float capacidadCarga, ABS abs, int numeroEjes, int numSalidasEmergencia,
+                    FrenoAire frenoAire, TipoCamion tipoCamion) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, precioVehiculo, combustible);
         this.aire = aire;
         this.capacidadCarga = capacidadCarga;
         this.abs = abs;
@@ -19,8 +22,6 @@ public class Camiones extends Vehiculo{
         this.numSalidasEmergencia = numSalidasEmergencia;
         this.frenoAire = frenoAire;
         this.tipoCamion = tipoCamion;
-
-
     }
 
     public AireAcondicionado getAire() {
