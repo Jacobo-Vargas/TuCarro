@@ -6,6 +6,7 @@ public class TestOrdenarVehiculuo {
     public void test01() throws Exception {
         var tuCarro=new TuCarro();
         var combustible=new Combustible(true,13f,20);
+        System.out.println("");
 
         var combustible2=new Combustible(true,true,true);
         var combustible3=new Combustible(true,true,true);
