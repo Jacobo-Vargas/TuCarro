@@ -16,17 +16,17 @@
             <HBox prefHeight="49.0" prefWidth="735.0" spacing="15.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
                <children>
                   <Label prefHeight="49.0" prefWidth="154.0" text=" " />
-                  <JFXButton fx:id="menuVehiculos" prefHeight="50.0" prefWidth="114.0" text="Vehiculos">
+                  <JFXButton fx:id="menuVehiculos" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Vehiculos">
                      <graphic>
                         <FontAwesomeIconView glyphName="CAR" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="menuRegistrar" prefHeight="49.0" prefWidth="133.0" text="Registrar cliente">
+                  <JFXButton fx:id="menuRegistrar" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Registrar cliente">
                      <graphic>
                         <FontAwesomeIconView glyphName="PLUS" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="menuSalir" prefHeight="50.0" prefWidth="114.0" text="Salir">
+                  <JFXButton fx:id="menuSalir" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Salir">
                      <graphic>
                         <FontAwesomeIconView glyphName="SIGN_OUT" />
                      </graphic>
@@ -40,7 +40,7 @@
          <center>
             <Pane prefHeight="459.0" prefWidth="628.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
                <children>
-                  <Pane fx:id="paneVehiculos" layoutX="1.0" layoutY="-1.0" prefHeight="460.0" prefWidth="747.0" />
+                  <Pane fx:id="paneVehiculos" layoutY="-15.0" prefHeight="460.0" prefWidth="747.0" />
                </children></Pane>
          </center>
       </BorderPane>

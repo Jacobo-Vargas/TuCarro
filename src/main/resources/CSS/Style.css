@@ -1,4 +1,4 @@
-.menuVehiculos:hover{
-    -fx-border-color: #ffffff;
-    -fx-
+.menuBar:hover{
+    -fx-border-color: #28C7FF;
+    -fx-border-width: 0px 0px 3px 0px;
 }
