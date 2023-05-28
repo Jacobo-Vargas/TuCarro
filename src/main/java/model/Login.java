@@ -4,7 +4,7 @@ package model;
 import javax.swing.*;
 
 public class Login {
-    private TuCarro tuCarro;
+    private final TuCarro tuCarro;
     private String nombreUSer;
 
     public Login(TuCarro tuCarro) {

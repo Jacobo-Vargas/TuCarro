@@ -55,19 +55,32 @@ public class TuCarro {
         }
 
     }
-    public void registrarCliente(Cliente cliente){
-        boolean validar = true;
-        for (Cliente e : listaClientes) {
-            if (e.getDocumento().equals(cliente.getDocumento())) {
-                JOptionPane.showMessageDialog(null,"El numero de documento ingresado ya existe.");
-                validar = false;
-                break;
+    public boolean registrarCliente(Cliente cliente) {
+        boolean validar = false;
+        try {
+            validar = true;
+            for (Cliente e : listaClientes) {
+                if (e.getDocumento().equals(cliente.getDocumento())) {
+                    validar = false;
+                    break;
+                }
             }
+            if (cliente.getDocumento().isEmpty() || cliente.getDocumento().isBlank() || cliente.getDocumento().length() != 10) {
+                validar = false;
+            }
+            if (validar) {
+                listaClientes.add(cliente);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            validar = false;
         }
-        if (validar){
-            listaClientes.add(cliente);
-        }
+
+        return validar;
     }
+
     public List<Vehiculo> ordenarListaCarroPlaca (){//metodo para ordenar por numero de placa
         var listaOrdenada=listaVehiculos.stream().sorted((vehiculo1 , vehiculo2)
                 ->vehiculo1. getPlaca(). compareTo(vehiculo2.getPlaca())) .collect(Collectors.toList());

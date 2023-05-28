@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.control.Alert;
+
 public class Empleado {
     private final String documento;
     private final String nombre;

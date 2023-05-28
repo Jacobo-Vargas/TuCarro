@@ -6,14 +6,26 @@ public class Cliente {
 
 
     public Cliente(String documento, String nombre) throws Exception {
-        if (documento == null || documento.isEmpty() || documento.isBlank() || documento.length() !=10){
-            throw new Exception("Existe un error en el documento");
-        }else {
-            this.documento=documento;
-        }if (nombre == null || nombre.isBlank() || nombre.isEmpty()){
-            throw new Exception("Existe un error en el nombre");
-        }else {
+        try {
+            validarNombre(nombre);
+            validarDocumento(documento);
             this.nombre = nombre;
+            this.documento = documento;
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void validarNombre(String nombre) {
+        if (nombre == null || nombre.isEmpty() || nombre.isBlank()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío");
+        }
+    }
+
+    private void validarDocumento(String documento) {
+        // Realizar validaciones específicas para el documento
+        if (documento == null || documento.isEmpty() || documento.length() != 10 || documento.isBlank()) {
+            throw new IllegalArgumentException("El documento no puede estar vacío");
         }
     }
 
