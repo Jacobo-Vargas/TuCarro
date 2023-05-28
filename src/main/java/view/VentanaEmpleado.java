@@ -7,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 import static model.tuCarroInstance.INSTANCE;
 import java.io.IOException;
 import java.util.Objects;
@@ -22,6 +24,7 @@ public class VentanaEmpleado extends Application {
         FXMLLoader ventana = new FXMLLoader(view.VentanaEmpleado.class.getResource("diseñoEmpleado.fxml"));
         Scene scene = new Scene(ventana.load());
         stage.setScene(scene);
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.setResizable(false);
         stage.setTitle(INSTANCE.getLogin().getNombreUSer());
         Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/image-removebg-preview.png")));

@@ -19,7 +19,7 @@ public class EmpleadoController {
     private Label labelVehiculos;
 
     @FXML
-    private JFXButton btnVehiculos;
+    private JFXButton menuVehiculos;
 
     @FXML
     private JFXButton btnRegistrarCliente;
