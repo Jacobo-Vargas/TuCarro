@@ -1,5 +1,9 @@
 package model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableValue;
+
 public class Cliente {
     private String documento;
     private String nombre;
@@ -10,12 +14,6 @@ public class Cliente {
         try {
             validarNombre(nombre);
             validarDocumento(documento);
-            this.nombre = nombre;
-            if (documento == null || documento.isEmpty() || documento.isBlank() || documento.length() != 10) {
-                throw new Exception("Existe un error en el documento");
-            } else {
-                this.documento = documento;
-            }
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
         }
@@ -24,18 +22,17 @@ public class Cliente {
 private void validarNombre(String nombre) {
     if (nombre == null || nombre.isEmpty() || nombre.isBlank()) {
         throw new IllegalArgumentException("El nombre no puede estar vacío");
+    }else{
+        this.nombre = nombre;
     }
 }
 
 private void validarDocumento(String documento) throws Exception {
     // Realizar validaciones específicas para el documento
-    if (documento == null || documento.isEmpty() || documento.length() != 10 || documento.isBlank()) {
+    if (documento == null || documento.length() != 10 || documento.isBlank()) {
         throw new IllegalArgumentException("El documento no puede estar vacío");
-    }
-    if (nombre == null || nombre.isBlank() || nombre.isEmpty()) {
-        throw new Exception("Existe un error en el nombre");
-    } else {
-        this.nombre = nombre;
+    }else{
+        this.documento = documento;
     }
 }
     public String getDocumento() {
@@ -54,4 +51,11 @@ private void validarDocumento(String documento) throws Exception {
                 '}';
     }
 
+    public StringProperty documentoProperty() {
+        return new SimpleStringProperty(documento);
+    }
+
+    public StringProperty nombreProperty() {
+        return new SimpleStringProperty(nombre);
+    }
 }
