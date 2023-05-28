@@ -3,11 +3,18 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EmpleadoController">
    <children>
@@ -20,16 +27,25 @@
                      <graphic>
                         <FontAwesomeIconView glyphName="CAR" />
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <JFXButton fx:id="menuRegistrar" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Registrar cliente">
                      <graphic>
                         <FontAwesomeIconView glyphName="PLUS" />
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <JFXButton fx:id="menuSalir" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Salir">
                      <graphic>
                         <FontAwesomeIconView glyphName="SIGN_OUT" />
                      </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                </children>
                <padding>
@@ -38,10 +54,56 @@
             </HBox>
          </top>
          <center>
-            <Pane prefHeight="459.0" prefWidth="628.0" style="-fx-background-color: #cfcfcf;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane fx:id="paneVehiculos" layoutY="-15.0" prefHeight="460.0" prefWidth="747.0" />
-               </children></Pane>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="458.0" layoutX="-1.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="754.0">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.20853080568720372">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.283016562461853" green="0.29315099120140076" blue="0.30263158679008484" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.42105263471603394" green="0.42105263471603394" blue="0.42105263471603394" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Label layoutX="158.0" layoutY="128.0" prefHeight="18.0" prefWidth="113.0" text="NOMBRE :" textFill="WHITE">
+                     <font>
+                        <Font name="Calisto MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="158.0" layoutY="221.0" prefHeight="18.0" prefWidth="113.0" text="DOCUMENTO :" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="294.0" layoutY="124.0" prefHeight="26.0" prefWidth="207.0" />
+                  <TextField layoutX="294.0" layoutY="217.0" prefHeight="26.0" prefWidth="207.0" />
+                  <JFXButton fx:id="btnGuardar" buttonType="RAISED" contentDisplay="CENTER" layoutX="460.0" layoutY="302.0" prefHeight="34.0" prefWidth="87.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Guardar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnLimpiar" buttonType="RAISED" contentDisplay="CENTER" layoutX="572.0" layoutY="302.0" prefHeight="34.0" prefWidth="90.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Limpiar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </Pane>
          </center>
       </BorderPane>
    </children>

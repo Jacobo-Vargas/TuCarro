@@ -1,6 +1,6 @@
 package view;
 
-import static model.tuCarroInstance.INSTANCE;
+import static model.loginInstance.INSTANCE;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

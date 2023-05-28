@@ -2,3 +2,19 @@
     -fx-border-color: #28C7FF;
     -fx-border-width: 0px 0px 3px 0px;
 }
+
+.btnGuardar {
+    -fx-background-color: linear-gradient(to bottom, #237AD9, #0E46A6);
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-family: Calisto TM;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-font-weight: bold;
+}
+
+.btnGuardar:hover {
+    -fx-background-color: linear-gradient(to bottom, #237AD9, #0E46A6);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 0);
+}
