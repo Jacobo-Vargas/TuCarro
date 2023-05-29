@@ -1,7 +1,9 @@
 package model;
 
+import javax.swing.*;
+
 public class Vehiculo {
-    private final String placa;
+    private  String placa;
     private EstadoVehiculo estadoVehiculo;
     private String marca;
     private int modelo;
@@ -15,43 +17,44 @@ public class Vehiculo {
     public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
                     float velocidadMaxima, int cilinbraje, Combustible combustible) throws Exception {
         if(placa.isEmpty() || placa.isBlank() || placa.length()!=6){
-            throw new Exception("existe un erro en la placa");
+            JOptionPane.showMessageDialog(null,"Existe un error en la placa");
         }else{
             this.placa=placa;
         }
         if(estadoVehiculo==null){
-            throw new Exception("el estado del vehiculo no puede ser nulo");
+            JOptionPane.showMessageDialog(null,"El estado del vehiculo no puede ser nulo");
         }else{
             this.estadoVehiculo = estadoVehiculo;
         }
         if(marca.isBlank() || marca.isEmpty()){
-            throw new Exception("el vehiculo no puede estar vacio");
+            JOptionPane.showMessageDialog(null,"La marca del vehiculo no puede estar vacia");
         }else{
             this.marca = marca;
         }
 
       if(modelo< 1980 || modelo> 2023 ){
-          throw new Exception("el año no puede ser menor a 1980 o mayor a 2023");
+          JOptionPane.showMessageDialog(null,"Error al ingresar el modelo de vehiculo");
       }else{
           this.modelo = modelo;
       }
         if(cambios <=3 ){
-            throw new Exception("el numero de marchas no puede ser menor que 3");
+            JOptionPane.showMessageDialog(null,"El numero de cambios no puede ser menor a tres");
         }else {
             this.cambios = cambios;
         }
         if(velocidadMaxima<=0){
-            throw new Exception("la velocidad maxima no puede ser menor o igual a cero");
+            JOptionPane.showMessageDialog(null,"La velocidad maxima del vehiculo no puede ser " +
+                    "menor a cero");
         }else{
             this.velocidadMaxima = velocidadMaxima;
         }
         if (cilinbraje <= 0){
-            throw new Exception("el cilindraje no puede menor o igual a cero");
+            JOptionPane.showMessageDialog(null,"El cilinbraje del vehiculo no puede menor a cero");
         }else {this.cilinbraje = cilinbraje;
         }
 
         if(combustible==null){
-           throw new Exception("El tipo de combustible no puede estar vacio");
+            JOptionPane.showMessageDialog(null,"El tipo de combustible no puede ser null");
         }else {
             this.combustible=combustible;
         }
