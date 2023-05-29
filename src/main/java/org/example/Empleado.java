@@ -15,6 +15,9 @@ public class Empleado {
     }
 
     //hola
+    public void hola{
+
+    }
 
     public String getDocumento() {
         return documento;
