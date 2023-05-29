@@ -27,7 +27,7 @@
                <Insets left="15.0" />
             </padding>
             <Label prefHeight="49.0" prefWidth="154.0" text=" " />
-            <JFXButton fx:id="menuVehiculos" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Vehiculos">
+            <JFXButton fx:id="menuVehiculos" onAction="#actionVehiculos" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Vehiculos">
                <graphic>
                   <FontAwesomeIconView glyphName="CAR" />
                </graphic>
@@ -35,7 +35,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="menuRegistrar" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Registrar cliente">
+            <JFXButton fx:id="menuRegistrar" onAction="#actionRegistrarClientes" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Registrar cliente">
                <graphic>
                   <FontAwesomeIconView glyphName="PLUS" />
                </graphic>
@@ -43,7 +43,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="menuSalir" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Salir">
+            <JFXButton fx:id="menuSalir" onAction="#actionSalir" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Salir">
                <graphic>
                   <FontAwesomeIconView glyphName="SIGN_OUT" />
                </graphic>
@@ -55,7 +55,29 @@
       </top>
       <center>
          <Pane prefHeight="463.0" prefWidth="773.0" BorderPane.alignment="CENTER">
-            <Pane prefHeight="357.0" prefWidth="747.0">
+            <Pane fx:id="paneVerVehiculos" prefHeight="358.0" prefWidth="747.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="359.0" stroke="BLACK" strokeType="INSIDE" width="747.0">
+                     <fill>
+                        <LinearGradient startX="1.0" startY="0.20853080568720372">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.283016562461853" green="0.29315099120140076" blue="0.30263158679008484" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.42105263471603394" green="0.42105263471603394" blue="0.42105263471603394" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+               </children>
+            </Pane>
+            <Pane fx:id="paneRegistrarClientes" prefHeight="357.0" prefWidth="747.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" height="357.0" stroke="BLACK" strokeType="INSIDE" width="747.0">
                      <fill>
@@ -130,10 +152,9 @@
                      </LinearGradient>
                   </fill>
                </Rectangle>
-               <JFXButton fx:id="playVideo" layoutX="187.0" layoutY="284.0" onAction="#playVideo" prefHeight="37.0" prefWidth="83.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Play" />
-               <MediaView fx:id="mediaView" fitHeight="270.0" fitWidth="400.0" layoutX="4.0" layoutY="-1.0" styleClass="media-view" x="10.0" y="15.0" />
-               <JFXButton fx:id="playVideo1" layoutX="543.0" layoutY="149.0" onAction="#playVideo" prefHeight="37.0" prefWidth="141.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Ver vehiculos" />
-               <JFXButton fx:id="playVideo2" layoutX="437.0" layoutY="284.0" onAction="#playVideo" prefHeight="37.0" prefWidth="83.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Play" />
+               <JFXButton fx:id="playVideo" layoutX="334.0" layoutY="269.0" minWidth="47.0" onAction="#playVideo" prefHeight="30.0" prefWidth="68.0" styleClass="transparent-button" stylesheets="@../CSS/Style.css" text="Play" textFill="#c30f0fb2" />
+               <MediaView fx:id="mediaView" fitHeight="245.0" fitWidth="600.0" layoutX="68.0" layoutY="-1.0" styleClass="media-view" x="70.0" y="15.0" />
+               <JFXButton fx:id="btnVerVehiculos" layoutX="297.0" layoutY="305.0" onAction="#verVehiculos" prefHeight="37.0" prefWidth="141.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Ver vehiculos" />
             </Pane>
          </Pane>
       </center>

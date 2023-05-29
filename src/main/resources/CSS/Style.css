@@ -31,3 +31,6 @@
     -fx-border-width: 2px; /* Ancho del borde */
     -fx-border-radius: 50px; /* Radio de las esquinas del borde */
 }
+.transparent-button {
+    -fx-background-color: transparent;
+}
