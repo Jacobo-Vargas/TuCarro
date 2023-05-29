@@ -12,107 +12,123 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="505.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.EmpleadoController">
-   <children>
-      <BorderPane prefHeight="508.0" prefWidth="747.0">
-         <top>
-            <HBox prefHeight="49.0" prefWidth="735.0" spacing="15.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
-               <children>
-                  <Label prefHeight="49.0" prefWidth="154.0" text=" " />
-                  <JFXButton fx:id="menuVehiculos" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Vehiculos">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="CAR" />
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
-                  <JFXButton fx:id="menuRegistrar" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Registrar cliente">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="PLUS" />
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
-                  <JFXButton fx:id="menuSalir" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Salir">
-                     <graphic>
-                        <FontAwesomeIconView glyphName="SIGN_OUT" />
-                     </graphic>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
-               </children>
-               <padding>
-                  <Insets left="15.0" />
-               </padding>
-            </HBox>
-         </top>
-         <center>
-            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="458.0" layoutX="-1.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="754.0">
-                     <fill>
-                        <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.20853080568720372">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.283016562461853" green="0.29315099120140076" blue="0.30263158679008484" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.42105263471603394" green="0.42105263471603394" blue="0.42105263471603394" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                  </Rectangle>
-                  <Label layoutX="35.0" layoutY="46.0" prefHeight="18.0" prefWidth="113.0" text="NOMBRE :" textFill="WHITE">
-                     <font>
-                        <Font name="Calisto MT Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="35.0" layoutY="112.0" prefHeight="18.0" prefWidth="113.0" text="DOCUMENTO :" textFill="WHITE">
-                     <font>
-                        <Font name="Cambria Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtNombreCliente" layoutX="202.0" layoutY="43.0" prefHeight="26.0" prefWidth="207.0" />
-                  <TextField fx:id="txtDocumentoCliente" layoutX="202.0" layoutY="108.0" prefHeight="26.0" prefWidth="207.0" />
-                  <JFXButton fx:id="btnGuardar" buttonType="RAISED" contentDisplay="CENTER" layoutX="489.0" layoutY="164.0" onAction="#handleRegistrarClienteButtonClick" prefHeight="34.0" prefWidth="87.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Guardar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton fx:id="btnLimpiar" buttonType="RAISED" contentDisplay="CENTER" layoutX="602.0" layoutY="164.0" onAction="#actionLimpiarDatos" prefHeight="34.0" prefWidth="90.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Limpiar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </JFXButton>
-                  <TableView fx:id="tblClientes" layoutX="-1.0" layoutY="206.0" prefHeight="253.0" prefWidth="747.0">
-                    <columns>
-                      <TableColumn fx:id="colNombre" prefWidth="170.0" resizable="false" text="Nombre" />
-                      <TableColumn fx:id="colDocumento" minWidth="5.0" prefWidth="207.0" text="Documento" />
-                    </columns>
-                  </TableView>
-               </children>
+<AnchorPane fx:id="anchorpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="404.0" prefWidth="747.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="view.EmpleadoController">
+   <BorderPane prefHeight="406.0" prefWidth="747.0">
+      <top>
+         <HBox prefHeight="49.0" prefWidth="735.0" spacing="15.0" style="-fx-background-color: #ffffff;"
+               BorderPane.alignment="CENTER">
+            <padding>
+               <Insets left="15.0"/>
+            </padding>
+            <Label prefHeight="49.0" prefWidth="154.0" text=" "/>
+            <JFXButton fx:id="menuVehiculos" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar"
+                       stylesheets="@../CSS/Style.css" text="Vehiculos">
+               <graphic>
+                  <FontAwesomeIconView glyphName="CAR"/>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND"/>
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="menuRegistrar" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar"
+                       stylesheets="@../CSS/Style.css" text="Registrar cliente">
+               <graphic>
+                  <FontAwesomeIconView glyphName="PLUS"/>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND"/>
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="menuSalir" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar"
+                       stylesheets="@../CSS/Style.css" text="Salir">
+               <graphic>
+                  <FontAwesomeIconView glyphName="SIGN_OUT"/>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND"/>
+               </cursor>
+            </JFXButton>
+         </HBox>
+      </top>
+      <center>
+         <Pane prefHeight="463.0" prefWidth="773.0" BorderPane.alignment="CENTER">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="354.0" layoutX="-1.0" layoutY="1.0" stroke="BLACK"
+                       strokeType="INSIDE" width="754.0">
+               <fill>
+                  <LinearGradient startX="1.0" startY="0.20853080568720372">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.283016562461853" green="0.29315099120140076" blue="0.30263158679008484"/>
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.42105263471603394" green="0.42105263471603394"
+                                     blue="0.42105263471603394"/>
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label layoutX="35.0" layoutY="88.0" prefHeight="18.0" prefWidth="113.0" text="NOMBRE :"
+                   textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="14.0"/>
+               </font>
+            </Label>
+            <Label layoutX="35.0" layoutY="155.0" prefHeight="18.0" prefWidth="113.0" text="DOCUMENTO :"
+                   textFill="WHITE">
+               <font>
+                  <Font name="Cambria Bold" size="14.0"/>
+               </font>
+            </Label>
+            <TextField fx:id="txtNombreCliente" layoutX="178.0" layoutY="85.0" prefHeight="26.0" prefWidth="153.0"/>
+            <TextField fx:id="txtDocumentoCliente" layoutX="178.0" layoutY="151.0" prefHeight="26.0"
+                       prefWidth="152.0"/>
+            <JFXButton fx:id="btnGuardar" buttonType="RAISED" contentDisplay="CENTER" layoutX="54.0" layoutY="257.0"
+                       onAction="#handleRegistrarClienteButtonClick" prefHeight="34.0" prefWidth="87.0"
+                       styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Guardar" textAlignment="CENTER"
+                       textFill="WHITE" wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND"/>
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0"/>
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="btnLimpiar" buttonType="RAISED" contentDisplay="CENTER" layoutX="178.0" layoutY="257.0"
+                       onAction="#actionLimpiarDatos" prefHeight="34.0" prefWidth="90.0" styleClass="btnGuardar"
+                       stylesheets="@../CSS/Style.css" text="Limpiar" textAlignment="CENTER" textFill="WHITE"
+                       wrapText="true">
+               <cursor>
+                  <Cursor fx:constant="HAND"/>
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0"/>
+               </font>
+            </JFXButton>
+            <TableView fx:id="tblClientes" layoutX="362.0" layoutY="46.0" prefHeight="253.0" prefWidth="371.0"
+                       stylesheets="@../CSS/Style.css">
+               <columns>
+                  <TableColumn fx:id="colNombre" prefWidth="182.0" resizable="false" text="Nombre"/>
+                  <TableColumn fx:id="colDocumento" minWidth="5.0" prefWidth="188.0" text="Documento"/>
+               </columns>
+            </TableView>
+            <Pane fx:id="mediaPane" prefHeight="357.0" prefWidth="747.0">
+               <MediaView fx:id="mediaView" fitHeight="357.0" fitWidth="747.0"/>
             </Pane>
-         </center>
-      </BorderPane>
-   </children>
+         </Pane>
+      </center>
+   </BorderPane>
 </AnchorPane>

@@ -4,6 +4,7 @@ module TuCarro {
     requires java.desktop;
     requires com.jfoenix;
     requires de.jensd.fx.glyphs.fontawesome;
+    requires javafx.media;
 
     exports view;
     opens view to javafx.fxml;

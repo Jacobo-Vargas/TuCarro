@@ -2,16 +2,19 @@ package view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import static model.tuCarroInstance.INSTANCE;
 import java.io.IOException;
 import java.util.Objects;
+
+import static model.tuCarroInstance.INSTANCE;
 
 public class VentanaEmpleado extends Application {
 
@@ -30,6 +33,5 @@ public class VentanaEmpleado extends Application {
         Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/images/image-removebg-preview.png")));
         stage.getIcons().add(icon);
         stage.show();
-
     }
 }

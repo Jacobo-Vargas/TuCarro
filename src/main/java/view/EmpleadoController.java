@@ -9,15 +9,29 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import model.Cliente;
 import model.TuCarro;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.util.Objects;
 
 import static model.SistemaInstance.SISTEMAINSTANCE;
 
 public class EmpleadoController {
+    public JFXButton menuSalir;
+    public JFXButton menuRegistrar;
+    public AnchorPane anchorpane;
+    @FXML
+    private Pane mediaPane;
+    @FXML
+    private MediaView mediaView;
+    @FXML
+    private MediaPlayer mediaPlayer;
     @FXML
     private AnchorPane anchorPane;
     @FXML
@@ -47,28 +61,30 @@ public class EmpleadoController {
     @FXML
     public void initialize() {
         clientes = FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaClientes());
-
         colDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-
         tblClientes.setItems(clientes);
+
+        String videoPath = Objects.requireNonNull(getClass().getResource("/videos/videoCarro.mp4")).toExternalForm();
+        Media media = new Media(videoPath);
+        mediaPlayer = new MediaPlayer(media);
+        mediaView.setMediaPlayer(mediaPlayer);
+        if (!mediaPane.getChildren().contains(mediaView)) {
+            mediaPane.getChildren().add(mediaView);
+        }
+        mediaPlayer.play();
     }
 
-
-
-    @FXML
-    private void handleVehiculosButtonClick() {
-        // Lógica para el botón Vehiculos
-    }
 
     @FXML
     private void handleRegistrarClienteButtonClick() {
         String nombre = txtNombreCliente.getText();
         String documento = txtDocumentoCliente.getText();
-
         try {
             Cliente cliente = new Cliente(documento, nombre);
             boolean registrado = SISTEMAINSTANCE.getSistema().registrarCliente(cliente);
+            txtNombreCliente.clear();
+            txtDocumentoCliente.clear();
 
             if (registrado) {
                 clientes.add(cliente);
@@ -76,17 +92,13 @@ public class EmpleadoController {
 
                 showInformationAlert("Cliente registrado", "El cliente se ha registrado correctamente.");
             } else {
-                showWarningAlert("Registro fallido", "No se pudo registrar el cliente.");
+                showWarningAlert("Registro fallido", "No se pudo registrar el cliente, verfique los datos ingresados.");
             }
         } catch (IllegalArgumentException e) {
             showErrorAlert("Datos inválidos", e.getMessage());
         } catch (Exception e) {
             showErrorAlert("Error", "Se produjo un error al registrar el cliente.");
         }
-    }
-    @FXML
-    private void handleSalirButtonClick() {
-        // Lógica para el botón Salir
     }
 
 
@@ -114,22 +126,7 @@ public class EmpleadoController {
             txtDocumentoCliente.clear();
 
     }
-
-
-//    public void actionGuardarDatosCliente(ActionEvent actionEvent) throws Exception {
-//
-//        if(SISTEMAINSTANCE.getSistema().registrarCliente(new Cliente(txtDocumentoCliente.getText(), txtNombreCliente.getText()))){
-//            showErrorAlert("Proceso de registro","Registro exitoso");
-//            txtDocumentoCliente.clear();
-//            txtNombreCliente.clear();
-//            System.out.println(clientes.size());
-//            tblClientes.refresh();
-//        }else{
-//            showWarningAlert("Proceso de registro","Verifique los datos ingresados");
-//
-//        }
-//
-//    }
+    @FXML
     private void showInformationAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
