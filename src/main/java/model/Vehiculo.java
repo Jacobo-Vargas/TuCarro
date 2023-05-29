@@ -8,13 +8,10 @@ public class Vehiculo {
     private int cambios;
     private float velocidadMaxima;
     private int cilinbraje;
-    private int numeroPasajeros;
-    private int numeroPuertas;
-    //public Combustible combustible;
+    private Combustible combustible;
 
     public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
-                    float velocidadMaxima, int cilinbraje, int numeroPasajeros
-            , int numeroPuertas) throws Exception {
+                    float velocidadMaxima, int cilinbraje, Combustible combustible) throws Exception {
         if(placa.isEmpty() || placa.isBlank() || placa.length()!=6){
             throw new Exception("existe un erro en la placa");
         }else{
@@ -50,15 +47,7 @@ public class Vehiculo {
             throw new Exception("el cilindraje no puede menor o igual a cero");
         }else {this.cilinbraje = cilinbraje;
         }
-        if(numeroPasajeros<2){
-            throw new Exception("el numero de pasajeros no puede ser menor que cero");
-        }else{this.numeroPasajeros = numeroPasajeros;
-        }
-        if (numeroPuertas < 2){
-            throw new Exception("El numero de puertas no puede ser menor que cero");
-        }else {
-            this.numeroPuertas=numeroPuertas;
-        }
+
         //if(combustible==null){
           //  throw new Exception("El tipo de combustible no puede estar vacio");
         //}else {
@@ -118,21 +107,6 @@ public class Vehiculo {
         this.cilinbraje = cilinbraje;
     }
 
-    public int getNumeroPasajeros() {
-        return numeroPasajeros;
-    }
-
-    public void setNumeroPasajeros(int numeroPasajeros) {
-        this.numeroPasajeros = numeroPasajeros;
-    }
-
-    public int getNumeroPuertas() {
-        return numeroPuertas;
-    }
-
-    public void setNumeroPuertas(int numeroPuertas) {
-        this.numeroPuertas = numeroPuertas;
-    }
 
 
     @Override
@@ -145,9 +119,6 @@ public class Vehiculo {
                 ", cambios=" + cambios +
                 ", velocidadMaxima=" + velocidadMaxima +
                 ", cilinbraje=" + cilinbraje +
-                ", numeroPasajeros=" + numeroPasajeros +
-                ", numeroPuertas=" + numeroPuertas +
-
                 '}';
     }
 }

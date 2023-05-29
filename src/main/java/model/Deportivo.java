@@ -7,12 +7,8 @@ public class Deportivo extends Vehiculo{
     private int numBolsasAire;
     private float timeCienKM;
 
-
-    public Deportivo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
-                     float velocidadMaxima, int cilinbraje, float precioVehiculo, Combustible combustible,
-                     int numPasajeros, int numPuertas, float caballosFuerza, int numBolsasAire,
-                     float timeCienKM) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, precioVehiculo, combustible);
+    public Deportivo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, int numPasajeros, int numPuertas, float caballosFuerza, int numBolsasAire, float timeCienKM) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.caballosFuerza = caballosFuerza;

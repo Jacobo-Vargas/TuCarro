@@ -12,7 +12,7 @@ public class TestAdicionarVehiculo {
         var combustible=new Combustible(true,13f,20);
 
         var vehiculo=new Vehiculo("IZG95F", EstadoVehiculo.NUEVO,"mazda",2006,4,
-                1300,250,4,combustible);
+                1300,250,4,combustible, );
         tuCarro.registrarVehiculo(vehiculo);
         Assertions.assertEquals(1,tuCarro.getListaVehiculos().size());
         Assertions.assertEquals(vehiculo,tuCarro.getListaVehiculos().get(0));
@@ -23,7 +23,7 @@ public class TestAdicionarVehiculo {
         var tuCarro=new TuCarro();
         var combustible=new Combustible(true,13f,20);
         var vehiculo=new Vehiculo("IZG95F", EstadoVehiculo.NUEVO,"mazda",2006,4,
-                1300,250,4,combustible);
+                1300,250,4,combustible  );
         tuCarro.registrarVehiculo(vehiculo);
         tuCarro.registrarVehiculo(new Vehiculo("IZG95F", EstadoVehiculo.NUEVO,"mazda",2006,4,
                 1300,250,4,combustible));

@@ -13,12 +13,8 @@ public class Sedan extends Vehiculo{
     private SensorTrafico sensorTrafico;
     private AsistenciaPermanencia asistenciaPermanencia;
 
-    public Sedan(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
-                 float velocidadMaxima, int cilinbraje, float precioVehiculo, Combustible combustible, int numPasajeros,
-                 int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero,
-                 int numBolsasAire, ABS abs, VelocidadCrucero velCucero, SensorColision sensorColision,
-                 SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, precioVehiculo, combustible);
+    public Sedan(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;

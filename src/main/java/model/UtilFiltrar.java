@@ -66,24 +66,6 @@ public class UtilFiltrar {
         };
         return predicate;
     }
-    public static Predicate<Vehiculo> filtrarPorNumeroPasajeros(int numeroPasajeros){
-        Predicate<Vehiculo> predicate=new Predicate<Vehiculo>() {
-            @Override
-            public boolean test(Vehiculo vehiculo) {
-                return vehiculo.getNumeroPasajeros()==numeroPasajeros;
-            }
-        };
-        return predicate;
-    }
-    public static Predicate<Vehiculo> filtrarPorNumeroPuertas(int numeroPuertas){
-        Predicate<Vehiculo> predicate=new Predicate<Vehiculo>() {
-            @Override
-            public boolean test(Vehiculo vehiculo) {
-                return vehiculo.getNumeroPuertas()==numeroPuertas;
-            }
-        };
-        return predicate;
-    }
     public static Predicate<Empleado> filtrarPorNumeroDocumento(String numeroDocumento){
         Predicate<Empleado> predicate=new Predicate<Empleado>() {
             @Override
@@ -165,12 +147,6 @@ public class UtilFiltrar {
         }
         if ( cilinbraje != 0 ){
             predicate = predicate.and(filtrarPorClinbraje(cilinbraje));
-        }
-        if ( numeroPasajeros != 0 ){
-            predicate = predicate.and(filtrarPorNumeroPasajeros(numeroPasajeros));
-        }
-        if ( numeroPuertas != 0 ){
-            predicate = predicate.and(filtrarPorNumeroPuertas(numeroPuertas));
         }
         //if ( combustible != null ){
           //  predicate = predicate.and(filtrarPorTipoCombustible(combustible));

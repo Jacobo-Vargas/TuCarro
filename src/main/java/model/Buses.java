@@ -11,11 +11,8 @@ public class Buses extends Vehiculo{
     private int numeroEjes;
     private int numSalidasEmergencia;
 
-    public Buses(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
-                 float velocidadMaxima, int cilinbraje, float precioVehiculo, Combustible combustible, int numPasajeros
-            , int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero,
-                 int numBolsasAire, ABS abs, int numeroEjes, int numSalidasEmergencia) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, precioVehiculo, combustible);
+    public Buses(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, int numeroEjes, int numSalidasEmergencia) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;
