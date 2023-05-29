@@ -49,6 +49,8 @@ public class EmpleadoController {
     @FXML
     private JFXButton btnLimpiar;
     @FXML
+    private JFXButton playVideo;
+    @FXML
     private TextField txtNombreCliente, txtDocumentoCliente;
     @FXML
     private TableView<Cliente> tblClientes;
@@ -56,7 +58,7 @@ public class EmpleadoController {
     private TableColumn<Cliente, String> colDocumento;
     @FXML
     private TableColumn<Cliente, String> colNombre;
-
+    private boolean isReproduciendo = false;
     ObservableList<Cliente> clientes;
     @FXML
     public void initialize() {
@@ -69,10 +71,11 @@ public class EmpleadoController {
         Media media = new Media(videoPath);
         mediaPlayer = new MediaPlayer(media);
         mediaView.setMediaPlayer(mediaPlayer);
+        mediaView.setStyle("-fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 5px;");
         if (!mediaPane.getChildren().contains(mediaView)) {
             mediaPane.getChildren().add(mediaView);
         }
-        mediaPlayer.play();
+
     }
 
 
@@ -135,5 +138,17 @@ public class EmpleadoController {
         alert.showAndWait();
     }
 
+
+    public void playVideo() {
+        if (isReproduciendo) {
+            mediaPlayer.stop();
+            playVideo.setText("Play");
+        } else {
+            mediaPlayer.play();
+            playVideo.setText("Stop");
+        }
+
+        isReproduciendo = !isReproduciendo;
+    }
 
 }

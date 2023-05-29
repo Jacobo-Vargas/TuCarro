@@ -25,3 +25,9 @@
 .table-cell {
     -fx-alignment: center; /* Alineación centrada del texto */
 }
+
+.media-view {
+    -fx-border-color: #000000; /* Color del borde */
+    -fx-border-width: 2px; /* Ancho del borde */
+    -fx-border-radius: 50px; /* Radio de las esquinas del borde */
+}
