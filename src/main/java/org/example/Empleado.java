@@ -14,6 +14,8 @@ public class Empleado {
         this.passCliente = passCliente;
     }
 
+    //hola
+
     public String getDocumento() {
         return documento;
     }
