@@ -132,6 +132,8 @@
                </Rectangle>
                <JFXButton fx:id="playVideo" layoutX="187.0" layoutY="284.0" onAction="#playVideo" prefHeight="37.0" prefWidth="83.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Play" />
                <MediaView fx:id="mediaView" fitHeight="270.0" fitWidth="400.0" layoutX="4.0" layoutY="-1.0" styleClass="media-view" x="10.0" y="15.0" />
+               <JFXButton fx:id="playVideo1" layoutX="543.0" layoutY="149.0" onAction="#playVideo" prefHeight="37.0" prefWidth="141.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Ver vehiculos" />
+               <JFXButton fx:id="playVideo2" layoutX="437.0" layoutY="284.0" onAction="#playVideo" prefHeight="37.0" prefWidth="83.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Play" />
             </Pane>
          </Pane>
       </center>
