@@ -10,8 +10,11 @@ public class PickUps extends Vehiculo{
     private ABS abs;
     private boolean cuatroPorCuatro;
 
-    public PickUps(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, int numeroPasajeros, int numeroPuertas, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadCarga, int numBolsasAire, ABS abs, boolean cuatroPorCuatro) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, numeroPasajeros, numeroPuertas);
+    public PickUps(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
+                   float velocidadMaxima, int cilinbraje, float precioVehiculo, Combustible combustible,
+                   int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
+                   float capacidadCarga, int numBolsasAire, ABS abs, boolean cuatroPorCuatro) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, precioVehiculo, combustible);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;

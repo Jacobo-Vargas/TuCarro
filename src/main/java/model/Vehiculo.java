@@ -10,7 +10,6 @@ public class Vehiculo {
     private int cilinbraje;
     private int numeroPasajeros;
     private int numeroPuertas;
-
     //public Combustible combustible;
 
     public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
