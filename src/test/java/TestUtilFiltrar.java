@@ -7,20 +7,25 @@ public class TestUtilFiltrar {
     @Test
     public void test01() throws Exception {//prueba para buscar una placa en especifico
         var tuCarro=new TuCarro();
+        var combustible=new Combustible(true,13f,20);
+        var combustible2=new Combustible(true,true,true);
+        var combustible3=new Combustible(true,true,true);
+        var combustible4=new Combustible(true,true,true);
+        var combustible5=new Combustible(true,true,true);
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,1500,4,4, );
+                4,100,1500,combustible);
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.USADO,"MUZAN",2021,
-                4,100,1500,4,4, );
+                4,100,1500,combustible2 );
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.USADO,"MUZAN",1999,
-                4,100,1500,4,4, );
+                4,100,1500, combustible3);
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"MUZAN",2000,
-                4,100,1500,4,4, );
+                4,100,1500, combustible4);
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2001,
-                4,100,1500,4,4, );
+                4,100,1500, combustible5);
 
         tuCarro.registrarVehiculo(vehiculo1);
 
@@ -40,20 +45,25 @@ public class TestUtilFiltrar {
     @Test
     public void test02() throws Exception {//prueba para filtrar por nuevo o usado
         var tuCarro=new TuCarro();
+        var combustible=new Combustible(true,13f,20);
+        var combustible2=new Combustible(true,true,true);
+        var combustible3=new Combustible(true,true,true);
+        var combustible4=new Combustible(true,true,true);
+        var combustible5=new Combustible(true,true,true);
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,1500,4,4, );
+                4,100,1500,combustible );
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.NUEVO,"MUZAN",2021,
-                4,100,1500,4,4, );
+                4,100,1500, combustible2);
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.NUEVO,"MUZAN",1999,
-                4,100,1500,4,4, );
+                4,100,1500, combustible3);
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"MUZAN",2000,
-                4,100,1500,4,4, );
+                4,100,1500, combustible4);
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2001,
-                4,100,1500,4,4, );
+                4,100,1500, combustible5);
 
         tuCarro.registrarVehiculo(vehiculo1);
 
@@ -79,20 +89,25 @@ public class TestUtilFiltrar {
     @Test
     public void test03() throws Exception {//prueba para filtrar por marca del vehiculo
         var tuCarro=new TuCarro();
+        var combustible=new Combustible(true,13f,20);
+        var combustible2=new Combustible(true,true,true);
+        var combustible3=new Combustible(true,true,true);
+        var combustible4=new Combustible(true,true,true);
+        var combustible5=new Combustible(true,true,true);
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,1500,4,4, );
+                4,100,1500, combustible);
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.NUEVO,"mazda",2021,
-                4,100,1500,4,4, );
+                4,100,1500, combustible2);
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.NUEVO,"akt",1999,
-                4,100,1500,4,4, );
+                4,100,1500, combustible3);
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"bmw",2000,
-                4,100,1500,4,4, );
+                4,100,1500, combustible4);
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2001,
-                4,100,1500,4,4, );
+                4,100,1500, combustible5);
 
         tuCarro.registrarVehiculo(vehiculo1);
 
@@ -112,20 +127,25 @@ public class TestUtilFiltrar {
     @Test
     public void test04() throws Exception {//prueba para filtrar por modelo del vehiculo
         var tuCarro=new TuCarro();
+        var combustible=new Combustible(true,13f,20);
+        var combustible2=new Combustible(true,true,true);
+        var combustible3=new Combustible(true,true,true);
+        var combustible4=new Combustible(true,true,true);
+        var combustible5=new Combustible(true,true,true);
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,1500,4,4, );
+                4,100,1500,combustible );
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.NUEVO,"MUZAN",2021,
-                4,100,1500,4,4, );
+                4,100,1500, combustible2);
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.NUEVO,"MUZAN",1999,
-                4,100,1500,4,4, );
+                4,100,1500, combustible3);
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"MUZAN",2000,
-                4,100,1500,4,4, );
+                4,100,1500, combustible4);
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,1500,4,4, );
+                4,100,1500, combustible5);
 
         tuCarro.registrarVehiculo(vehiculo1);
 
@@ -147,20 +167,25 @@ public class TestUtilFiltrar {
     @Test
     public void test05() throws Exception {//prueba para filtrar por numero de cambios o marchas 
         var tuCarro=new TuCarro();
+        var combustible=new Combustible(true,13f,20);
+        var combustible2=new Combustible(true,true,true);
+        var combustible3=new Combustible(true,true,true);
+        var combustible4=new Combustible(true,true,true);
+        var combustible5=new Combustible(true,true,true);
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,1500,4,4, );
+                4,100,1500,combustible );
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.NUEVO,"MUZAN",2021,
-                4,100,1500,4,4, );
+                4,100,1500, combustible2);
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.NUEVO,"MUZAN",1999,
-                5,100,1500,4,4, );
+                5,100,1500, combustible3);
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"MUZAN",2000,
-                6,100,1500,4,4, );
+                6,100,1500, combustible4);
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,1500,4,4, );
+                4,100,1500, combustible5);
 
         tuCarro.registrarVehiculo(vehiculo1);
 
@@ -182,20 +207,25 @@ public class TestUtilFiltrar {
     @Test
     public void test06() throws Exception {//prueba para filtrar por velicidad maxima
         var tuCarro=new TuCarro();
+        var combustible=new Combustible(true,13f,20);
+        var combustible2=new Combustible(true,true,true);
+        var combustible3=new Combustible(true,true,true);
+        var combustible4=new Combustible(true,true,true);
+        var combustible5=new Combustible(true,true,true);
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,1500,4,4, );
+                4,100,1500, combustible);
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.NUEVO,"MUZAN",2021,
-                4,120,1500,4,4, );
+                4,120,1500, combustible2);
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.NUEVO,"MUZAN",1999,
-                5,149,1500,4,4, );
+                5,149,1500, combustible3);
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"MUZAN",2000,
-                6,150,1500,4,4, );
+                6,150,1500, combustible4);
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,150,1500,4,4, );
+                4,150,1500,combustible5 );
 
         tuCarro.registrarVehiculo(vehiculo1);
 
@@ -217,20 +247,25 @@ public class TestUtilFiltrar {
     @Test
     public void test07() throws Exception {//prueba para filtrar por cilinbraje
         var tuCarro=new TuCarro();
+        var combustible=new Combustible(true,13f,20);
+        var combustible2=new Combustible(true,true,true);
+        var combustible3=new Combustible(true,true,true);
+        var combustible4=new Combustible(true,true,true);
+        var combustible5=new Combustible(true,true,true);
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,150,4,4, );
+                4,100,150,combustible );
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.NUEVO,"MUZAN",2021,
-                4,120,200,4,4, );
+                4,120,200, combustible2);
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.NUEVO,"MUZAN",1999,
-                5,149,300,4,4, );
+                5,149,300, combustible3);
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"MUZAN",2000,
-                6,150,600,4,4, );
+                6,150,600, combustible4);
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,150,1290,4,4, );
+                4,150,1290, combustible5);
 
         tuCarro.registrarVehiculo(vehiculo1);
 
@@ -252,20 +287,25 @@ public class TestUtilFiltrar {
     @Test
     public void test08() throws Exception {//prueba para filtrar por numero de pasajeros
         var tuCarro=new TuCarro();
+        var combustible=new Combustible(true,13f,20);
+        var combustible2=new Combustible(true,true,true);
+        var combustible3=new Combustible(true,true,true);
+        var combustible4=new Combustible(true,true,true);
+        var combustible5=new Combustible(true,true,true);
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,150,4,4, );
+                4,100,150, combustible);
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.NUEVO,"MUZAN",2021,
-                4,120,200,2,4, );
+                4,120,200, combustible2);
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.NUEVO,"MUZAN",1999,
-                5,149,300,6,4, );
+                5,149,300, combustible3);
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"MUZAN",2000,
-                6,150,600,40,4, );
+                6,150,600, combustible4);
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,150,1290,10,4, );
+                4,150,1290, combustible5);
 
         tuCarro.registrarVehiculo(vehiculo1);
 
@@ -287,20 +327,25 @@ public class TestUtilFiltrar {
     @Test
     public void test09() throws Exception {//prueba para filtrar por numero de pasajeros
         var tuCarro=new TuCarro();
+        var combustible=new Combustible(true,13f,20);
+        var combustible2=new Combustible(true,true,true);
+        var combustible3=new Combustible(true,true,true);
+        var combustible4=new Combustible(true,true,true);
+        var combustible5=new Combustible(true,true,true);
         var vehiculo1=new Vehiculo("IZG95F", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,100,150,4,4, );
+                4,100,150,combustible );
 
         var vehiculo2=new Vehiculo("WXX30G", EstadoVehiculo.NUEVO,"MUZAN",2021,
-                4,120,200,2,2, );
+                4,120,200,combustible2 );
 
         var vehiculo3=new Vehiculo("WZS457", EstadoVehiculo.NUEVO,"MUZAN",1999,
-                5,149,300,6,2, );
+                5,149,300,combustible3 );
 
         var vehiculo4=new Vehiculo("HSR834", EstadoVehiculo.USADO,"MUZAN",2000,
-                6,150,600,40,4, );
+                6,150,600,combustible4 );
 
         var vehiculo5=new Vehiculo("OFK345", EstadoVehiculo.USADO,"MUZAN",2023,
-                4,150,1290,10,4, );
+                4,150,1290,combustible5 );
 
         tuCarro.registrarVehiculo(vehiculo1);
 

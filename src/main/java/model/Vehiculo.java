@@ -10,6 +10,8 @@ public class Vehiculo {
     private int cilinbraje;
     private Combustible combustible;
 
+
+
     public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
                     float velocidadMaxima, int cilinbraje, Combustible combustible) throws Exception {
         if(placa.isEmpty() || placa.isBlank() || placa.length()!=6){
@@ -48,11 +50,11 @@ public class Vehiculo {
         }else {this.cilinbraje = cilinbraje;
         }
 
-        //if(combustible==null){
-          //  throw new Exception("El tipo de combustible no puede estar vacio");
-        //}else {
-         //   this.combustible=combustible;
-       // }
+        if(combustible==null){
+           throw new Exception("El tipo de combustible no puede estar vacio");
+        }else {
+            this.combustible=combustible;
+        }
     }
 
     public String getPlaca() {
@@ -105,6 +107,13 @@ public class Vehiculo {
 
     public void setCilinbraje(int cilinbraje) {
         this.cilinbraje = cilinbraje;
+    }
+    public Combustible getCombustible() {
+        return combustible;
+    }
+
+    public void setCombustible(Combustible combustible) {
+        this.combustible = combustible;
     }
 
 
