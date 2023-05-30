@@ -65,6 +65,7 @@ public class EmpleadoController {
     private TableColumn<Cliente, String> colNombre;
     @FXML
     private boolean isReproduciendo = false;
+    @FXML
     ObservableList<Cliente> clientes;
     @FXML
     public void initialize() {
@@ -188,5 +189,9 @@ public class EmpleadoController {
         launchVentanaLogin();
         Stage currentStage = (Stage) menuSalir.getScene().getWindow();
         currentStage.hide();
+    }
+
+    public void botonCerrar(ActionEvent actionEvent) {
+        MainApp.launch();
     }
 }
