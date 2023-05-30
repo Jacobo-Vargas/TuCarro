@@ -65,6 +65,8 @@ public class EmpleadoController {
     private TableColumn<Cliente, String> colNombre;
     @FXML
     private boolean isReproduciendo = false;
+    @FXML
+    private Button brnBorar;
     ObservableList<Cliente> clientes;
     @FXML
     public void initialize() {
@@ -73,6 +75,7 @@ public class EmpleadoController {
         colDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         tblClientes.setItems(clientes);
+        brnBorar.setVisible(false);
 
         String videoPath = Objects.requireNonNull(getClass().getResource("/videos/videoCarro.mp4")).toExternalForm();
         Media media = new Media(videoPath);
@@ -172,6 +175,7 @@ public class EmpleadoController {
     @FXML
     public void actionRegistrarClientes(ActionEvent actionEvent) {
         paneRegistrarClientes.setVisible(true);
+        brnBorar.setVisible(true);
 
     }
     @FXML
@@ -179,6 +183,30 @@ public class EmpleadoController {
         MainApp mainApp = new MainApp();
         Stage stage = new Stage();
         mainApp.start(stage);
+    }
+    @FXML
+    public void borarCliente(){
+
+        String documento = txtDocumentoCliente.getText();
+        try {
+            System.out.println("cantidad de datos en le arraylist al iniciar ");
+            System.out.println(SISTEMAINSTANCE.getSistema().getListaClientes().size());
+            SISTEMAINSTANCE.getSistema().borrarCliente(documento);
+            txtNombreCliente.clear();
+            txtDocumentoCliente.clear();
+            ObservableList<Cliente> items=tblClientes.getItems();
+            for(int i=items.size()-1;i>=0;i--){
+                if(items.get(i).getDocumento().equals(documento)){
+                    items.remove(items.get(i));
+                }
+            }
+            tblClientes.refresh();
+            System.out.println("cantidad de datos en le arraylist al finalizar");
+            System.out.println(SISTEMAINSTANCE.getSistema().getListaClientes().size());
+
+        } catch (IllegalArgumentException e) {
+        showErrorAlert("Datos inválidos", e.getMessage());
+    }
     }
 
     @FXML
