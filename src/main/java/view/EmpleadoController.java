@@ -171,6 +171,8 @@ public class EmpleadoController {
     }
     @FXML
     public void actionRegistrarClientes(ActionEvent actionEvent) {
+        paneVerVehiculos.setVisible(true);
+        mediaPane.setVisible(false);
         paneRegistrarClientes.setVisible(true);
 
     }
