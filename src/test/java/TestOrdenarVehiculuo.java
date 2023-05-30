@@ -85,6 +85,12 @@ public class TestOrdenarVehiculuo {
 
         tuCarro.ordenarListaPorModelo().forEach(System.out::println); //metodo que ordena la lista de menor a mayor
     }
+    @Test
+    public void test03() throws Exception {
+        var cobustible=new Combustible(true);
+        var vehiculo=new Vehiculo("IZg95f",null,"mazda",2021,4,120
+                ,200,cobustible);
+    }
 
 
 }
