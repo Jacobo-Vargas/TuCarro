@@ -60,62 +60,6 @@
       </top>
       <center>
          <Pane prefHeight="463.0" prefWidth="773.0" BorderPane.alignment="CENTER">
-            <Pane fx:id="paneRegistrarClientes" prefHeight="357.0" prefWidth="747.0">
-               <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="357.0" stroke="BLACK" strokeType="INSIDE" width="747.0">
-                     <fill>
-                        <LinearGradient startX="1.0" startY="0.20853080568720372">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.283016562461853" green="0.29315099120140076" blue="0.30263158679008484" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.42105263471603394" green="0.42105263471603394" blue="0.42105263471603394" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                  </Rectangle>
-                  <Label layoutX="42.0" layoutY="82.0" prefHeight="18.0" prefWidth="113.0" text="NOMBRE :" textFill="WHITE">
-                     <font>
-                        <Font name="Cambria Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="42.0" layoutY="139.0" prefHeight="18.0" prefWidth="113.0" text="DOCUMENTO :" textFill="WHITE">
-                     <font>
-                        <Font name="Cambria Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="txtNombreCliente" layoutX="199.0" layoutY="65.0" prefHeight="26.0" prefWidth="153.0" />
-                  <TextField fx:id="txtDocumentoCliente" layoutX="199.0" layoutY="122.0" prefHeight="26.0" prefWidth="152.0" />
-                  <JFXButton fx:id="btnGuardar" buttonType="RAISED" contentDisplay="CENTER" layoutX="77.0" layoutY="228.0" onAction="#handleRegistrarClienteButtonClick" prefHeight="34.0" prefWidth="87.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Guardar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton fx:id="btnLimpiar" buttonType="RAISED" contentDisplay="CENTER" layoutX="199.0" layoutY="228.0" onAction="#actionLimpiarDatos" prefHeight="34.0" prefWidth="90.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Limpiar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font name="System Bold" size="12.0" />
-                     </font>
-                  </JFXButton>
-                  <TableView fx:id="tblClientes" layoutX="362.0" layoutY="31.0" prefHeight="253.0" prefWidth="371.0" stylesheets="@../CSS/Style.css">
-                     <columns>
-                        <TableColumn fx:id="colNombre" prefWidth="182.0" resizable="false" text="Nombre" />
-                        <TableColumn fx:id="colDocumento" minWidth="5.0" prefWidth="188.0" text="Documento" />
-                     </columns>
-                  </TableView>
-               </children>
-            </Pane>
             <Pane fx:id="mediaPane" prefHeight="356.0" prefWidth="747.0">
                <Rectangle arcHeight="5.0" arcWidth="5.0" height="357.0" stroke="BLACK" strokeType="INSIDE" width="747.0">
                   <fill>
@@ -338,6 +282,62 @@
                         <TextField GridPane.columnIndex="3" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
+               </children>
+            </Pane>
+            <Pane fx:id="paneRegistrarClientes" prefHeight="357.0" prefWidth="747.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" height="357.0" stroke="BLACK" strokeType="INSIDE" width="747.0">
+                     <fill>
+                        <LinearGradient startX="1.0" startY="0.20853080568720372">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.283016562461853" green="0.29315099120140076" blue="0.30263158679008484" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.42105263471603394" green="0.42105263471603394" blue="0.42105263471603394" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </Rectangle>
+                  <Label layoutX="42.0" layoutY="82.0" prefHeight="18.0" prefWidth="113.0" text="NOMBRE :" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="42.0" layoutY="139.0" prefHeight="18.0" prefWidth="113.0" text="DOCUMENTO :" textFill="WHITE">
+                     <font>
+                        <Font name="Cambria Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtNombreCliente" layoutX="199.0" layoutY="65.0" prefHeight="26.0" prefWidth="153.0" />
+                  <TextField fx:id="txtDocumentoCliente" layoutX="199.0" layoutY="122.0" prefHeight="26.0" prefWidth="152.0" />
+                  <JFXButton fx:id="btnGuardar" buttonType="RAISED" contentDisplay="CENTER" layoutX="77.0" layoutY="228.0" onAction="#handleRegistrarClienteButtonClick" prefHeight="34.0" prefWidth="87.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Guardar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton fx:id="btnLimpiar" buttonType="RAISED" contentDisplay="CENTER" layoutX="199.0" layoutY="228.0" onAction="#actionLimpiarDatos" prefHeight="34.0" prefWidth="90.0" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Limpiar" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <TableView fx:id="tblClientes" layoutX="362.0" layoutY="31.0" prefHeight="253.0" prefWidth="371.0" stylesheets="@../CSS/Style.css">
+                     <columns>
+                        <TableColumn fx:id="colNombre" prefWidth="182.0" resizable="false" text="Nombre" />
+                        <TableColumn fx:id="colDocumento" minWidth="5.0" prefWidth="188.0" text="Documento" />
+                     </columns>
+                  </TableView>
                </children>
             </Pane>
          </Pane>
