@@ -3,6 +3,8 @@ package model;
 
 import javax.swing.*;
 
+import static model.SistemaInstance.SISTEMAINSTANCE;
+
 public class Login {
     private final TuCarro tuCarro;
     private String nombreUSer;
@@ -22,8 +24,13 @@ public class Login {
             this.nombreUSer = "admin";
             return 3;
         }
-        for(int i=0;i<Em)
-        JOptionPane.showMessageDialog(null, "Verifique los datos ingresados.");
+        for (Empleado e : SISTEMAINSTANCE.getSistema().listaEmpleados) {
+            if ((e.getDocumento().equals(documento) && e.getPassEmpleado().equals(pass))) {
+                JOptionPane.showMessageDialog(null, "Acceso exitoso");
+                this.nombreUSer = e.getNombre();
+                return 2;
+            }
+        }
         return 0;
     }
 

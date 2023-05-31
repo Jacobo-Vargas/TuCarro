@@ -43,16 +43,18 @@ public class AppController {
 
     @FXML
     public void actionBtnIngresar(ActionEvent actionEvent) throws IOException {
-        if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 1) || (INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 2) ){
+        if ((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(), txtPassword.getText()) == 1)) {
             launchVentanaEmpleado();
             Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
             currentStage.hide();
-        }if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 3) ){
+        }if ((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(), txtPassword.getText()) == 2)) {
+                launchVentanaEmpleado();
+                Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
+                currentStage.hide();
+        }if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(), txtPassword.getText()) == 3)){
             lanzarVentanaAdministrador();
             Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
             currentStage.hide();
-        }else{
-            System.out.println(SISTEMAINSTANCE.getSistema().listaEmpleados.size());
         }
-}
+    }
 }

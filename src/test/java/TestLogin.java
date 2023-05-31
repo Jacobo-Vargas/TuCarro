@@ -18,7 +18,8 @@ public class TestLogin {
         prueba.registrarEmpleado(e4);
 
         Login uno = new Login(prueba);
-        uno.verificarCredenciales("1094958613", "12345");
+
+        System.out.println(uno.verificarCredenciales("1094958613", "12345"));
     }
     @Test
     void Test02Exitoso()throws Exception{
@@ -33,6 +34,6 @@ public class TestLogin {
             prueba.registrarEmpleado(e4);
 
             Login uno = new Login(prueba);
-            uno.verificarCredenciales("1094958612","1234@");
+            System.out.println(uno.verificarCredenciales("1094958612","1234@"));
     }
 }
