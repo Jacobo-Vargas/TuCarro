@@ -1,5 +1,6 @@
 package view;
 
+import static model.SistemaInstance.SISTEMAINSTANCE;
 import static model.tuCarroInstance.INSTANCE;
 
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import model.SistemaInstance;
 
 import java.io.IOException;
 
@@ -29,6 +31,15 @@ public class AppController {
         Stage stage = new Stage();
         ventanaEmpleado.start(stage);
     }
+    @FXML
+    private void lanzarVentanaAdministrador() throws IOException {
+        var ventanaAdmin=new VentanaAdmin();
+        Stage stage = new Stage();
+        ventanaAdmin.start(stage);
+    }
+
+
+
 
     @FXML
     public void actionBtnIngresar(ActionEvent actionEvent) throws IOException {
@@ -36,6 +47,12 @@ public class AppController {
             launchVentanaEmpleado();
             Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
             currentStage.hide();
+        }if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 3) ){
+            lanzarVentanaAdministrador();
+            Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
+            currentStage.hide();
+        }else{
+            System.out.println(SISTEMAINSTANCE.getSistema().listaEmpleados.size());
         }
-    }
+}
 }

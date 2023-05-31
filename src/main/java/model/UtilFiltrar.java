@@ -175,4 +175,13 @@ public class UtilFiltrar {
         }
         return predicate;
     }
+    public static Predicate<Empleado> filtrarNumeroDocumento(String documento){
+        Predicate<Empleado> predicate=new Predicate<Empleado>() {
+            @Override
+            public boolean test(Empleado empleado) {
+                return empleado.getDocumento()==documento;
+            }
+        };
+        return predicate;
+    }
 }

@@ -17,13 +17,12 @@ public class Login {
             this.nombreUSer = "admin";
             return 1;
         }
-        for (Empleado e : tuCarro.listaEmpleados) {
-            if ((e.getDocumento().equals(documento) && e.getPassEmpleado().equals(pass))) {
-                JOptionPane.showMessageDialog(null, "Acceso exitoso");
-                this.nombreUSer = e.getNombre();
-                return 2;
-            }
+        if(documento.equals("administrador") && pass.equals("@")){
+            JOptionPane.showMessageDialog(null, "Acceso exitoso");
+            this.nombreUSer = "admin";
+            return 3;
         }
+        for(int i=0;i<Em)
         JOptionPane.showMessageDialog(null, "Verifique los datos ingresados.");
         return 0;
     }
