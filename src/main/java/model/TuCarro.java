@@ -40,6 +40,13 @@ public class TuCarro {
             listaVehiculos.add(vehiculo);
         }
     }
+    public void borrarCliente(String numeroCedula){
+        for(int i=0;i<listaClientes.size();i++){
+            if(listaClientes.get(i).getDocumento().equals(numeroCedula)){
+                listaClientes.remove(listaClientes.get(i));
+            }
+        }
+    }
 
     public void registrarEmpleado(Empleado empleado){
         boolean validar = true;

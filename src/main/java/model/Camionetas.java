@@ -2,20 +2,20 @@ package model;
 
 public class Camionetas extends Vehiculo{
     private int numPasajeros;
-    private int numPuertas;
+    private final int numPuertas;
     private AireAcondicionado aire;
     private CamaraReversa camReversa;
     private float capacidadMaletero;
     private int numBolsasAire;
     private ABS abs;
-    private VelocidadCrucero velCucero;
+    private VelocidadCrucero velCrucero;
     private SensorColision sensorColision;
     private SensorTrafico sensorTrafico;
     private AsistenciaPermanencia asistenciaPermanencia;
-    private boolean cuatroPorCuatro;
+    private final CuatroPorCuatro cuatroPorCuatro;
 
-    public Camionetas(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia, boolean cuatroPorCuatro) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible);
+    public Camionetas(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible,float precio, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCrucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia, CuatroPorCuatro cuatroPorCuatro) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible,precio);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;
@@ -23,11 +23,57 @@ public class Camionetas extends Vehiculo{
         this.capacidadMaletero = capacidadMaletero;
         this.numBolsasAire = numBolsasAire;
         this.abs = abs;
-        this.velCucero = velCucero;
+        this.velCrucero = velCrucero;
         this.sensorColision = sensorColision;
         this.sensorTrafico = sensorTrafico;
         this.asistenciaPermanencia = asistenciaPermanencia;
         this.cuatroPorCuatro = cuatroPorCuatro;
+    }
+    public static Camionetas of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje,
+                                Combustible combustible,float precio, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
+                                float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCrucero, SensorColision sensorColision,
+                                SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia, CuatroPorCuatro cuatroPorCuatro) throws Exception {
+        if(numPasajeros <=0 ){
+            throw new Exception("Numero de pasajeros debe ser mayor a cero.");
+        }
+        if(numPuertas <=0 ){
+            throw new Exception("Numero de puertas debe ser mayor a cero.");
+        }
+        if (aire == null) {
+            throw new Exception("La información del aire acondicionado es requerida.");
+        }
+        if(camReversa == null){
+            throw new Exception("Indique si tiene camara de reversa.");
+        }
+        if(capacidadMaletero < 1){
+            throw new Exception("Indique la capacidad del maletero.");
+        }
+        if(numBolsasAire < 1){
+            throw new Exception("Indique el numero de bolsas de aire.");
+        }
+        if(abs == null){
+            throw new Exception("Indique si tiene sistemas de ABS.");
+        }
+        if(velCrucero == null){
+            throw new Exception("Indique si tiene velocidad crucero.");
+        }
+        if(sensorColision == null){
+            throw new Exception("Indique si tiene sensor de colision.");
+        }
+        if(sensorTrafico == null){
+            throw new Exception("Indique si tiene sensor de trafico.");
+        }
+        if(asistenciaPermanencia == null){
+            throw new Exception("Indique si tiene asistencia de permanencia.");
+        }
+        if(cuatroPorCuatro == null){
+            throw new Exception("Indique si es 4X4.");
+        }
+
+        return new Camionetas(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilinbraje,combustible,precio,numPasajeros, numPuertas,
+                aire,camReversa, capacidadMaletero,numBolsasAire, abs,velCrucero,sensorColision, sensorTrafico, asistenciaPermanencia,cuatroPorCuatro);
+
+
     }
 
     public int getNumPasajeros() {
@@ -40,10 +86,6 @@ public class Camionetas extends Vehiculo{
 
     public int getNumPuertas() {
         return numPuertas;
-    }
-
-    public void setNumPuertas(int numPuertas) {
-        this.numPuertas = numPuertas;
     }
 
     public AireAcondicionado getAire() {
@@ -86,12 +128,12 @@ public class Camionetas extends Vehiculo{
         this.abs = abs;
     }
 
-    public VelocidadCrucero getVelCucero() {
-        return velCucero;
+    public VelocidadCrucero getVelCrucero() {
+        return velCrucero;
     }
 
-    public void setVelCucero(VelocidadCrucero velCucero) {
-        this.velCucero = velCucero;
+    public void setVelCrucero(VelocidadCrucero velCrucero) {
+        this.velCrucero = velCrucero;
     }
 
     public SensorColision getSensorColision() {
@@ -118,11 +160,8 @@ public class Camionetas extends Vehiculo{
         this.asistenciaPermanencia = asistenciaPermanencia;
     }
 
-    public boolean isCuatroPorCuatro() {
+    public CuatroPorCuatro isCuatroPorCuatro() {
         return cuatroPorCuatro;
     }
 
-    public void setCuatroPorCuatro(boolean cuatroPorCuatro) {
-        this.cuatroPorCuatro = cuatroPorCuatro;
-    }
 }

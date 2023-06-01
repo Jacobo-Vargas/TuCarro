@@ -1,63 +1,70 @@
 package model;
 
-import javax.swing.*;
+import java.util.Objects;
 
 public class Vehiculo {
-    private  String placa;
+    private final String placa;
     private EstadoVehiculo estadoVehiculo;
-    private String marca;
-    private int modelo;
-    private int cambios;
-    private float velocidadMaxima;
-    private int cilinbraje;
+    private final String marca;
+    private final int modelo;
+    private final int cambios;
+    private final float velocidadMaxima;
+    private final int cilindraje;
     private Combustible combustible;
 
+    private float precio;
 
 
-    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
-                    float velocidadMaxima, int cilinbraje, Combustible combustible) throws Exception {
-        if(placa.isEmpty() || placa.isBlank() || placa.length()!=6){
-            JOptionPane.showMessageDialog(null,"Existe un error en la placa");
-        }else{
-            this.placa=placa;
+    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio) {
+        this.placa = placa;
+        this.estadoVehiculo = estadoVehiculo;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.cambios = cambios;
+        this.velocidadMaxima = velocidadMaxima;
+        this.cilindraje = cilindraje;
+        this.combustible = combustible;
+        this.precio = precio;
+    }
+    public static Vehiculo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio) throws Exception {
+        if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
+            throw new Exception("Placa vehiculo");
         }
-        if(estadoVehiculo==null){
-            JOptionPane.showMessageDialog(null,"El estado del vehiculo no puede ser nulo");
-        }else{
-            this.estadoVehiculo = estadoVehiculo;
+        if (estadoVehiculo == null) {
+            throw  new Exception("Estado vehiculo");
         }
-        if(marca.isBlank() || marca.isEmpty()){
-            JOptionPane.showMessageDialog(null,"La marca del vehiculo no puede estar vacia");
-        }else{
-            this.marca = marca;
-        }
-
-      if(modelo< 1980 || modelo> 2023 ){
-          JOptionPane.showMessageDialog(null,"Error al ingresar el modelo de vehiculo");
-      }else{
-          this.modelo = modelo;
-      }
-        if(cambios <=3 ){
-            JOptionPane.showMessageDialog(null,"El numero de cambios no puede ser menor a tres");
-        }else {
-            this.cambios = cambios;
-        }
-        if(velocidadMaxima<=0){
-            JOptionPane.showMessageDialog(null,"La velocidad maxima del vehiculo no puede ser " +
-                    "menor a cero");
-        }else{
-            this.velocidadMaxima = velocidadMaxima;
-        }
-        if (cilinbraje <= 0){
-            JOptionPane.showMessageDialog(null,"El cilinbraje del vehiculo no puede menor a cero");
-        }else {this.cilinbraje = cilinbraje;
+        if (Objects.requireNonNull(marca,"la marca no puede estar vacia").isEmpty()) {
+            throw new Exception("la marca no pued estar vacia");
         }
 
-        if(combustible==null){
-            JOptionPane.showMessageDialog(null,"El tipo de combustible no puede ser null");
-        }else {
-            this.combustible=combustible;
+        if (modelo < 1980 || modelo > 2023) {
+            throw new Exception("verifique el modelo.");
         }
+        if (cambios <= 3) {
+            throw new Exception("El numero de cambios no puede ser menor a cero.");
+        }
+        if (velocidadMaxima <= 0){
+            throw new Exception("La velocidad no puede ser menor o igual a cero.");
+        }
+        if (cilindraje <= 0){
+            throw new Exception("El cilindraje no puede ser menos o igual a cero.");
+        }
+        if (combustible == null){
+            throw new Exception("Debe proporcionar un tipo de combustible");
+        }
+        if(precio <= 0 ){
+            throw new Exception("El precio debe ser mayor a cero.");
+        }
+
+        return new Vehiculo(placa,estadoVehiculo,marca,modelo,cambios,velocidadMaxima,cilindraje,combustible,precio);
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
+    }
+
+    public float getPrecio() {
+        return precio;
     }
 
     public String getPlaca() {
@@ -76,41 +83,25 @@ public class Vehiculo {
         return marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
     public int getModelo() {
         return modelo;
     }
 
-    public void setModelo(int modelo) {
-        this.modelo = modelo;
-    }
 
     public int getCambios() {
         return cambios;
     }
 
-    public void setCambios(int cambios) {
-        this.cambios = cambios;
-    }
 
     public float getVelocidadMaxima() {
         return velocidadMaxima;
     }
 
-    public void setVelocidadMaxima(float velocidadMaxima) {
-        this.velocidadMaxima = velocidadMaxima;
+
+    public int getCilindraje() {
+        return cilindraje;
     }
 
-    public int getCilinbraje() {
-        return cilinbraje;
-    }
-
-    public void setCilinbraje(int cilinbraje) {
-        this.cilinbraje = cilinbraje;
-    }
     public Combustible getCombustible() {
         return combustible;
     }
@@ -118,7 +109,6 @@ public class Vehiculo {
     public void setCombustible(Combustible combustible) {
         this.combustible = combustible;
     }
-
 
 
     @Override
@@ -130,7 +120,7 @@ public class Vehiculo {
                 ", modelo=" + modelo +
                 ", cambios=" + cambios +
                 ", velocidadMaxima=" + velocidadMaxima +
-                ", cilinbraje=" + cilinbraje +
+                ", cilinbraje=" + cilindraje +
                 '}';
     }
 }

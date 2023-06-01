@@ -57,11 +57,11 @@ public class UtilFiltrar {
         };
         return predicate;
     }
-    public static Predicate<Vehiculo> filtrarPorClinbraje(int cilinbraje){
+    public static Predicate<Vehiculo> filtrarPorClinbraje(int cilindraje){
         Predicate<Vehiculo> predicate=new Predicate<Vehiculo>() {
             @Override
             public boolean test(Vehiculo vehiculo) {
-                return vehiculo.getCilinbraje()==cilinbraje;
+                return vehiculo.getCilindraje()==cilindraje;
             }
         };
         return predicate;

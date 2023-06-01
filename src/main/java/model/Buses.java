@@ -1,6 +1,6 @@
 package model;
 
-public class Buses extends Vehiculo{
+public class Buses extends Vehiculo {
     private int numPasajeros;
     private int numPuertas;
     private AireAcondicionado aire;
@@ -11,8 +11,8 @@ public class Buses extends Vehiculo{
     private int numeroEjes;
     private int numSalidasEmergencia;
 
-    public Buses(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, int numeroEjes, int numSalidasEmergencia) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible);
+    public Buses(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, float precio, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, int numeroEjes, int numSalidasEmergencia) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible, precio);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;
@@ -22,6 +22,38 @@ public class Buses extends Vehiculo{
         this.abs = abs;
         this.numeroEjes = numeroEjes;
         this.numSalidasEmergencia = numSalidasEmergencia;
+    }
+
+    public static Buses of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, float precio, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, int numeroEjes, int numSalidasEmergencia) throws Exception {
+        if(numPasajeros <= 0){
+            throw new Exception("El numero de pasajeros es requerido");
+        }
+        if(numPuertas < 1){
+            throw new Exception("el numero de puertas debe ser mayor a cero");
+        }
+        if(aire == null){
+            throw new Exception("Indique si tiene aire acondicionado");
+        }
+        if(camReversa == null){
+            throw new Exception("Indique si tiene camara de reversa");
+        }
+        if(capacidadMaletero < 1){
+            throw new Exception("Indique la capacidad del maletero");
+        }
+        if(numBolsasAire < 1){
+            throw new Exception("Indique el numero de bolsas de aire");
+        }
+        if(abs == null){
+            throw new Exception("Indique si tiene sistemas de ABS");
+        }
+        if(numeroEjes < 1 || numeroEjes > 5){
+            throw new Exception("Indique un numero de ejes valido");
+        }
+        if(numSalidasEmergencia < 1 || numSalidasEmergencia > 6){
+            throw new Exception("Indique la capacidad del maletero");
+        }
+
+        return new Buses(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible, precio, numPasajeros, numPuertas, aire, camReversa, capacidadMaletero, numBolsasAire, abs, numeroEjes, numSalidasEmergencia);
     }
 
     public int getNumPasajeros() {

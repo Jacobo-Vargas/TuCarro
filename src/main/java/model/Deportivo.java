@@ -7,13 +7,37 @@ public class Deportivo extends Vehiculo{
     private int numBolsasAire;
     private float timeCienKM;
 
-    public Deportivo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, int numPasajeros, int numPuertas, float caballosFuerza, int numBolsasAire, float timeCienKM) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible);
+    public Deportivo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
+                     float velocidadMaxima, int cilinbraje, Combustible combustible,float precio, int numPasajeros,
+                     int numPuertas, float caballosFuerza, int numBolsasAire, float timeCienKM) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible,precio);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.caballosFuerza = caballosFuerza;
         this.numBolsasAire = numBolsasAire;
         this.timeCienKM = timeCienKM;
+    }
+    public static Deportivo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
+                               float velocidadMaxima, int cilinbraje, Combustible combustible,float precio, int numPasajeros,
+                               int numPuertas, float caballosFuerza, int numBolsasAire, float timeCienKM) throws Exception {
+        if(numPasajeros <= 0){
+            throw new Exception("El numero de pasajeros es requerido");
+        }
+        if(numPuertas < 1){
+            throw new Exception("el numero de puertas debe ser mayor a cero");
+        }
+        if(caballosFuerza <= 0){
+            throw new Exception("Caballos de fuerza no puede ser igual a cero.");
+        }
+        if(numBolsasAire < 1){
+            throw new Exception("Indique el numero de bolsas de aire");
+        }
+        if(timeCienKM <=0){
+            throw new Exception("Tiempo de 100 km/h no puede ser menor a cero.");
+        }
+        return new Deportivo(placa,estadoVehiculo,marca,modelo,cambios,
+        velocidadMaxima,cilinbraje,combustible, precio, numPasajeros,
+        numPuertas,caballosFuerza, numBolsasAire, timeCienKM);
     }
 
     public int getNumPasajeros() {
