@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.Cliente;
 import model.Empleado;
+import model.EstadoVehiculo;
 import model.Vehiculo;
 
 import java.io.IOException;
@@ -55,31 +56,37 @@ public class AdminController {
     @FXML
     public TableView tablaRegistroVentas;
     @FXML
-    public TableColumn<Vehiculo,String> columDocumentoVentas;
+    public TableColumn<Vehiculo, String> columDocumentoVentas;
     @FXML
-    public TableColumn<Vehiculo,String> columValorVentas;
+    public TableColumn<Vehiculo,Float> columValorVentas;
     @FXML
     public TextField documentoBuscarTabla;
     @FXML
     public TextField precioBuscarTabla;
+    @FXML
+    public Button botoRefrescarDatos;
+    @FXML
+    public TableColumn<Vehiculo, EstadoVehiculo> columEstadoVentas;
+    @FXML
+    public Button botonBuscarVentas;
     ObservableList<Empleado> empleados;
+    ObservableList<Vehiculo> vehiculos;
 
     public void initialize(){
-        llenarTabla(SISTEMAINSTANCE.getTuCarro().buscarEnTabla(null,null));
-        columDocumentoVentas.setCellValueFactory(new PropertyValueFactory<>("vendedor"));
-        columValorVentas.setCellValueFactory(new PropertyValueFactory<>("precio"));
         registroEmpleado.setVisible(true);
         registroVentas.setVisible(false);
+        vehiculos=FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaVehiculos());
+        columDocumentoVentas.setCellValueFactory(new PropertyValueFactory<>("vendedor"));
+        columValorVentas.setCellValueFactory(new PropertyValueFactory<>("precio"));
+        columEstadoVentas.setCellValueFactory(new PropertyValueFactory<>("estadoVehiculo"));
+        tablaRegistroVentas.setItems(vehiculos);
+
         empleados= FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaEmpleados());
         columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         columDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
         columPass.setCellValueFactory(new PropertyValueFactory<>("passEmpleado"));
         tablaEmpleado.setItems(empleados);
 
-        tablaRegistroVentas.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> llenarCampos(newValue));
-        columDocumentoVentas.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
-        columValorVentas.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
 
     }
     public void lanzarVentanaRegistro(){
@@ -90,16 +97,11 @@ public class AdminController {
         registroEmpleado.setVisible(true);
         registroVentas.setVisible(false);
     }
-    private void llenarTabla(List<Vehiculo> vehiculo){
-        tablaRegistroVentas.setItems(FXCollections.observableArrayList(vehiculo));
-        tablaRegistroVentas.refresh();
-
+    public void refrescarDatosBoton(){
+        vehiculos.clear();
+        vehiculos.addAll(vehiculos);
     }
-    private void llenarCampos(Vehiculo vehiculo){
-        documentoBuscarTabla.setText(vehiculo.getVendedor());
-        precioBuscarTabla.setText(vehiculo.getPrecio());
 
-    }
 
     public void GuardarEmpleador() throws Exception {
         String nombre=nombreEmpleado.getText();
