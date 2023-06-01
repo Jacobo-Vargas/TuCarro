@@ -46,10 +46,6 @@ public class AppController {
             launchVentanaEmpleado();
             Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
             currentStage.hide();
-        }if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(), txtPassword.getText()) == 3)){
-            lanzarVentanaAdministrador();
-            Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
-            currentStage.hide();
         }else if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 2)){
             showConfirmatioAlert("Login","Bienvenido "+ INSTANCE.getLogin().getNombre());
             launchVentanaEmpleado();

@@ -266,6 +266,7 @@
                            <Font name="Cambria Bold" size="14.0" />
                         </font>
                      </Label>
+
                      <TextField fx:id="tfModelo" prefHeight="26.0" prefWidth="111.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      <TextField fx:id="tfCambios" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                      <TextField fx:id="tfPlaca" prefHeight="11.0" prefWidth="103.0" GridPane.columnIndex="1" />
