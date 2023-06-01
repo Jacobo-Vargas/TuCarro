@@ -38,7 +38,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </JFXButton>
-            <JFXButton fx:id="registraEmpleado1" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="RegistroVentas">
+            <JFXButton fx:id="botonRegistroVentas" onAction="#lanzarVentanaRegistro" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="RegistroVentas">
                <graphic>
                   <FontAwesomeIconView glyphName="PLUS" />
                </graphic>

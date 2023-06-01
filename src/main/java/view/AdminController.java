@@ -56,13 +56,18 @@ public class AdminController {
 
     public void initialize(){
         registroEmpleado.setVisible(true);
-        registroEmpleado.setVisible(false);
+        registroVentas.setVisible(false);
         empleados= FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaEmpleados());
         columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         columDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
         columPass.setCellValueFactory(new PropertyValueFactory<>("passEmpleado"));
         tablaEmpleado.setItems(empleados);
     }
+    public void lanzarVentanaRegistro(){
+        registroEmpleado.setVisible(false);
+        registroVentas.setVisible(true);
+    }
+
 
     public void GuardarEmpleador() throws Exception {
         String nombre=nombreEmpleado.getText();
