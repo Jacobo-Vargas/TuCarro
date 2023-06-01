@@ -30,15 +30,7 @@
             </padding>
             <children>
                 <Label prefHeight="49.0" prefWidth="163.0" text=" " />
-            <JFXButton fx:id="registraEmpleado" onAction="#lanzarVentanaRegsitroEmpleado" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Resgistrar Empleado">
-               <graphic>
-                  <FontAwesomeIconView glyphName="PLUS" />
-               </graphic>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </JFXButton>
-                <JFXButton fx:id="botonRegistroVentas" onAction="#lanzarVentanaRegistro" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Registro Ventas">
+                <JFXButton fx:id="registraEmpleado" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Registrar Empleado">
                     <graphic>
                         <FontAwesomeIconView glyphName="PLUS" />
                     </graphic>
@@ -46,6 +38,14 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </JFXButton>
+            <JFXButton fx:id="botonRegistroVentas" onAction="#lanzarVentanaRegistro" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="RegistroVentas">
+               <graphic>
+                  <FontAwesomeIconView glyphName="PLUS" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
                 <JFXButton fx:id="menuSalir" onAction="#botonVolver" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Salir">
                     <graphic>
                         <FontAwesomeIconView glyphName="SIGN_OUT" />
@@ -60,7 +60,7 @@
          <center>
             <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane fx:id="registroEmpleado" prefHeight="351.0" prefWidth="750.0">
+                  <Pane fx:id="registroVentas" prefHeight="351.0" prefWidth="750.0">
                      <children>
                         <TableView fx:id="tablaEmpleado" layoutX="409.0" layoutY="54.0" prefHeight="200.0" prefWidth="318.0">
                            <columns>
@@ -135,7 +135,7 @@
                         </JFXButton>
                      </children>
                   </Pane>
-                  <Pane fx:id="registroVentas" prefHeight="351.0" prefWidth="750.0">
+                  <Pane fx:id="registroEmpleado" prefHeight="351.0" prefWidth="750.0">
                      <children>
                         <Rectangle arcHeight="5.0" arcWidth="5.0" height="351.0" stroke="BLACK" strokeType="INSIDE" width="750.0">
                            <fill>

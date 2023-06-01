@@ -206,6 +206,7 @@ public class EmpleadoController {
     public void registerVehicle(){
         if(boxSelVehicle.getValue().equals(SelectVehicle.BUSES)){
 
+
         }
     }
 
