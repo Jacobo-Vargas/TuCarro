@@ -99,7 +99,7 @@ public class TuCarro {
 
         return validar;
     }
-    public List<Vehiculo> buscarEnTabla(String documento, String precio) {
+    public List<Vehiculo> buscarEnTabla(String documento, Float precio) {
         return listaVehiculos.stream()
                 .filter(UtilFiltrar.filtrarPorTodo(documento, precio)).
                 filter(Vehiculo -> Vehiculo.getDisponibilidad()==Disponibilidad.VENDIDO).collect(Collectors

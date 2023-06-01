@@ -44,11 +44,13 @@ public class AppController {
     public void actionBtnIngresar(ActionEvent actionEvent) throws IOException {
         if ((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(), txtPassword.getText()) == 1)) {
             showConfirmatioAlert("Login","Bienvenido "+ INSTANCE.getLogin().getNombreUSer());
+
             launchVentanaAdmin();
             Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
             currentStage.hide();
         }else if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 2)){
             showConfirmatioAlert("Login","Bienvenido "+ INSTANCE.getLogin().getNombreUSer());
+
             launchVentanaEmpleado();
             Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
             currentStage.hide();

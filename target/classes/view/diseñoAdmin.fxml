@@ -30,15 +30,7 @@
             </padding>
             <children>
                 <Label prefHeight="49.0" prefWidth="163.0" text=" " />
-                <JFXButton fx:id="registraEmpleado" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Registrar Empleado">
-                    <graphic>
-                        <FontAwesomeIconView glyphName="PLUS" />
-                    </graphic>
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </JFXButton>
-            <JFXButton fx:id="botonRegistroVentas" onAction="#lanzarVentanaRegistro" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="RegistroVentas">
+            <JFXButton fx:id="botonRegistroVentas" onAction="#lanzarVentanaRegistro" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Resgistrar Empleado">
                <graphic>
                   <FontAwesomeIconView glyphName="PLUS" />
                </graphic>
@@ -46,6 +38,14 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+                <JFXButton fx:id="registraEmpleado" onAction="#lanzarVentanaRegsitroEmpleado" prefHeight="49.0" prefWidth="133.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Registro Ventas">
+                    <graphic>
+                        <FontAwesomeIconView glyphName="PLUS" />
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
                 <JFXButton fx:id="menuSalir" onAction="#botonVolver" prefHeight="50.0" prefWidth="114.0" styleClass="menuBar" stylesheets="@../CSS/Style.css" text="Salir">
                     <graphic>
                         <FontAwesomeIconView glyphName="SIGN_OUT" />
@@ -155,13 +155,6 @@
                               </LinearGradient>
                            </fill>
                         </Rectangle>
-                        <TableView layoutX="439.0" layoutY="64.0" prefHeight="200.0" prefWidth="239.0">
-                          <columns>
-                            <TableColumn prefWidth="75.0" text="Documento" />
-                            <TableColumn prefWidth="89.0" text="Tipo Vehiculo" />
-                              <TableColumn prefWidth="74.0" text="Valor" />
-                          </columns>
-                        </TableView>
                         <GridPane layoutX="46.0" layoutY="97.0" prefHeight="157.0" prefWidth="280.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -178,21 +171,22 @@
                                     <Font name="Cambria Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="18.0" prefWidth="113.0" text="TIPO VEHICULO :" textFill="WHITE" GridPane.rowIndex="1">
+                              <Label prefHeight="18.0" prefWidth="113.0" text="PRECIO :" textFill="WHITE" GridPane.rowIndex="1">
                                  <font>
                                     <Font name="Cambria Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <Label prefHeight="18.0" prefWidth="113.0" text="VALOR :" textFill="WHITE" GridPane.rowIndex="2">
-                                 <font>
-                                    <Font name="Cambria Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="nombreEmpleado1" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" />
-                              <TextField fx:id="documentoEmpleado1" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <TextField fx:id="passEmpleado1" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="documentoBuscarTabla" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="precioBuscarTabla" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                            </children>
                         </GridPane>
+                        <Button layoutX="350.0" layoutY="283.0" mnemonicParsing="false" text="Buscar" />
+                        <TableView fx:id="tablaRegistroVentas" layoutX="439.0" layoutY="64.0" prefHeight="200.0" prefWidth="150.0">
+                          <columns>
+                            <TableColumn fx:id="columDocumentoVentas" prefWidth="75.0" text="Documento" />
+                              <TableColumn fx:id="columValorVentas" prefWidth="74.0" text="Valor" />
+                          </columns>
+                        </TableView>
                      </children>
                   </Pane>
                </children>

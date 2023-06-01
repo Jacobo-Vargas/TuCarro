@@ -132,6 +132,20 @@
                   </JFXButton>
                </children>
             </Pane>
+            <Pane fx:id="mediaPane" prefHeight="506.0" prefWidth="809.0">
+               <ImageView fitHeight="507.0" fitWidth="825.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../images/imgFondo.png" />
+                  </image>
+               </ImageView>
+               <MediaView id="fondo" fx:id="mediaView" fitHeight="450.0" fitWidth="809.0" preserveRatio="false" smooth="false" styleClass="background-Rectangle" />
+               <JFXButton fx:id="playVideo" layoutX="-1.0" layoutY="453.0" minWidth="47.0" onAction="#playVideo" prefHeight="55.0" prefWidth="809.0" styleClass="transparent-button" stylesheets="@../CSS/Style.css" text=" " textFill="#c21111f6">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor></JFXButton>
+               <FontAwesomeIconView fx:id="imagePlay" glyphName="PLAY" layoutX="387.0" layoutY="481.0" />
+               <FontAwesomeIconView fx:id="imagePause" glyphName="PAUSE" layoutX="387.0" layoutY="481.0" />
+            </Pane>
             <Pane fx:id="paneVerVehiculos" prefHeight="507.0" prefWidth="809.0">
                <Rectangle arcHeight="5.0" arcWidth="5.0" height="507.0" stroke="BLACK" strokeType="INSIDE" width="809.0">
                   <fill>
@@ -320,35 +334,21 @@
                      <TextField fx:id="tfMarca" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      <TextField fx:id="tfNumPasajeros" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                      <TextField fx:id="tfNumPuertas" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="3" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                     <ComboBox fx:id="boxDisponibilidad" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     <ComboBox fx:id="boxCombustible" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                     <ComboBox fx:id="boxAire" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                     <ComboBox fx:id="boxCamReversa" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                     <ComboBox fx:id="boxAsistencia" prefWidth="150.0" GridPane.columnIndex="3" />
+                     <ComboBox fx:id="boxTipoCamion" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                      <TextField fx:id="tfCapacidadCarga" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="11" />
-                     <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+                     <ComboBox fx:id="boxABS" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                     <ComboBox fx:id="boxSenColision" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+                     <ComboBox fx:id="boxSenTrafico" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+                     <ComboBox fx:id="boxFrenoAire" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                     <ComboBox fx:id="boxCuatroPorCuatro" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="12" />
                   </children>
                </GridPane>
                <ComboBox fx:id="boxSelVehicle" layoutX="14.0" layoutY="35.0" prefWidth="150.0" />
-            </Pane>
-            <Pane fx:id="mediaPane" prefHeight="506.0" prefWidth="809.0">
-               <ImageView fitHeight="507.0" fitWidth="825.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../images/imgFondo.png" />
-                  </image>
-               </ImageView>
-               <MediaView id="fondo" fx:id="mediaView" fitHeight="450.0" fitWidth="809.0" preserveRatio="false" smooth="false" styleClass="background-Rectangle" />
-               <JFXButton fx:id="playVideo" layoutX="-1.0" layoutY="453.0" minWidth="47.0" onAction="#playVideo" prefHeight="55.0" prefWidth="809.0" styleClass="transparent-button" stylesheets="@../CSS/Style.css" text=" " textFill="#c21111f6">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor></JFXButton>
-               <FontAwesomeIconView fx:id="imagePlay" glyphName="PLAY" layoutX="387.0" layoutY="481.0" />
-               <FontAwesomeIconView fx:id="imagePause" glyphName="PAUSE" layoutX="387.0" layoutY="481.0" />
             </Pane>
          </Pane>
       </center>

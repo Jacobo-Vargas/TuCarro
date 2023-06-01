@@ -65,21 +65,24 @@ public class AdminController {
     ObservableList<Empleado> empleados;
 
     public void initialize(){
-        llenarTabla(SISTEMAINSTANCE.getTuCarro().buscarEnTabla(null,null));
+
+        llenarTabla(SISTEMAINSTANCE.getTuCarro().buscarEnTabla(null, null));
         columDocumentoVentas.setCellValueFactory(new PropertyValueFactory<>("vendedor"));
         columValorVentas.setCellValueFactory(new PropertyValueFactory<>("precio"));
         registroEmpleado.setVisible(true);
         registroVentas.setVisible(false);
+
+
         empleados= FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaEmpleados());
         columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         columDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
         columPass.setCellValueFactory(new PropertyValueFactory<>("passEmpleado"));
         tablaEmpleado.setItems(empleados);
 
-        tablaRegistroVentas.getSelectionModel().selectedItemProperty()
-                .addListener((observable, oldValue, newValue) -> llenarCampos(newValue));
-        columDocumentoVentas.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
-        columValorVentas.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
+//        tablaRegistroVentas.getSelectionModel().selectedItemProperty()
+//                .addListener((observable, oldValue, newValue) -> llenarCampos(newValue));
+//        columDocumentoVentas.setTextFormatter(new TextFormatter<>(TextFormatterUtil::integerFormat));
+//        columValorVentas.setTextFormatter(new TextFormatter<>(TextFormatterUtil::upperCaseFormat));
 
     }
     public void lanzarVentanaRegistro(){
@@ -97,7 +100,7 @@ public class AdminController {
     }
     private void llenarCampos(Vehiculo vehiculo){
         documentoBuscarTabla.setText(vehiculo.getVendedor());
-        precioBuscarTabla.setText(vehiculo.getPrecio());
+//        precioBuscarTabla.setText(vehiculo.getPrecio());
 
     }
 

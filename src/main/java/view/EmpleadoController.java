@@ -16,10 +16,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
-import model.AireAcondicionado;
-import model.Cliente;
-import model.SelectVehicle;
-import model.TuCarro;
+import model.*;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -47,41 +44,63 @@ public class EmpleadoController {
     @FXML
     public Rectangle rectangleFondo;
     @FXML
-    public JFXButton btnLimpiar;
+    private ComboBox<SelectVehicle> boxSelVehicle;
     @FXML
-    public JFXButton btnGuardar;
+    private ComboBox<Disponibilidad> boxDisponibilidad;
     @FXML
-    public TextField tfCapacidadCarga;
+    private ComboBox<CombustibleEnum> boxCombustible;
     @FXML
-    public TextField tfNumPuertas;
+    private ComboBox<AireAcondicionado> boxAire;
     @FXML
-    public TextField tfNumPasajeros;
+    private ComboBox<CamaraReversa> boxCamReversa;
     @FXML
-    public TextField tfMarca;
+    private ComboBox<AsistenciaPermanencia> boxAsistencia;
     @FXML
-    public TextField tfSalEmergencia;
+    private ComboBox<TipoCamion> boxTipoCamion;
     @FXML
-    public TextField tfNumEjes;
+    private ComboBox<ABS> boxABS;
     @FXML
-    public TextField tfVelCrucero;
+    private ComboBox<SensorColision> boxSenColision;
     @FXML
-    public TextField tfBolsasAire;
+    private ComboBox<SensorTrafico> boxSenTrafico;
     @FXML
-    public TextField tfCapacidadMaletero;
+    private ComboBox<FrenoAire> boxFrenoAire;
     @FXML
-    public TextField tfPrecio;
+    private ComboBox<CuatroPorCuatro> boxCuatroPorCuatro;
     @FXML
-    public TextField tfCilindraje;
+    private JFXButton btnLimpiar;
     @FXML
-    public TextField tfVelMaxima;
+    private JFXButton btnGuardar;
     @FXML
-    public TextField tfPlaca;
+    private TextField tfCapacidadCarga;
     @FXML
-    public TextField tfCambios;
+    private TextField tfNumPuertas;
     @FXML
-    public TextField tfModelo;
+    private TextField tfNumPasajeros;
     @FXML
-    public ComboBox<SelectVehicle> boxSelVehicle;
+    private TextField tfMarca;
+    @FXML
+    private TextField tfSalEmergencia;
+    @FXML
+    private TextField tfNumEjes;
+    @FXML
+    private TextField tfVelCrucero;
+    @FXML
+    private TextField tfBolsasAire;
+    @FXML
+    private TextField tfCapacidadMaletero;
+    @FXML
+    private TextField tfPrecio;
+    @FXML
+    private TextField tfCilindraje;
+    @FXML
+    private TextField tfVelMaxima;
+    @FXML
+    private TextField tfPlaca;
+    @FXML
+    private TextField tfCambios;
+    @FXML
+    private TextField tfModelo;
     @FXML
     private Pane mediaPane;
     @FXML
@@ -105,7 +124,29 @@ public class EmpleadoController {
     @FXML
     ObservableList<SelectVehicle> listaVehiculoSelect;
     @FXML
-    ObservableList<AireAcondicionado> listAireAcondicionado;
+    ObservableList<Disponibilidad> listDisponibilidad;
+    @FXML
+    ObservableList<CombustibleEnum> listCombustible;
+    @FXML
+    ObservableList<AireAcondicionado>listAireAcondicionado;
+    @FXML
+    ObservableList<CamaraReversa>listCamReversa;
+    @FXML
+    ObservableList<AsistenciaPermanencia> listAsistencia;
+    @FXML
+    ObservableList<TipoCamion>  listTipoCamion;
+    @FXML
+    ObservableList<ABS> listABS;
+    @FXML
+    ObservableList<SensorColision> listSensorCol;
+    @FXML
+    ObservableList<SensorTrafico> listSensorTra;
+    @FXML
+    ObservableList<FrenoAire> listFrenoAire;
+    @FXML
+    ObservableList<CuatroPorCuatro> listCuatroPorCuatro;
+
+
 
     @FXML
     public void initialize() {
@@ -135,6 +176,40 @@ public class EmpleadoController {
 
         listaVehiculoSelect = FXCollections.observableArrayList(SelectVehicle.values());
         boxSelVehicle.setItems(listaVehiculoSelect);
+
+        listABS = FXCollections.observableArrayList(ABS.values());
+        boxABS.setItems(listABS);
+
+        listDisponibilidad = FXCollections.observableArrayList(Disponibilidad.values());
+        boxDisponibilidad.setItems(listDisponibilidad);
+
+        listCombustible = FXCollections.observableArrayList(CombustibleEnum.values());
+        boxCombustible.setItems(listCombustible);
+
+        listAireAcondicionado = FXCollections.observableArrayList(AireAcondicionado.values());
+        boxAire.setItems(listAireAcondicionado);
+
+        listCamReversa = FXCollections.observableArrayList(CamaraReversa.values());
+        boxCamReversa.setItems(listCamReversa);
+
+        listAsistencia = FXCollections.observableArrayList(AsistenciaPermanencia.values());
+        boxAsistencia.setItems(listAsistencia);
+
+        listTipoCamion= FXCollections.observableArrayList(TipoCamion.values());
+        boxTipoCamion.setItems(listTipoCamion);
+
+        listSensorCol = FXCollections.observableArrayList(SensorColision.values());
+        boxSenColision.setItems(listSensorCol);
+
+        listSensorTra = FXCollections.observableArrayList(SensorTrafico.values());
+        boxSenTrafico.setItems(listSensorTra);
+
+        listFrenoAire = FXCollections.observableArrayList(FrenoAire.values());
+        boxFrenoAire.setItems(listFrenoAire);
+
+        listCuatroPorCuatro = FXCollections.observableArrayList(CuatroPorCuatro.values());
+        boxCuatroPorCuatro.setItems(listCuatroPorCuatro);
+
     }
 
 
@@ -262,4 +337,5 @@ public class EmpleadoController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
 }
