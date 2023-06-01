@@ -11,10 +11,11 @@ public class TuCarro {
     public List<Empleado> listaEmpleados;
     public List<Cliente>  listaClientes;
 
-    public TuCarro() {
+    public TuCarro(){
         listaVehiculos = new ArrayList<>();
         listaEmpleados = new ArrayList<>();
         listaClientes = new ArrayList<>();
+
     }
 
 //    public void registrarVehiculo(Vehiculo vehiculo) throws Exception {

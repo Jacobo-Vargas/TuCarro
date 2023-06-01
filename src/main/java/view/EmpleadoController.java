@@ -1,6 +1,7 @@
 package view;
 
 import com.jfoenix.controls.JFXButton;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import model.Cliente;
 import model.TuCarro;
@@ -33,26 +35,25 @@ public class EmpleadoController {
     @FXML
     public AnchorPane anchorpane;
     @FXML
-    public JFXButton btnVerVehiculos;
-    @FXML
     public Pane paneVerVehiculos;
     @FXML
     public Pane paneRegistrarClientes;
+    @FXML
+    public FontAwesomeIconView imagePlay;
+    @FXML
+    public FontAwesomeIconView imagePause;
+    @FXML
+    public Rectangle rectangleFondo;
+    @FXML
+    public JFXButton btnLimpiar;
+    @FXML
+    public JFXButton btnGuardar;
     @FXML
     private Pane mediaPane;
     @FXML
     private MediaView mediaView;
     @FXML
     private MediaPlayer mediaPlayer;
-    @FXML
-    private AnchorPane anchorPane;
-    @FXML
-    private HBox topHBox;
-    @FXML
-    private Label labelVehiculos;
-    @FXML
-    private JFXButton btnRegistrarCliente;
-
     @FXML
     private JFXButton playVideo;
     @FXML
@@ -67,10 +68,18 @@ public class EmpleadoController {
     private boolean isReproduciendo = false;
     @FXML
     ObservableList<Cliente> clientes;
+
+
+
+
+
     @FXML
     public void initialize() {
         clientes = FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaClientes());
         mediaPane.setVisible(true);
+        imagePause.setVisible(false);
+        paneVerVehiculos.setVisible(false);
+        paneRegistrarClientes.setVisible(false);
         colDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         tblClientes.setItems(clientes);
@@ -114,8 +123,58 @@ public class EmpleadoController {
 
 
     @FXML
+    public void actionLimpiarDatos(ActionEvent e){
+            txtNombreCliente.clear();
+            txtDocumentoCliente.clear();
+
+    }
+
+
+    @FXML
+    public void playVideo() {
+        if (isReproduciendo) {
+            mediaPlayer.pause();
+            playVideo.setText(" ");
+            imagePlay.setVisible(true);
+            imagePause.setVisible(false);
+        } else {
+            mediaPlayer.play();
+            playVideo.setText(" ");
+            imagePause.setVisible(true);
+            imagePlay.setVisible(false);
+        }
+
+        isReproduciendo = !isReproduciendo;
+    }
+    @FXML
+    private void launchVentanaLogin() throws IOException {
+        MainApp mainApp = new MainApp();
+        Stage stage = new Stage();
+        mainApp.start(stage);
+    }
+
+    @FXML
+    public void actionVehiculos(ActionEvent actionEvent) {
+        paneRegistrarClientes.setVisible(false);
+        paneVerVehiculos.setVisible(true);
+        mediaPane.setVisible(false);
+    }
+    @FXML
+    public void actionRegistrarClientes(ActionEvent actionEvent) {
+        paneVerVehiculos.setVisible(false);
+        mediaPane.setVisible(false);
+        paneRegistrarClientes.setVisible(true);
+    }
+    @FXML
+    public void actionSalir(ActionEvent actionEvent) throws IOException {
+        launchVentanaLogin();
+        Stage currentStage = (Stage) menuSalir.getScene().getWindow();
+        currentStage.hide();
+    }
+
+    @FXML
     private void showErrorAlert(String title, String message) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(message);
@@ -130,12 +189,13 @@ public class EmpleadoController {
         alert.setContentText(message);
         alert.showAndWait();
     }
-
     @FXML
-    public void actionLimpiarDatos(ActionEvent e){
-            txtNombreCliente.clear();
-            txtDocumentoCliente.clear();
-
+    private void showConfirmatioAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
     @FXML
     private void showInformationAlert(String title, String message) {
@@ -144,54 +204,5 @@ public class EmpleadoController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
-    }
-
-    @FXML
-    public void playVideo() {
-        if (isReproduciendo) {
-            mediaPlayer.pause();
-            playVideo.setText("Play");
-        } else {
-            mediaPlayer.play();
-            playVideo.setText("Pause");
-        }
-
-        isReproduciendo = !isReproduciendo;
-    }
-    @FXML
-    public void verVehiculos(ActionEvent e) {
-        paneRegistrarClientes.setVisible(false);
-        paneVerVehiculos.setVisible(true);
-        mediaPane.setVisible(false);
-    }
-    @FXML
-    public void actionVehiculos(ActionEvent actionEvent) {
-        paneRegistrarClientes.setVisible(false);
-        paneVerVehiculos.setVisible(true);
-        mediaPane.setVisible(false);
-    }
-    @FXML
-    public void actionRegistrarClientes(ActionEvent actionEvent) {
-        paneVerVehiculos.setVisible(true);
-        mediaPane.setVisible(false);
-        paneRegistrarClientes.setVisible(true);
-
-    }
-    @FXML
-    private void launchVentanaLogin() throws IOException {
-        MainApp mainApp = new MainApp();
-        Stage stage = new Stage();
-        mainApp.start(stage);
-    }
-
-    @FXML
-    public void actionSalir(ActionEvent actionEvent) throws IOException {
-        launchVentanaLogin();
-        Stage currentStage = (Stage) menuSalir.getScene().getWindow();
-        currentStage.hide();
-    }
-
-    public void botonCerrar(ActionEvent actionEvent) {
-        MainApp.launch();
     }
 }

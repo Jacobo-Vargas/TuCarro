@@ -34,3 +34,8 @@
 .transparent-button {
     -fx-background-color: transparent;
 }
+.background-Rectangle{
+    -fx-background-image: url('/images/imgFondo.png');
+    -fx-background-repeat: no-repeat;
+    -fx-background-size: cover;
+}
