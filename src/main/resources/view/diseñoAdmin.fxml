@@ -58,10 +58,84 @@
         </HBox>
         <BorderPane layoutY="48.0" prefHeight="351.0" prefWidth="750.0">
          <center>
-            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <Pane prefHeight="338.0" prefWidth="743.0" BorderPane.alignment="CENTER">
                <children>
+                  <Pane fx:id="registroEmpleado" prefHeight="351.0" prefWidth="750.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" height="351.0" layoutX="1.0" stroke="BLACK" strokeType="INSIDE" width="750.0">
+                           <fill>
+                              <LinearGradient startX="1.0" startY="0.20853080568720372">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.283016562461853" green="0.29315099120140076" blue="0.30263158679008484" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.42105263471603394" green="0.42105263471603394" blue="0.42105263471603394" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Rectangle>
+                        <GridPane layoutX="46.0" layoutY="97.0" prefHeight="157.0" prefWidth="280.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="113.0" text="DOCUMENTO :" textFill="WHITE">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="18.0" prefWidth="113.0" text="PRECIO :" textFill="WHITE" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Cambria Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="documentoBuscarTabla" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" />
+                              <TextField fx:id="precioBuscarTabla" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="botoRefrescarDatos" mnemonicParsing="false" onAction="#refrescarDatosBoton" text="Actulizar" GridPane.rowIndex="2" />
+                              <Button fx:id="botonBuscarVentas" mnemonicParsing="false" text="Buscar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <TableView fx:id="tablaRegistroVentas" layoutX="439.0" layoutY="64.0" prefHeight="200.0" prefWidth="219.0">
+                          <columns>
+                            <TableColumn fx:id="columDocumentoVentas" prefWidth="75.0" text="Documento" />
+                              <TableColumn fx:id="columValorVentas" prefWidth="74.0" text="Valor" />
+                              <TableColumn fx:id="columEstadoVentas" prefWidth="75.0" text="Estado" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
                   <Pane fx:id="registroVentas" prefHeight="351.0" prefWidth="750.0">
                      <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" height="351.0" stroke="BLACK" strokeType="INSIDE" width="750.0">
+                           <fill>
+                              <LinearGradient startX="1.0" startY="0.20853080568720372">
+                                 <stops>
+                                    <Stop>
+                                       <color>
+                                          <Color red="0.283016562461853" green="0.29315099120140076" blue="0.30263158679008484" />
+                                       </color>
+                                    </Stop>
+                                    <Stop offset="1.0">
+                                       <color>
+                                          <Color red="0.42105263471603394" green="0.42105263471603394" blue="0.42105263471603394" />
+                                       </color>
+                                    </Stop>
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Rectangle>
                         <TableView fx:id="tablaEmpleado" layoutX="409.0" layoutY="54.0" prefHeight="200.0" prefWidth="318.0">
                            <columns>
                               <TableColumn fx:id="columNombre" prefWidth="126.0" text="Nombre" />
@@ -133,62 +207,6 @@
                               <Font name="System Bold" size="12.0" />
                            </font>
                         </JFXButton>
-                     </children>
-                  </Pane>
-                  <Pane fx:id="registroEmpleado" prefHeight="351.0" prefWidth="750.0">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" height="351.0" layoutX="-21.0" stroke="BLACK" strokeType="INSIDE" width="750.0">
-                           <fill>
-                              <LinearGradient startX="1.0" startY="0.20853080568720372">
-                                 <stops>
-                                    <Stop>
-                                       <color>
-                                          <Color red="0.283016562461853" green="0.29315099120140076" blue="0.30263158679008484" />
-                                       </color>
-                                    </Stop>
-                                    <Stop offset="1.0">
-                                       <color>
-                                          <Color red="0.42105263471603394" green="0.42105263471603394" blue="0.42105263471603394" />
-                                       </color>
-                                    </Stop>
-                                 </stops>
-                              </LinearGradient>
-                           </fill>
-                        </Rectangle>
-                        <GridPane layoutX="46.0" layoutY="97.0" prefHeight="157.0" prefWidth="280.0">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <Label prefHeight="18.0" prefWidth="113.0" text="DOCUMENTO :" textFill="WHITE">
-                                 <font>
-                                    <Font name="Cambria Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label prefHeight="18.0" prefWidth="113.0" text="PRECIO :" textFill="WHITE" GridPane.rowIndex="1">
-                                 <font>
-                                    <Font name="Cambria Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <TextField fx:id="documentoBuscarTabla" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" />
-                              <TextField fx:id="precioBuscarTabla" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <Button fx:id="botoRefrescarDatos" mnemonicParsing="false" onAction="#refrescarDatosBoton" text="Actulizar" GridPane.rowIndex="2" />
-                              <Button fx:id="botonBuscarVentas" mnemonicParsing="false" text="Buscar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                           </children>
-                        </GridPane>
-                        <TableView fx:id="tablaRegistroVentas" layoutX="439.0" layoutY="64.0" prefHeight="200.0" prefWidth="219.0">
-                          <columns>
-                            <TableColumn fx:id="columDocumentoVentas" prefWidth="75.0" text="Documento" />
-                              <TableColumn fx:id="columValorVentas" prefWidth="74.0" text="Valor" />
-                              <TableColumn fx:id="columEstadoVentas" prefWidth="75.0" text="Estado" />
-                          </columns>
-                        </TableView>
                      </children>
                   </Pane>
                </children>
