@@ -137,7 +137,7 @@
                   </Pane>
                   <Pane fx:id="registroEmpleado" prefHeight="351.0" prefWidth="750.0">
                      <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" height="351.0" stroke="BLACK" strokeType="INSIDE" width="750.0">
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" height="351.0" layoutX="-21.0" stroke="BLACK" strokeType="INSIDE" width="750.0">
                            <fill>
                               <LinearGradient startX="1.0" startY="0.20853080568720372">
                                  <stops>
@@ -178,13 +178,15 @@
                               </Label>
                               <TextField fx:id="documentoBuscarTabla" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" />
                               <TextField fx:id="precioBuscarTabla" prefHeight="26.0" prefWidth="153.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="botoRefrescarDatos" mnemonicParsing="false" onAction="#refrescarDatosBoton" text="Actulizar" GridPane.rowIndex="2" />
+                              <Button fx:id="botonBuscarVentas" mnemonicParsing="false" text="Buscar" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
-                        <Button layoutX="350.0" layoutY="283.0" mnemonicParsing="false" text="Buscar" />
-                        <TableView fx:id="tablaRegistroVentas" layoutX="439.0" layoutY="64.0" prefHeight="200.0" prefWidth="150.0">
+                        <TableView fx:id="tablaRegistroVentas" layoutX="439.0" layoutY="64.0" prefHeight="200.0" prefWidth="219.0">
                           <columns>
                             <TableColumn fx:id="columDocumentoVentas" prefWidth="75.0" text="Documento" />
                               <TableColumn fx:id="columValorVentas" prefWidth="74.0" text="Valor" />
+                              <TableColumn fx:id="columEstadoVentas" prefWidth="75.0" text="Estado" />
                           </columns>
                         </TableView>
                      </children>
