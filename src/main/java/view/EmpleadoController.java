@@ -16,6 +16,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
+import model.AireAcondicionado;
 import model.Cliente;
 import model.SelectVehicle;
 import model.TuCarro;
@@ -103,7 +104,8 @@ public class EmpleadoController {
     ObservableList<Cliente> clientes;
     @FXML
     ObservableList<SelectVehicle> listaVehiculoSelect;
-
+    @FXML
+    ObservableList<AireAcondicionado> listAireAcondicionado;
 
     @FXML
     public void initialize() {
@@ -201,6 +203,13 @@ public class EmpleadoController {
     }
 
     @FXML
+    public void registerVehicle(){
+        if(boxSelVehicle.getValue().equals(SelectVehicle.BUSES)){
+
+        }
+    }
+
+    @FXML
     public void actionRegistrarClientes(ActionEvent actionEvent) {
         paneVerVehiculos.setVisible(false);
         mediaPane.setVisible(false);
@@ -216,6 +225,7 @@ public class EmpleadoController {
         currentStage.hide();
         mediaPlayer.stop();
     }
+
 
     @FXML
     private void showErrorAlert(String title, String message) {
