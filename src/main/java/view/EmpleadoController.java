@@ -20,6 +20,7 @@ import model.*;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 import static model.SistemaInstance.SISTEMAINSTANCE;
@@ -43,6 +44,10 @@ public class EmpleadoController {
     public FontAwesomeIconView imagePause;
     @FXML
     public Rectangle rectangleFondo;
+    @FXML
+    private Pane paneAtributos;
+    @FXML
+    private ComboBox<EstadoVehiculo> boxEstado;
     @FXML
     private ComboBox<SelectVehicle> boxSelVehicle;
     @FXML
@@ -122,8 +127,6 @@ public class EmpleadoController {
     @FXML
     ObservableList<Cliente> clientes;
     @FXML
-    ObservableList<SelectVehicle> listaVehiculoSelect;
-    @FXML
     ObservableList<Disponibilidad> listDisponibilidad;
     @FXML
     ObservableList<CombustibleEnum> listCombustible;
@@ -145,12 +148,13 @@ public class EmpleadoController {
     ObservableList<FrenoAire> listFrenoAire;
     @FXML
     ObservableList<CuatroPorCuatro> listCuatroPorCuatro;
+    @FXML
+    ObservableList<EstadoVehiculo> listEstadoVehiculo;
 
 
 
     @FXML
     public void initialize() {
-
         mediaPane.setVisible(true);
         imagePause.setVisible(false);
         paneVerVehiculos.setVisible(false);
@@ -174,8 +178,7 @@ public class EmpleadoController {
             mediaPane.getChildren().add(mediaView);
         }
 
-        listaVehiculoSelect = FXCollections.observableArrayList(SelectVehicle.values());
-        boxSelVehicle.setItems(listaVehiculoSelect);
+        boxSelVehicle.setItems(FXCollections.observableArrayList(SelectVehicle.values()));
 
         listABS = FXCollections.observableArrayList(ABS.values());
         boxABS.setItems(listABS);
@@ -210,6 +213,8 @@ public class EmpleadoController {
         listCuatroPorCuatro = FXCollections.observableArrayList(CuatroPorCuatro.values());
         boxCuatroPorCuatro.setItems(listCuatroPorCuatro);
 
+        listEstadoVehiculo = FXCollections.observableArrayList(EstadoVehiculo.values());
+        boxEstado.setItems(listEstadoVehiculo);
     }
 
 
@@ -275,14 +280,35 @@ public class EmpleadoController {
         paneVerVehiculos.setVisible(true);
         mediaPane.setVisible(false);
         mediaPlayer.stop();
+        registerVehicle();
     }
-
     @FXML
     public void registerVehicle(){
-        if(boxSelVehicle.getValue().equals(SelectVehicle.BUSES)){
-
-
-        }
+        boxSelVehicle.valueProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                // Realiza las actualizaciones correspondientes según la selección
+                if (newValue.equals(SelectVehicle.BUSES)) {
+                    boxCuatroPorCuatro.setDisable(true);
+                    boxFrenoAire.setDisable(true);
+                    tfVelCrucero.setDisable(true);
+                    boxSenTrafico.setDisable(true);
+                    boxSenColision.setDisable(true);
+                    tfCapacidadCarga.setDisable(true);
+                    boxAsistencia.setDisable(true);
+                }
+                if (newValue.equals(SelectVehicle.CAMIONES)) {
+                    boxCuatroPorCuatro.setDisable(false);
+                    boxFrenoAire.setDisable(false);
+                    tfVelCrucero.setDisable(false);
+                    boxSenTrafico.setDisable(false);
+                    boxSenColision.setDisable(false);
+                    tfCapacidadCarga.setDisable(false);
+                    boxAsistencia.setDisable(false);
+                    boxCuatroPorCuatro.setDisable(true);
+                    boxFrenoAire.setDisable(true);
+                }
+            }
+        });
     }
 
     @FXML

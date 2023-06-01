@@ -10,12 +10,13 @@ public class TuCarro {
     private List<Vehiculo> listaVehiculos;
     public List<Empleado> listaEmpleados;
     public List<Cliente>  listaClientes;
-    private SelectVehicle selectVehicle;
+
 
     public TuCarro(){
         listaVehiculos = new ArrayList<>();
         listaEmpleados = new ArrayList<>();
         listaClientes = new ArrayList<>();
+
 
     }
 
@@ -140,7 +141,4 @@ public class TuCarro {
         this.listaClientes = listaClientes;
     }
 
-    public SelectVehicle getSelectVehicle() {
-        return selectVehicle;
-    }
 }
