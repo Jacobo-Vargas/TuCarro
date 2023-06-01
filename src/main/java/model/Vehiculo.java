@@ -11,12 +11,12 @@ public class Vehiculo {
     private final float velocidadMaxima;
     private final int cilindraje;
     private Combustible combustible;
-    private float precio;
+    private String precio;
     private final String vendedor;
     private final Disponibilidad disponibilidad;
 
 
-    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor, Disponibilidad disponibilidad) {
+    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, String precio,String vendedor, Disponibilidad disponibilidad) {
         this.placa = placa;
         this.estadoVehiculo = estadoVehiculo;
         this.marca = marca;
@@ -29,7 +29,7 @@ public class Vehiculo {
         this.vendedor = vendedor;
         this.disponibilidad = disponibilidad;
     }
-    public static Vehiculo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio, String vendedor,Disponibilidad disponibilidad) throws Exception {
+    public static Vehiculo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, String precio, String vendedor,Disponibilidad disponibilidad) throws Exception {
 
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
@@ -56,7 +56,7 @@ public class Vehiculo {
         if (combustible == null){
             throw new Exception("Debe proporcionar un tipo de combustible");
         }
-        if(precio <= 0 ){
+        if(precio == null ){
             throw new Exception("El precio debe ser mayor a cero.");
         }
         if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
@@ -66,14 +66,6 @@ public class Vehiculo {
             throw new Exception("Disponibilidad requerida");
         }
         return new Vehiculo(placa,estadoVehiculo,marca,modelo,cambios,velocidadMaxima,cilindraje,combustible,precio,vendedor,disponibilidad);
-    }
-
-    public void setPrecio(float precio) {
-        this.precio = precio;
-    }
-
-    public float getPrecio() {
-        return precio;
     }
 
     public String getPlaca() {
@@ -96,16 +88,13 @@ public class Vehiculo {
         return modelo;
     }
 
-
     public int getCambios() {
         return cambios;
     }
 
-
     public float getVelocidadMaxima() {
         return velocidadMaxima;
     }
-
 
     public int getCilindraje() {
         return cilindraje;
@@ -117,6 +106,14 @@ public class Vehiculo {
 
     public void setCombustible(Combustible combustible) {
         this.combustible = combustible;
+    }
+
+    public String getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
 
     public String getVendedor() {

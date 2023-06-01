@@ -12,4 +12,8 @@ public enum SistemaInstance {
     public TuCarro getSistema(){
         return tuCarro;
     }
+
+    public TuCarro getTuCarro() {
+        return tuCarro;
+    }
 }

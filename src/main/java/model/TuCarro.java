@@ -48,18 +48,30 @@ public class TuCarro {
         }
     }
 
-    public void registrarEmpleado(Empleado empleado){
-        boolean validar = true;
-        for (Empleado e : listaEmpleados) {
-            if (e.getDocumento().equals(empleado.getDocumento())) {
-                JOptionPane.showMessageDialog(null,"El documento ingresado ya existe.");
-                validar = false;
-                break;
+    public boolean registrarEmpleado(Empleado empleado){
+        boolean validar = false;
+        try {
+            validar = true;
+            for (Empleado e : listaEmpleados) {
+                if (e.getDocumento().equals(empleado.getDocumento())) {
+                    validar = false;
+                    break;
+                }
             }
+            if (empleado.getDocumento().isEmpty() || empleado.getDocumento().isBlank() || empleado.getDocumento().length() != 10) {
+                validar = false;
+            }
+            if (validar) {
+                listaEmpleados.add(empleado);
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            validar = false;
         }
-        if(validar){
-            listaEmpleados.add(empleado);
-        }
+
+        return validar;
 
     }
     public boolean registrarCliente(Cliente cliente) {
@@ -86,6 +98,12 @@ public class TuCarro {
         }
 
         return validar;
+    }
+    public List<Vehiculo> buscarEnTabla(String documento, String precio) {
+        return listaVehiculos.stream()
+                .filter(UtilFiltrar.filtrarPorTodo(documento, precio)).
+                filter(Vehiculo -> Vehiculo.getDisponibilidad()==Disponibilidad.VENDIDO).collect(Collectors
+                        .toUnmodifiableList());
     }
 
     public List<Vehiculo> ordenarListaCarroPlaca (){//metodo para ordenar por numero de placa
