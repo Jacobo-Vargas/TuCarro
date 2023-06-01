@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Sedan extends Vehiculo{
     private int numPasajeros;
     private int numPuertas;
@@ -13,8 +15,8 @@ public class Sedan extends Vehiculo{
     private SensorTrafico sensorTrafico;
     private AsistenciaPermanencia asistenciaPermanencia;
 
-    public Sedan(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible);
+    public Sedan(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia) {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;
@@ -26,6 +28,77 @@ public class Sedan extends Vehiculo{
         this.sensorColision = sensorColision;
         this.sensorTrafico = sensorTrafico;
         this.asistenciaPermanencia = asistenciaPermanencia;
+    }
+    public static Sedan of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje,
+                                Combustible combustible,float precio, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
+                                float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCrucero, SensorColision sensorColision,
+                                SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia, CuatroPorCuatro cuatroPorCuatro) throws Exception {
+
+        if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
+            throw new Exception("Placa vehiculo");
+        }
+        if (estadoVehiculo == null) {
+            throw  new Exception("Estado vehiculo");
+        }
+        if (Objects.requireNonNull(marca,"la marca no puede estar vacia").isEmpty()) {
+            throw new Exception("la marca no pued estar vacia");
+        }
+
+        if (modelo < 1980 || modelo > 2023) {
+            throw new Exception("verifique el modelo.");
+        }
+        if (cambios <= 3) {
+            throw new Exception("El numero de cambios no puede ser menor a cero.");
+        }
+        if (velocidadMaxima <= 0){
+            throw new Exception("La velocidad no puede ser menor o igual a cero.");
+        }
+        if (cilindraje <= 0){
+            throw new Exception("El cilindraje no puede ser menos o igual a cero.");
+        }
+        if (combustible == null){
+            throw new Exception("Debe proporcionar un tipo de combustible");
+        }
+        if(precio <= 0 ){
+            throw new Exception("El precio debe ser mayor a cero.");
+        }
+
+        if(numPasajeros <=0 ){
+            throw new Exception("Numero de pasajeros debe ser mayor a cero.");
+        }
+        if(numPuertas <=0 ){
+            throw new Exception("Numero de puertas debe ser mayor a cero.");
+        }
+        if (aire == null) {
+            throw new Exception("La información del aire acondicionado es requerida.");
+        }
+        if(camReversa == null){
+            throw new Exception("Indique si tiene camara de reversa.");
+        }
+        if(capacidadMaletero < 1){
+            throw new Exception("Indique la capacidad del maletero.");
+        }
+        if(numBolsasAire < 1){
+            throw new Exception("Indique el numero de bolsas de aire.");
+        }
+        if(abs == null){
+            throw new Exception("Indique si tiene sistemas de ABS.");
+        }
+        if(velCrucero == null){
+            throw new Exception("Indique si tiene velocidad crucero.");
+        }
+        if(sensorColision == null){
+            throw new Exception("Indique si tiene sensor de colision.");
+        }
+        if(sensorTrafico == null){
+            throw new Exception("Indique si tiene sensor de trafico.");
+        }
+        if(asistenciaPermanencia == null){
+            throw new Exception("Indique si tiene asistencia de permanencia.");
+        }
+
+        return new Sedan(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilindraje,combustible,precio,numPasajeros, numPuertas,
+                aire,camReversa, capacidadMaletero,numBolsasAire, abs,velCrucero,sensorColision, sensorTrafico, asistenciaPermanencia);
     }
 
     public int getNumPasajeros() {
