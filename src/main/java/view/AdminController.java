@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import model.Empleado;
 
@@ -45,16 +46,28 @@ public class AdminController {
     public Button botonRestablecer;
     @FXML
     public JFXButton menuSalir;
+    @FXML
+    public Pane registroVentas;
+    @FXML
+    public Pane registroEmpleado;
+    @FXML
+    public JFXButton registraEmpleado;
     ObservableList<Empleado> empleados;
 
     public void initialize(){
-
+        registroEmpleado.setVisible(true);
+        registroVentas.setVisible(false);
         empleados= FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaEmpleados());
         columNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         columDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
         columPass.setCellValueFactory(new PropertyValueFactory<>("passEmpleado"));
         tablaEmpleado.setItems(empleados);
     }
+    public void lanzarVentanaRegistro(){
+        registroEmpleado.setVisible(false);
+        registroVentas.setVisible(true);
+    }
+
 
     public void GuardarEmpleador() throws Exception {
         String nombre=nombreEmpleado.getText();
