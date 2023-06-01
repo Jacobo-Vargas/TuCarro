@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Camionetas extends Vehiculo{
     private int numPasajeros;
     private final int numPuertas;
@@ -29,10 +31,39 @@ public class Camionetas extends Vehiculo{
         this.asistenciaPermanencia = asistenciaPermanencia;
         this.cuatroPorCuatro = cuatroPorCuatro;
     }
-    public static Camionetas of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje,
+    public static Camionetas of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje,
                                 Combustible combustible,float precio, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
                                 float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCrucero, SensorColision sensorColision,
                                 SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia, CuatroPorCuatro cuatroPorCuatro) throws Exception {
+        if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
+            throw new Exception("Placa vehiculo");
+        }
+        if (estadoVehiculo == null) {
+            throw  new Exception("Estado vehiculo");
+        }
+        if (Objects.requireNonNull(marca,"la marca no puede estar vacia").isEmpty()) {
+            throw new Exception("la marca no pued estar vacia");
+        }
+
+        if (modelo < 1980 || modelo > 2023) {
+            throw new Exception("verifique el modelo.");
+        }
+        if (cambios <= 3) {
+            throw new Exception("El numero de cambios no puede ser menor a cero.");
+        }
+        if (velocidadMaxima <= 0){
+            throw new Exception("La velocidad no puede ser menor o igual a cero.");
+        }
+        if (cilindraje <= 0){
+            throw new Exception("El cilindraje no puede ser menos o igual a cero.");
+        }
+        if (combustible == null){
+            throw new Exception("Debe proporcionar un tipo de combustible");
+        }
+        if(precio <= 0 ){
+            throw new Exception("El precio debe ser mayor a cero.");
+        }
+
         if(numPasajeros <=0 ){
             throw new Exception("Numero de pasajeros debe ser mayor a cero.");
         }
@@ -70,10 +101,8 @@ public class Camionetas extends Vehiculo{
             throw new Exception("Indique si es 4X4.");
         }
 
-        return new Camionetas(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilinbraje,combustible,precio,numPasajeros, numPuertas,
+        return new Camionetas(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilindraje,combustible,precio,numPasajeros, numPuertas,
                 aire,camReversa, capacidadMaletero,numBolsasAire, abs,velCrucero,sensorColision, sensorTrafico, asistenciaPermanencia,cuatroPorCuatro);
-
-
     }
 
     public int getNumPasajeros() {

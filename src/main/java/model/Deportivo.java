@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Deportivo extends Vehiculo{
     private int numPasajeros;
     private int numPuertas;
@@ -8,9 +10,9 @@ public class Deportivo extends Vehiculo{
     private float timeCienKM;
 
     public Deportivo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
-                     float velocidadMaxima, int cilinbraje, Combustible combustible,float precio, int numPasajeros,
+                     float velocidadMaxima, int cilindraje, Combustible combustible,float precio, int numPasajeros,
                      int numPuertas, float caballosFuerza, int numBolsasAire, float timeCienKM) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible,precio);
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible,precio);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.caballosFuerza = caballosFuerza;
@@ -18,8 +20,37 @@ public class Deportivo extends Vehiculo{
         this.timeCienKM = timeCienKM;
     }
     public static Deportivo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
-                               float velocidadMaxima, int cilinbraje, Combustible combustible,float precio, int numPasajeros,
+                               float velocidadMaxima, int cilindraje, Combustible combustible,float precio, int numPasajeros,
                                int numPuertas, float caballosFuerza, int numBolsasAire, float timeCienKM) throws Exception {
+        if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
+            throw new Exception("Placa vehiculo");
+        }
+        if (estadoVehiculo == null) {
+            throw  new Exception("Estado vehiculo");
+        }
+        if (Objects.requireNonNull(marca,"la marca no puede estar vacia").isEmpty()) {
+            throw new Exception("la marca no pued estar vacia");
+        }
+
+        if (modelo < 1980 || modelo > 2023) {
+            throw new Exception("verifique el modelo.");
+        }
+        if (cambios <= 3) {
+            throw new Exception("El numero de cambios no puede ser menor a cero.");
+        }
+        if (velocidadMaxima <= 0){
+            throw new Exception("La velocidad no puede ser menor o igual a cero.");
+        }
+        if (cilindraje <= 0){
+            throw new Exception("El cilindraje no puede ser menos o igual a cero.");
+        }
+        if (combustible == null){
+            throw new Exception("Debe proporcionar un tipo de combustible");
+        }
+        if(precio <= 0 ){
+            throw new Exception("El precio debe ser mayor a cero.");
+        }
+
         if(numPasajeros <= 0){
             throw new Exception("El numero de pasajeros es requerido");
         }
@@ -36,7 +67,7 @@ public class Deportivo extends Vehiculo{
             throw new Exception("Tiempo de 100 km/h no puede ser menor a cero.");
         }
         return new Deportivo(placa,estadoVehiculo,marca,modelo,cambios,
-        velocidadMaxima,cilinbraje,combustible, precio, numPasajeros,
+        velocidadMaxima,cilindraje,combustible, precio, numPasajeros,
         numPuertas,caballosFuerza, numBolsasAire, timeCienKM);
     }
 
