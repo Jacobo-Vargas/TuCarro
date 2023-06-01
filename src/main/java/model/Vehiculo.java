@@ -11,12 +11,12 @@ public class Vehiculo {
     private final float velocidadMaxima;
     private final int cilindraje;
     private Combustible combustible;
-    private String precio;
+    private float precio;
     private final String vendedor;
     private final Disponibilidad disponibilidad;
 
 
-    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, String precio,String vendedor, Disponibilidad disponibilidad) {
+    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor, Disponibilidad disponibilidad) {
         this.placa = placa;
         this.estadoVehiculo = estadoVehiculo;
         this.marca = marca;
@@ -29,7 +29,7 @@ public class Vehiculo {
         this.vendedor = vendedor;
         this.disponibilidad = disponibilidad;
     }
-    public static Vehiculo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, String precio, String vendedor,Disponibilidad disponibilidad) throws Exception {
+    public static Vehiculo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio, String vendedor,Disponibilidad disponibilidad) throws Exception {
 
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
@@ -56,7 +56,7 @@ public class Vehiculo {
         if (combustible == null){
             throw new Exception("Debe proporcionar un tipo de combustible");
         }
-        if(precio == null ){
+        if(precio == 0 ){
             throw new Exception("El precio debe ser mayor a cero.");
         }
         if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
@@ -108,11 +108,11 @@ public class Vehiculo {
         this.combustible = combustible;
     }
 
-    public String getPrecio() {
+    public float getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(float precio) {
         this.precio = precio;
     }
 

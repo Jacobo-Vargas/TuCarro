@@ -181,15 +181,15 @@ public class UtilFiltrar {
     public static Predicate<Vehiculo> buscarPorNumeroIdentificacion(String numeroIdentificacion){
         return vehiculo -> vehiculo.getVendedor().equals(numeroIdentificacion);
     }
-    public static Predicate<Vehiculo> buscarPorPrecio(String precio){
-        return vehiculo -> vehiculo.getPrecio().equals(precio);
+    public static Predicate<Vehiculo> buscarPorPrecio(float precio){
+        return vehiculo -> vehiculo.getPrecio()==(precio);
     }
 
-    public static Predicate<Vehiculo> filtrarPorTodo(String numeroIdentificacion, String precio){
+    public static Predicate<Vehiculo> filtrarPorTodo(String numeroIdentificacion, float precio){
         Predicate<Vehiculo> predicado = persona -> true;
         if(numeroIdentificacion !=null && numeroIdentificacion.isEmpty()){
              predicado= predicado.and(buscarPorNumeroIdentificacion(numeroIdentificacion));
-        }if(precio != null && numeroIdentificacion.isEmpty()){
+        }if(precio != 0 && numeroIdentificacion.isEmpty()){
             predicado= predicado.and(buscarPorPrecio(precio));
         }
         return predicado;

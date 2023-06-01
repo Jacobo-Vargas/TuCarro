@@ -73,9 +73,9 @@ public class AdminController {
     ObservableList<Vehiculo> vehiculos;
 
     public void initialize(){
-        registroEmpleado.setVisible(true);
-        registroVentas.setVisible(false);
-        vehiculos=FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaVehiculos());
+        registroEmpleado.setVisible(false);
+        registroVentas.setVisible(true);
+        vehiculos=FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().buscarEnTabla());
         columDocumentoVentas.setCellValueFactory(new PropertyValueFactory<>("vendedor"));
         columValorVentas.setCellValueFactory(new PropertyValueFactory<>("precio"));
         columEstadoVentas.setCellValueFactory(new PropertyValueFactory<>("estadoVehiculo"));

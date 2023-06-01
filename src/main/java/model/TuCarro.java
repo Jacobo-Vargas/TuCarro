@@ -99,11 +99,8 @@ public class TuCarro {
 
         return validar;
     }
-    public List<Vehiculo> buscarEnTabla(String documento, String precio) {
-        return listaVehiculos.stream()
-                .filter(UtilFiltrar.filtrarPorTodo(documento, precio)).
-                filter(Vehiculo -> Vehiculo.getDisponibilidad()==Disponibilidad.VENDIDO).collect(Collectors
-                        .toUnmodifiableList());
+    public List<Vehiculo> buscarEnTabla() {
+        return listaVehiculos.stream().filter(vehiculo -> vehiculo.getEstadoVehiculo()==EstadoVehiculo.USADO).collect(Collectors.toList());
     }
 
     public List<Vehiculo> ordenarListaCarroPlaca (){//metodo para ordenar por numero de placa
