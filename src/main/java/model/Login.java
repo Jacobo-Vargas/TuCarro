@@ -3,6 +3,8 @@ package model;
 
 import javax.swing.*;
 
+import static model.SistemaInstance.SISTEMAINSTANCE;
+
 public class Login {
     private final TuCarro tuCarro;
     private String nombreUSer;
@@ -16,8 +18,11 @@ public class Login {
         if (documento.equals("admin") && pass.equals("@dmin")) {
             this.nombreUSer = "admin";
             return 1;
+        }if(documento.equals("administrador") && pass.equals("@")){
+            this.nombreUSer="administrador";
+            return 3;
         }
-        for (Empleado e : tuCarro.listaEmpleados) {
+        for (Empleado e : SISTEMAINSTANCE.getSistema().listaEmpleados) {
             if ((e.getDocumento().equals(documento) && e.getPassEmpleado().equals(pass))) {
                 this.nombreUSer = e.getNombre();
                 this.nombre = e.getNombre();

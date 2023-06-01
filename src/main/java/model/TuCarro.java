@@ -40,6 +40,13 @@ public class TuCarro {
             }
         }
     }
+    public void borrarEmpleado(String documento){
+        for(int i=0;i<listaEmpleados.size();i++){
+            if(listaEmpleados.get(i).getDocumento().equals(documento)){
+                listaEmpleados.remove(listaEmpleados.get(i));
+            }
+        }
+    }
 
     public void registrarEmpleado(Empleado empleado){
         boolean validar = true;

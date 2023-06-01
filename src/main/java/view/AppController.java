@@ -30,12 +30,24 @@ public class AppController {
         Stage stage = new Stage();
         ventanaEmpleado.start(stage);
     }
+    @FXML
+    private void lanzarVentanaAdministrador() throws IOException {
+        var ventanaAdmin=new VentanaAdmin();
+        Stage stage = new Stage();
+        ventanaAdmin.start(stage);
+    }
+
+
+
 
     @FXML
     public void actionBtnIngresar(ActionEvent actionEvent) throws IOException {
-        if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 1)){
-            showConfirmatioAlert("Login","Bienvenido "+ INSTANCE.getLogin().getNombreUSer());
+        if ((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(), txtPassword.getText()) == 1)) {
             launchVentanaEmpleado();
+            Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
+            currentStage.hide();
+        }if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(), txtPassword.getText()) == 3)){
+            lanzarVentanaAdministrador();
             Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
             currentStage.hide();
         }else if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 2)){
@@ -43,10 +55,12 @@ public class AppController {
             launchVentanaEmpleado();
             Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
             currentStage.hide();
-        }else{
+       } else{
             showWarningAlert("Login","Verifique los datos ingresados");
         }
     }
+
+    
 
     @FXML
     private void showWarningAlert(String title, String message) {
