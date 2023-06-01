@@ -49,6 +49,36 @@ public class EmpleadoController {
     @FXML
     public JFXButton btnGuardar;
     @FXML
+    public TextField tfCapacidadCarga;
+    @FXML
+    public TextField tfNumPuertas;
+    @FXML
+    public TextField tfNumPasajeros;
+    @FXML
+    public TextField tfMarca;
+    @FXML
+    public TextField tfSalEmergencia;
+    @FXML
+    public TextField tfNumEjes;
+    @FXML
+    public TextField tfVelCrucero;
+    @FXML
+    public TextField tfBolsasAire;
+    @FXML
+    public TextField tfCapacidadMaletero;
+    @FXML
+    public TextField tfPrecio;
+    @FXML
+    public TextField tfCilindraje;
+    @FXML
+    public TextField tfVelMaxima;
+    @FXML
+    public TextField tfPlaca;
+    @FXML
+    public TextField tfCambios;
+    @FXML
+    public TextField tfModelo;
+    @FXML
     private Pane mediaPane;
     @FXML
     private MediaView mediaView;
@@ -75,11 +105,13 @@ public class EmpleadoController {
 
     @FXML
     public void initialize() {
-        clientes = FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaClientes());
+
         mediaPane.setVisible(true);
         imagePause.setVisible(false);
         paneVerVehiculos.setVisible(false);
         paneRegistrarClientes.setVisible(false);
+
+        clientes = FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaClientes());
         colDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
         tblClientes.setItems(clientes);
@@ -109,7 +141,6 @@ public class EmpleadoController {
             if (registrado) {
                 clientes.add(cliente);
                 tblClientes.refresh();
-
                 showInformationAlert("Cliente registrado", "El cliente se ha registrado correctamente.");
             } else {
                 showWarningAlert("Registro fallido", "No se pudo registrar el cliente, verfique los datos ingresados.");
@@ -126,7 +157,6 @@ public class EmpleadoController {
     public void actionLimpiarDatos(ActionEvent e){
             txtNombreCliente.clear();
             txtDocumentoCliente.clear();
-
     }
 
 
@@ -143,9 +173,10 @@ public class EmpleadoController {
             imagePause.setVisible(true);
             imagePlay.setVisible(false);
         }
-
         isReproduciendo = !isReproduciendo;
     }
+
+
     @FXML
     private void launchVentanaLogin() throws IOException {
         MainApp mainApp = new MainApp();
@@ -159,12 +190,15 @@ public class EmpleadoController {
         paneVerVehiculos.setVisible(true);
         mediaPane.setVisible(false);
     }
+
     @FXML
     public void actionRegistrarClientes(ActionEvent actionEvent) {
         paneVerVehiculos.setVisible(false);
         mediaPane.setVisible(false);
         paneRegistrarClientes.setVisible(true);
     }
+
+
     @FXML
     public void actionSalir(ActionEvent actionEvent) throws IOException {
         launchVentanaLogin();
@@ -197,6 +231,7 @@ public class EmpleadoController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
     @FXML
     private void showInformationAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

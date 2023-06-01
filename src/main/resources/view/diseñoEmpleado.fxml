@@ -280,15 +280,15 @@
                            <Font name="Cambria Bold" size="14.0" />
                         </font>
                      </Label>
-                     <TextField prefHeight="26.0" prefWidth="111.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                     <TextField prefHeight="11.0" prefWidth="103.0" GridPane.columnIndex="1" />
-                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                     <TextField GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                     <TextField fx:id="tfModelo" prefHeight="26.0" prefWidth="111.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     <TextField fx:id="tfCambios" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     <TextField fx:id="tfPlaca" prefHeight="11.0" prefWidth="103.0" GridPane.columnIndex="1" />
+                     <TextField fx:id="tfVelMaxima" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     <TextField fx:id="tfCilindraje" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                     <TextField fx:id="tfPrecio" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                     <TextField fx:id="tfCapacidadMaletero" GridPane.columnIndex="3" GridPane.rowIndex="1" />
                      <TextField GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                     <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                     <TextField fx:id="tfBolsasAire" GridPane.columnIndex="3" GridPane.rowIndex="4" />
                      <Label ellipsisString="" prefHeight="22.0" prefWidth="133.0" text="Numero pasajeros: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.rowIndex="9">
                         <font>
                            <Font name="Cambria Bold" size="14.0" />
@@ -329,19 +329,19 @@
                            <Font name="Cambria Bold" size="14.0" />
                         </font>
                      </Label>
-                     <TextField GridPane.columnIndex="3" GridPane.rowIndex="8" />
-                     <TextField GridPane.columnIndex="3" GridPane.rowIndex="9" />
-                     <TextField GridPane.columnIndex="3" GridPane.rowIndex="10" />
-                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                     <TextField GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                     <TextField fx:id="tfVelCrucero" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                     <TextField fx:id="tfNumEjes" GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                     <TextField fx:id="tfSalEmergencia" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+                     <TextField fx:id="tfMarca" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     <TextField fx:id="tfNumPasajeros" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                     <TextField fx:id="tfNumPuertas" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                      <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                      <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                      <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
                      <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
                      <ComboBox prefWidth="150.0" GridPane.columnIndex="3" />
                      <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                     <TextField GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                     <TextField fx:id="tfCapacidadCarga" GridPane.columnIndex="3" GridPane.rowIndex="2" />
                      <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="5" />
                      <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
                      <ComboBox prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
