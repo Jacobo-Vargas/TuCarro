@@ -11,12 +11,12 @@ public class Vehiculo {
     private final float velocidadMaxima;
     private final int cilindraje;
     private Combustible combustible;
-
     private float precio;
     private final String vendedor;
+    private final Disponibilidad disponibilidad;
 
 
-    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor) {
+    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor, Disponibilidad disponibilidad) {
         this.placa = placa;
         this.estadoVehiculo = estadoVehiculo;
         this.marca = marca;
@@ -27,8 +27,9 @@ public class Vehiculo {
         this.combustible = combustible;
         this.precio = precio;
         this.vendedor = vendedor;
+        this.disponibilidad = disponibilidad;
     }
-    public static Vehiculo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio, String vendedor) throws Exception {
+    public static Vehiculo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio, String vendedor,Disponibilidad disponibilidad) throws Exception {
 
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
@@ -61,7 +62,7 @@ public class Vehiculo {
         if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
             throw new Exception("Debe ingresar el vendedor");
         }
-        return new Vehiculo(placa,estadoVehiculo,marca,modelo,cambios,velocidadMaxima,cilindraje,combustible,precio,vendedor);
+        return new Vehiculo(placa,estadoVehiculo,marca,modelo,cambios,velocidadMaxima,cilindraje,combustible,precio,vendedor,disponibilidad);
     }
 
     public void setPrecio(float precio) {
@@ -117,6 +118,10 @@ public class Vehiculo {
 
     public String getVendedor() {
         return vendedor;
+    }
+
+    public Disponibilidad getDisponibilidad() {
+        return disponibilidad;
     }
 
     @Override

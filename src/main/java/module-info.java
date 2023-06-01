@@ -9,5 +9,6 @@ module TuCarro {
     exports view;
     opens view to javafx.fxml;
     opens model;
+    exports model;
 
 }
