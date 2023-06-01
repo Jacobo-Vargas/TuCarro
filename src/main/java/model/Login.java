@@ -16,7 +16,7 @@ public class Login {
 
     public int verificarCredenciales(String documento, String pass) {
         if (documento.equals("admin") && pass.equals("@dmin")) {
-            this.nombreUSer = "admin";
+            this.nombreUSer = "Administrador";
             return 1;
         }
         for (Empleado e : SISTEMAINSTANCE.getSistema().listaEmpleados) {

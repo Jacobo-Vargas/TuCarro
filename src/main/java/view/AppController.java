@@ -31,8 +31,8 @@ public class AppController {
         ventanaEmpleado.start(stage);
     }
     @FXML
-    private void lanzarVentanaAdministrador() throws IOException {
-        var ventanaAdmin=new VentanaAdmin();
+    private void launchVentanaAdmin() throws IOException {
+        VentanaAdmin ventanaAdmin = new VentanaAdmin();
         Stage stage = new Stage();
         ventanaAdmin.start(stage);
     }
@@ -43,7 +43,7 @@ public class AppController {
     @FXML
     public void actionBtnIngresar(ActionEvent actionEvent) throws IOException {
         if ((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(), txtPassword.getText()) == 1)) {
-            launchVentanaEmpleado();
+            launchVentanaAdmin();
             Stage currentStage = (Stage) btnIngresar.getScene().getWindow();
             currentStage.hide();
         }else if((INSTANCE.getLogin().verificarCredenciales(txtUsuario.getText(),txtPassword.getText()) == 2)){
