@@ -27,6 +27,7 @@ public class Vehiculo {
         this.precio = precio;
     }
     public static Vehiculo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio) throws Exception {
+
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
         }
