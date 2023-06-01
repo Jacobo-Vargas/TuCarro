@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Motos extends Vehiculo{
 
-    public Motos(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio);
+    public Motos(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor);
     }
-    public static Motos of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio)throws Exception{
+    public static Motos of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor)throws Exception{
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
         }
@@ -36,7 +36,10 @@ public class Motos extends Vehiculo{
         if(precio <= 0 ){
             throw new Exception("El precio debe ser mayor a cero.");
         }
+        if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
+            throw new Exception("Debe ingresar el vendedor");
+        }
 
-        return new Motos(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio);
+        return new Motos(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor);
     }
 }

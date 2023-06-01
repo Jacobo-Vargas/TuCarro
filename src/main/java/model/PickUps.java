@@ -12,8 +12,8 @@ public class PickUps extends Vehiculo{
     private ABS abs;
     private CuatroPorCuatro cuatroPorCuatro;
 
-    public PickUps(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadCarga, int numBolsasAire, ABS abs, CuatroPorCuatro cuatroPorCuatro) {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio);
+    public PickUps(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadCarga, int numBolsasAire, ABS abs, CuatroPorCuatro cuatroPorCuatro) {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;
@@ -25,7 +25,7 @@ public class PickUps extends Vehiculo{
     }
 
     public static PickUps of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje,
-                                Combustible combustible,float precio, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
+                                Combustible combustible,float precio,String vendedor, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
                                 float capacidadCarga, int numBolsasAire, ABS abs, CuatroPorCuatro cuatroPorCuatro) throws Exception {
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
@@ -55,6 +55,9 @@ public class PickUps extends Vehiculo{
         if(precio <= 0 ){
             throw new Exception("El precio debe ser mayor a cero.");
         }
+        if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
+            throw new Exception("Debe ingresar el vendedor");
+        }
 
         if(numPasajeros <=0 ){
             throw new Exception("Numero de pasajeros debe ser mayor a cero.");
@@ -81,7 +84,7 @@ public class PickUps extends Vehiculo{
             throw new Exception("Indique si es 4X4.");
         }
 
-        return new PickUps(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilindraje,combustible,precio,numPasajeros, numPuertas,
+        return new PickUps(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilindraje,combustible,precio,vendedor,numPasajeros, numPuertas,
                 aire,camReversa, capacidadCarga,numBolsasAire, abs,cuatroPorCuatro);
     }
 

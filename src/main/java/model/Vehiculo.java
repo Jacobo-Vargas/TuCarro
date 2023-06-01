@@ -13,9 +13,10 @@ public class Vehiculo {
     private Combustible combustible;
 
     private float precio;
+    private final String vendedor;
 
 
-    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio) {
+    public Vehiculo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor) {
         this.placa = placa;
         this.estadoVehiculo = estadoVehiculo;
         this.marca = marca;
@@ -25,8 +26,9 @@ public class Vehiculo {
         this.cilindraje = cilindraje;
         this.combustible = combustible;
         this.precio = precio;
+        this.vendedor = vendedor;
     }
-    public static Vehiculo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio) throws Exception {
+    public static Vehiculo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio, String vendedor) throws Exception {
 
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
@@ -56,8 +58,10 @@ public class Vehiculo {
         if(precio <= 0 ){
             throw new Exception("El precio debe ser mayor a cero.");
         }
-
-        return new Vehiculo(placa,estadoVehiculo,marca,modelo,cambios,velocidadMaxima,cilindraje,combustible,precio);
+        if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
+            throw new Exception("Debe ingresar el vendedor");
+        }
+        return new Vehiculo(placa,estadoVehiculo,marca,modelo,cambios,velocidadMaxima,cilindraje,combustible,precio,vendedor);
     }
 
     public void setPrecio(float precio) {
@@ -111,6 +115,9 @@ public class Vehiculo {
         this.combustible = combustible;
     }
 
+    public String getVendedor() {
+        return vendedor;
+    }
 
     @Override
     public String toString() {
