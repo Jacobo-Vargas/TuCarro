@@ -44,6 +44,9 @@ public class EmpleadoController {
     public FontAwesomeIconView imagePause;
     @FXML
     public Rectangle rectangleFondo;
+    public JFXButton btnGuardarVehiculo;
+    public JFXButton btnVenderVehiculo;
+    public JFXButton btnAlquilarVehiculo;
     @FXML
     private Pane paneAtributos;
     @FXML
@@ -280,32 +283,70 @@ public class EmpleadoController {
         paneVerVehiculos.setVisible(true);
         mediaPane.setVisible(false);
         mediaPlayer.stop();
-        registerVehicle();
+        llenarDatosVehicle();
     }
     @FXML
-    public void registerVehicle(){
+    public void llenarDatosVehicle(){
         boxSelVehicle.valueProperty().addListener((observable, oldValue, newValue) -> {
             if (newValue != null) {
-                // Realiza las actualizaciones correspondientes según la selección
                 if (newValue.equals(SelectVehicle.BUSES)) {
-                    boxCuatroPorCuatro.setDisable(true);
-                    boxFrenoAire.setDisable(true);
-                    tfVelCrucero.setDisable(true);
-                    boxSenTrafico.setDisable(true);
-                    boxSenColision.setDisable(true);
-                    tfCapacidadCarga.setDisable(true);
+                    tfPlaca.setDisable(false);
+                    boxDisponibilidad.setDisable(false);
+                    boxEstado.setDisable(false);
+                    tfMarca.setDisable(false);
+                    tfModelo.setDisable(false);
+                    tfCambios.setDisable(false);
+                    tfVelMaxima.setDisable(false);
+                    tfCilindraje.setDisable(false);
+                    boxCombustible.setDisable(false);
+                    tfPrecio.setDisable(false);
+                    tfNumPasajeros.setDisable(false);
+                    tfNumPuertas.setDisable(false);
+                    boxAire.setDisable(false);
+                    boxCamReversa.setDisable(true);
                     boxAsistencia.setDisable(true);
-                }
-                if (newValue.equals(SelectVehicle.CAMIONES)) {
-                    boxCuatroPorCuatro.setDisable(false);
-                    boxFrenoAire.setDisable(false);
-                    tfVelCrucero.setDisable(false);
-                    boxSenTrafico.setDisable(false);
-                    boxSenColision.setDisable(false);
-                    tfCapacidadCarga.setDisable(false);
-                    boxAsistencia.setDisable(false);
-                    boxCuatroPorCuatro.setDisable(true);
+                    tfCapacidadMaletero.setDisable(true);
+                    tfCapacidadCarga.setDisable(true);
+                    boxTipoCamion.setDisable(true);
+                    tfBolsasAire.setDisable(true);
+                    boxABS.setDisable(true);
+                    boxSenColision.setDisable(true);
+                    boxSenTrafico.setDisable(true);
+                    tfVelCrucero.setDisable(true);
+                    tfNumEjes.setDisable(true);
+                    tfSalEmergencia.setDisable(false);
                     boxFrenoAire.setDisable(true);
+                    boxCuatroPorCuatro.setDisable(true);
+
+                }
+                if (newValue.equals(SelectVehicle.MOTOS)) {
+                    tfPlaca.setDisable(false);
+                    boxDisponibilidad.setDisable(false);
+                    boxEstado.setDisable(false);
+                    tfMarca.setDisable(false);
+                    tfModelo.setDisable(false);
+                    tfCambios.setDisable(false);
+                    tfVelMaxima.setDisable(false);
+                    tfCilindraje.setDisable(false);
+                    boxCombustible.setDisable(false);
+                    tfPrecio.setDisable(false);
+                    tfNumPasajeros.setDisable(true);
+                    tfNumPuertas.setDisable(true);
+                    boxAire.setDisable(true);
+                    boxCamReversa.setDisable(true);
+                    boxAsistencia.setDisable(true);
+                    tfCapacidadMaletero.setDisable(true);
+                    tfCapacidadCarga.setDisable(true);
+                    boxTipoCamion.setDisable(true);
+                    tfBolsasAire.setDisable(true);
+                    boxABS.setDisable(true);
+                    boxSenColision.setDisable(true);
+                    boxSenTrafico.setDisable(true);
+                    tfVelCrucero.setDisable(true);
+                    tfNumEjes.setDisable(true);
+                    tfSalEmergencia.setDisable(true);
+                    boxFrenoAire.setDisable(true);
+                    boxCuatroPorCuatro.setDisable(true);
                 }
             }
         });
@@ -364,4 +405,12 @@ public class EmpleadoController {
         alert.showAndWait();
     }
 
+    public void actionRegistrarVehiculos(ActionEvent actionEvent) {
+    }
+
+    public void actionVenderVehiculos(ActionEvent actionEvent) {
+    }
+
+    public void actionAlquilarVehiculos(ActionEvent actionEvent) {
+    }
 }

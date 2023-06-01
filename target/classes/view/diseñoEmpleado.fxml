@@ -165,15 +165,15 @@
                      </LinearGradient>
                   </fill>
                </Rectangle>
-               <ComboBox fx:id="boxSelVehicle" layoutX="14.0" layoutY="35.0" prefWidth="150.0" />
-               <Pane fx:id="paneAtributos" layoutX="204.0" prefHeight="507.0" prefWidth="605.0">
+               <Pane fx:id="paneAtributos" layoutX="11.0" layoutY="55.0" prefHeight="452.0" prefWidth="798.0">
                   <children>
-                     <GridPane prefHeight="388.0" prefWidth="573.0">
+                     <GridPane prefHeight="399.0" prefWidth="755.0">
                         <columnConstraints>
                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="133.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="135.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="175.0" />
-                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="127.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="169.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="264.0" minWidth="10.0" prefWidth="67.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="329.0" minWidth="10.0" prefWidth="233.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="169.0" />
                         </columnConstraints>
                         <rowConstraints>
                            <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
@@ -247,51 +247,50 @@
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="189.0" text="   Asistencia permanencia: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="165.0" text="   Asistencia permanencia: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="133.0" text="   Numero de ejes:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="133.0" text="   Numero de ejes:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="10">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="164.0" text="   Salidas de emergencia:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="164.0" text="   Salidas de emergencia:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="11">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="144.0" text="   Tipo de camion:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="144.0" text="   Tipo de camion:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="4">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="145.0" text="   Frenos de aire:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="12">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="145.0" text="   Frenos de aire:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="12">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="143.0" text="   Capacidad maletero:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="143.0" text="   Capacidad maletero:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="1">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="133.0" text="   Bolsas de aire: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="133.0" text="   Bolsas de aire: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="5">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
       
                            <TextField fx:id="tfModelo" prefHeight="26.0" prefWidth="111.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                           <TextField fx:id="tfCambios" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                           <TextField fx:id="tfCambios" prefHeight="26.0" prefWidth="147.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                            <TextField fx:id="tfPlaca" prefHeight="11.0" prefWidth="103.0" GridPane.columnIndex="1" />
                            <TextField fx:id="tfVelMaxima" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                            <TextField fx:id="tfCilindraje" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                            <TextField fx:id="tfPrecio" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                           <TextField fx:id="tfCapacidadMaletero" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                           <TextField GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                           <TextField fx:id="tfBolsasAire" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                           <TextField fx:id="tfCapacidadMaletero" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                           <TextField fx:id="tfBolsasAire" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                            <Label ellipsisString="" prefHeight="22.0" prefWidth="133.0" text="Numero pasajeros: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.rowIndex="10">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
@@ -302,64 +301,68 @@
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="80.0" text="   ABS:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="80.0" text="   ABS:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="6">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="140.0" text="   Sensor colision:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="140.0" text="   Sensor colision:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="7">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="143.0" text="   Capacidad carga: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="143.0" text="   Capacidad carga: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="3">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="140.0" text="   Sensor trafico: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="140.0" text="   Sensor trafico: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="8">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="140.0" text="   Velocidad crucero:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="140.0" text="   Velocidad crucero:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="9">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <Label ellipsisString="" prefHeight="22.0" prefWidth="145.0" text="   Cuatro por cuatro: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="13">
+                           <Label ellipsisString="" prefHeight="22.0" prefWidth="145.0" text="   Cuatro por cuatro: " textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="3" GridPane.rowIndex="13">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <TextField fx:id="tfVelCrucero" GridPane.columnIndex="3" GridPane.rowIndex="9" />
-                           <TextField fx:id="tfNumEjes" GridPane.columnIndex="3" GridPane.rowIndex="10" />
-                           <TextField fx:id="tfSalEmergencia" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+                           <TextField fx:id="tfVelCrucero" GridPane.columnIndex="4" GridPane.rowIndex="9" />
+                           <TextField fx:id="tfNumEjes" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+                           <TextField fx:id="tfSalEmergencia" GridPane.columnIndex="4" GridPane.rowIndex="11" />
                            <TextField fx:id="tfMarca" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            <TextField fx:id="tfNumPasajeros" GridPane.columnIndex="1" GridPane.rowIndex="10" />
                            <TextField fx:id="tfNumPuertas" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                           <ComboBox fx:id="boxDisponibilidad" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                           <ComboBox fx:id="boxCombustible" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                           <ComboBox fx:id="boxAire" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-                           <ComboBox fx:id="boxCamReversa" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-                           <ComboBox fx:id="boxAsistencia" prefWidth="150.0" GridPane.columnIndex="3" />
-                           <ComboBox fx:id="boxTipoCamion" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-                           <TextField fx:id="tfCapacidadCarga" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-                           <ComboBox fx:id="boxABS" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-                           <ComboBox fx:id="boxSenColision" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="7" />
-                           <ComboBox fx:id="boxSenTrafico" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="8" />
-                           <ComboBox fx:id="boxFrenoAire" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="12" />
-                           <ComboBox fx:id="boxCuatroPorCuatro" prefWidth="150.0" GridPane.columnIndex="3" GridPane.rowIndex="13" />
+                           <ComboBox fx:id="boxDisponibilidad" prefHeight="26.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           <ComboBox fx:id="boxCombustible" prefHeight="26.0" prefWidth="164.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                           <ComboBox fx:id="boxAire" prefHeight="26.0" prefWidth="166.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                           <ComboBox fx:id="boxCamReversa" prefHeight="26.0" prefWidth="168.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+                           <ComboBox fx:id="boxAsistencia" prefHeight="26.0" prefWidth="182.0" GridPane.columnIndex="4" />
+                           <TextField fx:id="tfCapacidadCarga" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                           <ComboBox fx:id="boxABS" prefHeight="26.0" prefWidth="180.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+                           <ComboBox fx:id="boxSenColision" prefHeight="26.0" prefWidth="178.0" GridPane.columnIndex="4" GridPane.rowIndex="7" />
+                           <ComboBox fx:id="boxSenTrafico" prefHeight="26.0" prefWidth="180.0" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+                           <ComboBox fx:id="boxFrenoAire" prefHeight="26.0" prefWidth="180.0" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+                           <ComboBox fx:id="boxCuatroPorCuatro" prefHeight="26.0" prefWidth="187.0" GridPane.columnIndex="4" GridPane.rowIndex="13" />
                            <Label ellipsisString="" prefHeight="22.0" prefWidth="124.0" text="Estado:" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.rowIndex="2">
                               <font>
                                  <Font name="Cambria Bold" size="14.0" />
                               </font>
                            </Label>
-                           <ComboBox fx:id="boxEstado" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <ComboBox fx:id="boxEstado" prefHeight="26.0" prefWidth="163.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <ComboBox fx:id="boxTipoCamion" prefHeight="26.0" prefWidth="184.0" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                         </children>
                      </GridPane>
                   </children>
                </Pane>
+               <JFXButton fx:id="btnGuardarVehiculo" layoutX="268.0" layoutY="10.0" onAction="#actionRegistrarVehiculos" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Comprar Vehiculo" />
+               <ComboBox fx:id="boxSelVehicle" layoutX="13.0" layoutY="12.0" prefHeight="27.0" prefWidth="213.0" promptText="Seleccione un vehiculo..." />
+               <JFXButton fx:id="btnVenderVehiculo" layoutX="433.0" layoutY="10.0" onAction="#actionVenderVehiculos" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Vender Vehiculo" />
+               <JFXButton fx:id="btnAlquilarVehiculo" layoutX="585.0" layoutY="10.0" onAction="#actionAlquilarVehiculos" styleClass="btnGuardar" stylesheets="@../CSS/Style.css" text="Alquilar Vehiculo" />
             </Pane>
          </Pane>
       </center>
