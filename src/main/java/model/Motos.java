@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Motos extends Vehiculo{
 
-    public Motos(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor);
+    public Motos(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor, Disponibilidad disponibilidad) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor,disponibilidad);
     }
-    public static Motos of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor)throws Exception{
+    public static Motos of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor, Disponibilidad disponibilidad)throws Exception{
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
         }
@@ -39,7 +39,10 @@ public class Motos extends Vehiculo{
         if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
             throw new Exception("Debe ingresar el vendedor");
         }
+        if(disponibilidad == null){
+            throw new Exception("Disponibilidad requerida");
+        }
 
-        return new Motos(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor);
+        return new Motos(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor,disponibilidad);
     }
 }

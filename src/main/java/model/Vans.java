@@ -11,8 +11,8 @@ public class Vans extends Vehiculo{
     private int numBolsasAire;
     private ABS abs;
 
-    public Vans(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs) {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor);
+    public Vans(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor,Disponibilidad disponibilidad, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs) {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor,disponibilidad);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;
@@ -22,7 +22,7 @@ public class Vans extends Vehiculo{
         this.abs = abs;
     }
     public static Vans of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje,
-                                Combustible combustible,float precio,String vendedor, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
+                                Combustible combustible,float precio,String vendedor, Disponibilidad disponibilidad, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
                                 float capacidadMaletero, int numBolsasAire, ABS abs) throws Exception {
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
@@ -77,8 +77,11 @@ public class Vans extends Vehiculo{
         if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
             throw new Exception("Debe ingresar el vendedor");
         }
+        if(disponibilidad == null){
+            throw new Exception("Disponibilidad requerida");
+        }
 
-        return new Vans(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilindraje,combustible,precio,vendedor,numPasajeros, numPuertas,
+        return new Vans(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilindraje,combustible,precio,vendedor,disponibilidad,numPasajeros, numPuertas,
                 aire,camReversa, capacidadMaletero,numBolsasAire, abs);
     }
 
