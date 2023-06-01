@@ -1,4 +1,5 @@
 module TuCarro {
+
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
@@ -8,7 +9,8 @@ module TuCarro {
 
     exports view;
     opens view to javafx.fxml;
-    opens model;
+    opens model to javafx.controls;
     exports model;
+
 
 }
