@@ -10,6 +10,7 @@ public class TuCarro {
     private List<Vehiculo> listaVehiculos;
     public List<Empleado> listaEmpleados;
     public List<Cliente>  listaClientes;
+    private SelectVehicle selectVehicle;
 
     public TuCarro(){
         listaVehiculos = new ArrayList<>();
@@ -18,15 +19,6 @@ public class TuCarro {
 
     }
 
-//    public void registrarVehiculo(Vehiculo vehiculo) throws Exception {
-//        for(int i=0;i<listaVehiculos.size();i++){
-//            if(listaVehiculos.get(i).getPlaca()==vehiculo.getPlaca()){
-//                throw new Exception("el vehiculo este repetido");
-//            }
-//        }
-//        listaVehiculos.add(vehiculo);
-//
-//    }
 
     public void registrarVehiculo(Vehiculo vehiculo){
         boolean validar = true;
@@ -42,7 +34,7 @@ public class TuCarro {
         }
     }
     public void borrarCliente(String numeroCedula){
-        for(int i=0;i<listaClientes.size();i++){
+        for(int i = 0; i < listaClientes.size(); i++ ){
             if(listaClientes.get(i).getDocumento().equals(numeroCedula)){
                 listaClientes.remove(listaClientes.get(i));
             }
@@ -121,5 +113,9 @@ public class TuCarro {
 
     public void setListaClientes(List<Cliente> listaClientes) {
         this.listaClientes = listaClientes;
+    }
+
+    public SelectVehicle getSelectVehicle() {
+        return selectVehicle;
     }
 }

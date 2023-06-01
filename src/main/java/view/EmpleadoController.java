@@ -17,6 +17,7 @@ import javafx.scene.media.MediaView;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import model.Cliente;
+import model.SelectVehicle;
 import model.TuCarro;
 
 import javax.swing.*;
@@ -79,6 +80,8 @@ public class EmpleadoController {
     @FXML
     public TextField tfModelo;
     @FXML
+    public ComboBox<SelectVehicle> boxSelVehicle;
+    @FXML
     private Pane mediaPane;
     @FXML
     private MediaView mediaView;
@@ -98,9 +101,8 @@ public class EmpleadoController {
     private boolean isReproduciendo = false;
     @FXML
     ObservableList<Cliente> clientes;
-
-
-
+    @FXML
+    ObservableList<SelectVehicle> listaVehiculoSelect;
 
 
     @FXML
@@ -112,19 +114,25 @@ public class EmpleadoController {
         paneRegistrarClientes.setVisible(false);
 
         clientes = FXCollections.observableArrayList(SISTEMAINSTANCE.getSistema().getListaClientes());
+        tblClientes.setItems(clientes);
+
         colDocumento.setCellValueFactory(new PropertyValueFactory<>("documento"));
         colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        tblClientes.setItems(clientes);
+
 
         String videoPath = Objects.requireNonNull(getClass().getResource("/videos/videoCarro.mp4")).toExternalForm();
         Media media = new Media(videoPath);
         mediaPlayer = new MediaPlayer(media);
         mediaView.setMediaPlayer(mediaPlayer);
         mediaView.setStyle("-fx-border-color: #000000; -fx-border-width: 2px; -fx-border-radius: 5px;");
+
+
         if (!mediaPane.getChildren().contains(mediaView)) {
             mediaPane.getChildren().add(mediaView);
         }
 
+        listaVehiculoSelect = FXCollections.observableArrayList(SelectVehicle.values());
+        boxSelVehicle.setItems(listaVehiculoSelect);
     }
 
 
@@ -189,6 +197,7 @@ public class EmpleadoController {
         paneRegistrarClientes.setVisible(false);
         paneVerVehiculos.setVisible(true);
         mediaPane.setVisible(false);
+        mediaPlayer.stop();
     }
 
     @FXML
@@ -196,6 +205,7 @@ public class EmpleadoController {
         paneVerVehiculos.setVisible(false);
         mediaPane.setVisible(false);
         paneRegistrarClientes.setVisible(true);
+        mediaPlayer.stop();
     }
 
 
@@ -204,6 +214,7 @@ public class EmpleadoController {
         launchVentanaLogin();
         Stage currentStage = (Stage) menuSalir.getScene().getWindow();
         currentStage.hide();
+        mediaPlayer.stop();
     }
 
     @FXML
