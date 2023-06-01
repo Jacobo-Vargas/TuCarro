@@ -12,8 +12,8 @@ public class Camiones extends Vehiculo{
     private TipoCamion tipoCamion;
 
 
-    public Camiones(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, float precio,String vendedor, AireAcondicionado aire, float capacidadCarga, ABS abs, int numeroEjes, int numSalidasEmergencia, FrenoAire frenoAire, TipoCamion tipoCamion) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible, precio,vendedor);
+    public Camiones(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible, float precio,String vendedor,Disponibilidad disponibilidad, AireAcondicionado aire, float capacidadCarga, ABS abs, int numeroEjes, int numSalidasEmergencia, FrenoAire frenoAire, TipoCamion tipoCamion) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible, precio,vendedor,disponibilidad);
         this.aire = aire;
         this.capacidadCarga = capacidadCarga;
         this.abs = abs;
@@ -23,7 +23,7 @@ public class Camiones extends Vehiculo{
         this.tipoCamion = tipoCamion;
     }
 
-    public static Camiones of (String placa,EstadoVehiculo estadoVehiculo,String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible,float precio,String vendedor, AireAcondicionado aire, float capacidadCarga, ABS abs, int numeroEjes, int numSalidasEmergencia, FrenoAire frenoAire, TipoCamion tipoCamion)throws Exception{
+    public static Camiones of (String placa,EstadoVehiculo estadoVehiculo,String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible,float precio,String vendedor,Disponibilidad disponibilidad, AireAcondicionado aire, float capacidadCarga, ABS abs, int numeroEjes, int numSalidasEmergencia, FrenoAire frenoAire, TipoCamion tipoCamion)throws Exception{
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
         }
@@ -55,6 +55,9 @@ public class Camiones extends Vehiculo{
         if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
             throw new Exception("Debe ingresar el vendedor");
         }
+        if(disponibilidad == null){
+            throw new Exception("Disponibilidad requerida");
+        }
         if (aire == null) {
             throw new Exception("La información del aire acondicionado es requerida");
         }
@@ -76,7 +79,7 @@ public class Camiones extends Vehiculo{
         if (tipoCamion == null) {
             throw new Exception("El tipo de camión es requerido");
         }
-        return new Camiones(placa,estadoVehiculo,marca,modelo,cambios,velocidadMaxima,cambios,combustible,precio,vendedor,aire,capacidadCarga,abs,numeroEjes,numSalidasEmergencia,frenoAire,tipoCamion);
+        return new Camiones(placa,estadoVehiculo,marca,modelo,cambios,velocidadMaxima,cambios,combustible,precio,vendedor,disponibilidad,aire,capacidadCarga,abs,numeroEjes,numSalidasEmergencia,frenoAire,tipoCamion);
     }
 
 

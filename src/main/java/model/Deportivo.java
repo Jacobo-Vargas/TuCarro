@@ -10,9 +10,9 @@ public class Deportivo extends Vehiculo{
     private float timeCienKM;
 
     public Deportivo(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
-                     float velocidadMaxima, int cilindraje, Combustible combustible,float precio,String vendedor, int numPasajeros,
+                     float velocidadMaxima, int cilindraje, Combustible combustible,float precio,String vendedor, Disponibilidad disponibilidad, int numPasajeros,
                      int numPuertas, float caballosFuerza, int numBolsasAire, float timeCienKM) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible,precio, vendedor);
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible,precio, vendedor,disponibilidad);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.caballosFuerza = caballosFuerza;
@@ -20,7 +20,7 @@ public class Deportivo extends Vehiculo{
         this.timeCienKM = timeCienKM;
     }
     public static Deportivo of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios,
-                               float velocidadMaxima, int cilindraje, Combustible combustible,float precio,String vendedor,int numPasajeros,
+                               float velocidadMaxima, int cilindraje, Combustible combustible,float precio,String vendedor,Disponibilidad disponibilidad,int numPasajeros,
                                int numPuertas, float caballosFuerza, int numBolsasAire, float timeCienKM) throws Exception {
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
@@ -53,6 +53,9 @@ public class Deportivo extends Vehiculo{
         if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
             throw new Exception("Debe ingresar el vendedor");
         }
+        if(disponibilidad == null){
+            throw new Exception("Disponibilidad requerida");
+        }
         if(numPasajeros <= 0){
             throw new Exception("El numero de pasajeros es requerido");
         }
@@ -69,7 +72,7 @@ public class Deportivo extends Vehiculo{
             throw new Exception("Tiempo de 100 km/h no puede ser menor a cero.");
         }
         return new Deportivo(placa,estadoVehiculo,marca,modelo,cambios,
-        velocidadMaxima,cilindraje,combustible, precio, vendedor, numPasajeros,
+        velocidadMaxima,cilindraje,combustible, precio, vendedor, disponibilidad, numPasajeros,
         numPuertas,caballosFuerza, numBolsasAire, timeCienKM);
     }
 

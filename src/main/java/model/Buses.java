@@ -13,8 +13,8 @@ public class Buses extends Vehiculo {
     private int numeroEjes;
     private int numSalidasEmergencia;
 
-    public Buses(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor,int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, int numeroEjes, int numSalidasEmergencia) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor);
+    public Buses(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor,Disponibilidad disponibilidad, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, int numeroEjes, int numSalidasEmergencia) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor,disponibilidad);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;
@@ -26,7 +26,7 @@ public class Buses extends Vehiculo {
         this.numSalidasEmergencia = numSalidasEmergencia;
     }
 
-    public static Buses of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, int numeroEjes, int numSalidasEmergencia) throws Exception {
+    public static Buses of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor,Disponibilidad disponibilidad, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, int numeroEjes, int numSalidasEmergencia) throws Exception {
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
         }
@@ -58,6 +58,9 @@ public class Buses extends Vehiculo {
         if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
             throw new Exception("Debe ingresar el vendedor");
         }
+        if(disponibilidad == null){
+            throw new Exception("Disponibilidad requerida");
+        }
         if(numPasajeros <= 0){
             throw new Exception("El numero de pasajeros es requerido");
         }
@@ -86,7 +89,7 @@ public class Buses extends Vehiculo {
             throw new Exception("Indique la capacidad del maletero");
         }
 
-        return new Buses(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor, numPasajeros, numPuertas, aire, camReversa, capacidadMaletero, numBolsasAire, abs, numeroEjes, numSalidasEmergencia);
+        return new Buses(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor,disponibilidad, numPasajeros, numPuertas, aire, camReversa, capacidadMaletero, numBolsasAire, abs, numeroEjes, numSalidasEmergencia);
     }
 
     public int getNumPasajeros() {

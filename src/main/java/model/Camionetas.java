@@ -16,8 +16,8 @@ public class Camionetas extends Vehiculo{
     private AsistenciaPermanencia asistenciaPermanencia;
     private final CuatroPorCuatro cuatroPorCuatro;
 
-    public Camionetas(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible,float precio,String vendedor,int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCrucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia, CuatroPorCuatro cuatroPorCuatro) throws Exception {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible,precio,vendedor);
+    public Camionetas(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilinbraje, Combustible combustible,float precio,String vendedor,Disponibilidad disponibilidad,int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCrucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia, CuatroPorCuatro cuatroPorCuatro) throws Exception {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilinbraje, combustible,precio,vendedor,disponibilidad);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;
@@ -32,7 +32,7 @@ public class Camionetas extends Vehiculo{
         this.cuatroPorCuatro = cuatroPorCuatro;
     }
     public static Camionetas of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje,
-                                Combustible combustible,float precio,String vendedor, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
+                                Combustible combustible,float precio,String vendedor,Disponibilidad disponibilidad,int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
                                 float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCrucero, SensorColision sensorColision,
                                 SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia, CuatroPorCuatro cuatroPorCuatro) throws Exception {
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
@@ -65,6 +65,9 @@ public class Camionetas extends Vehiculo{
         }
         if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
             throw new Exception("Debe ingresar el vendedor");
+        }
+        if(disponibilidad == null){
+            throw new Exception("Disponibilidad requerida");
         }
         if(numPasajeros <=0 ){
             throw new Exception("Numero de pasajeros debe ser mayor a cero.");
@@ -103,7 +106,7 @@ public class Camionetas extends Vehiculo{
             throw new Exception("Indique si es 4X4.");
         }
 
-        return new Camionetas(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilindraje,combustible,precio,vendedor,numPasajeros, numPuertas,
+        return new Camionetas(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilindraje,combustible,precio,vendedor,disponibilidad,numPasajeros, numPuertas,
                 aire,camReversa, capacidadMaletero,numBolsasAire, abs,velCrucero,sensorColision, sensorTrafico, asistenciaPermanencia,cuatroPorCuatro);
     }
 

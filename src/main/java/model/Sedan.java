@@ -15,8 +15,8 @@ public class Sedan extends Vehiculo{
     private SensorTrafico sensorTrafico;
     private AsistenciaPermanencia asistenciaPermanencia;
 
-    public Sedan(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor,int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia) {
-        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor);
+    public Sedan(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje, Combustible combustible, float precio,String vendedor,Disponibilidad disponibilidad,int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa, float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCucero, SensorColision sensorColision, SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia) {
+        super(placa, estadoVehiculo, marca, modelo, cambios, velocidadMaxima, cilindraje, combustible, precio,vendedor,disponibilidad);
         this.numPasajeros = numPasajeros;
         this.numPuertas = numPuertas;
         this.aire = aire;
@@ -30,9 +30,9 @@ public class Sedan extends Vehiculo{
         this.asistenciaPermanencia = asistenciaPermanencia;
     }
     public static Sedan of(String placa, EstadoVehiculo estadoVehiculo, String marca, int modelo, int cambios, float velocidadMaxima, int cilindraje,
-                                Combustible combustible,float precio,String vendedor, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
+                                Combustible combustible,float precio,String vendedor,Disponibilidad disponibilidad, int numPasajeros, int numPuertas, AireAcondicionado aire, CamaraReversa camReversa,
                                 float capacidadMaletero, int numBolsasAire, ABS abs, VelocidadCrucero velCrucero, SensorColision sensorColision,
-                                SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia, CuatroPorCuatro cuatroPorCuatro) throws Exception {
+                                SensorTrafico sensorTrafico, AsistenciaPermanencia asistenciaPermanencia) throws Exception {
 
         if (Objects.requireNonNull(placa,"La placa no puede estar vacia").isEmpty()) {
             throw new Exception("Placa vehiculo");
@@ -61,6 +61,12 @@ public class Sedan extends Vehiculo{
         }
         if(precio <= 0 ){
             throw new Exception("El precio debe ser mayor a cero.");
+        }
+        if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
+            throw new Exception("Debe ingresar el vendedor");
+        }
+        if(disponibilidad == null){
+            throw new Exception("Disponibilidad requerida");
         }
 
         if(numPasajeros <=0 ){
@@ -96,11 +102,8 @@ public class Sedan extends Vehiculo{
         if(asistenciaPermanencia == null){
             throw new Exception("Indique si tiene asistencia de permanencia.");
         }
-        if(Objects.requireNonNull(vendedor,"Debe ingresar el vendedor").isEmpty()){
-            throw new Exception("Debe ingresar el vendedor");
-        }
 
-        return new Sedan(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilindraje,combustible,precio,vendedor,numPasajeros, numPuertas,
+        return new Sedan(placa,estadoVehiculo,marca, modelo, cambios, velocidadMaxima, cilindraje,combustible,precio,vendedor,disponibilidad,numPasajeros, numPuertas,
                 aire,camReversa, capacidadMaletero,numBolsasAire, abs,velCrucero,sensorColision, sensorTrafico, asistenciaPermanencia);
     }
 
