@@ -18,7 +18,7 @@ public class Login {
             return 1;
         }if(documento.equals("administrador") && pass.equals("@")){
             this.nombreUSer="administrador";
-            return 5;
+            return 3;
         }
         for (Empleado e : tuCarro.listaEmpleados) {
             if ((e.getDocumento().equals(documento) && e.getPassEmpleado().equals(pass))) {
